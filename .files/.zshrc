@@ -84,7 +84,6 @@ plugins=(
 	rust 
 	python 
 	pip 
-	pyenv
   conda
 	nvm 
 	npm 
