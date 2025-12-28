@@ -11,7 +11,7 @@ sudo pacman -S --noconfirm vlc ffmpeg ffmpegthumbs mpv \
 	gstreamer gst-plugins-base gst-plugins-good gst-plugin-pipewire \
 	gst-plugins-bad gst-plugins-ugly gst-libav \
 	libva-utils libva gstreamer-vaapi \
-	libvdpau-va-gl libva-vdpau-driver v4l2loopback-dkms
+	libvdpau-va-gl v4l2loopback-dkms
 
 # GPU-specific tools
 if lspci | grep -i amd | grep -i vga >/dev/null; then
@@ -25,24 +25,21 @@ if lspci | grep -i intel | grep -i vga >/dev/null; then
 fi
 
 # UI tools
-sudo pacman -S --noconfirm gnome-tweaks gnome-extensions-app
+sudo pacman -S --noconfirm gnome-tweaks
 
-# pipx (Python packaging)
-sudo pacman -S --noconfirm pipx
-pipx ensurepath
+sudo pacman -S --noconfirm python-pipx
 
 # Developer tools
-sudo pacman -S --noconfirm llvm clang cmake make gcc g++ \
+sudo pacman -S --noconfirm llvm clang cmake make gcc \
 	clang-tools-extra lldb lld ninja meson \
 	flex bison gperf ccache openssl libffi dfu-util unzip \
 	readline base-devel
 
 # GTK and GUI dev
-sudo pacman -S --noconfirm gtk3 gtk4 gtk3-devel gtk4-devel \
+sudo pacman -S --noconfirm gtk3 gtk4 \
 	gobject-introspection webkit2gtk libxrandr libxi libxinerama libxcursor libxxf86vm \
 	libx11 libxext libxft libxrender libxfixes mesa mesa-utils \
-	mesa-vdpau mesa-va mesa-libgl mesa-libegl mesa-gbm
-
+	mesa-vdpau mesa-libgl 
 # Fonts
 sudo pacman -S --noconfirm ttf-fira-code ttf-font-awesome noto-fonts
 

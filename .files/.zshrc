@@ -221,6 +221,9 @@ export PATH="$PATH:$HOME/.local/kitty.app/bin"
 export PATH="$PATH:$HOME/.platformio/penv/bin"
 # <<< platformio install directory <<<
 
+# >>> kitty install directory >>>
+export PATH="$PATH:$HOME/.apps/dotbot/bin"
+# <<< kitty install directory <<<
 
 
 export PATH="$PATH:$HOME/.local/bin"
@@ -339,3 +342,5 @@ unset __mamba_setup
 # <<< mamba initialize <<<
 
 . "$HOME/.local/bin/env"
+
+. "$HOME/.local/share/../bin/env"

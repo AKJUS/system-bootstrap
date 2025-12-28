@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo "Init base git configuration"
 git config --global user.email  "balyszyn@gmail.com"
 git config --global user.name   "limpid-kzonix"

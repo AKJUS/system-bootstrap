@@ -3,7 +3,28 @@
 # Update system
 sudo pacman -Syu --noconfirm
 
-sudo pacman -S --noconfirm gnome-keyring seahorse pam pambase
+sudo pacman -S \
+  plasma-integration \
+  kde-gtk-config \
+  breeze \
+  breeze-gtk \
+  qt5ct \
+  qt6ct
+
+sudo pacman -S --noconfirm tmux zip systemsettings kde-cli-tools kcmutils plasma-desktop
+
+paru -S --needed wireplumber libgtop bluez bluez-utils btop networkmanager \
+ dart-sass wl-clipboard brightnessctl swww python upower pacman-contrib \
+ power-profiles-daemon gvfs gtksourceview3 libsoup3 grimblast-git wf-recorder-git \
+ hyprpicker matugen-bin python-gpustat hyprsunset-git \
+ vicinae-bin neovim ags-hyprpanel-git 1password
+
+sudo pacman -S --noconfirm gnome-keyring seahorse pam pambase ghostty \
+ xdg-desktop-portal xdg-desktop-portal-wlr wl-clipboard hyprpaper \
+ polkit-kde-agent polkit-gnome flatpak
+
+
+
 
 # Install base packages from official repos
 sudo pacman -S --noconfirm \
