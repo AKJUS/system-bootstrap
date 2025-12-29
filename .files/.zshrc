@@ -248,6 +248,23 @@ export PATH="$PATH:$GOPATH/bin"
 export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"
 
 
+### EZA Themes
+export EZA_COLORS="
+di=1;38;5;110:
+fi=38;5;252:
+ex=1;38;5;114:
+ln=1;38;5;183:
+or=1;38;5;203:
+sb=38;5;221:
+da=38;5;245:
+ga=1;38;5;114:
+gm=1;38;5;221:
+gd=1;38;5;203:
+gu=38;5;245
+"
+### 
+
+
 # Not all systems have this file
 [[ -d "$HOME/.nimble/bin" ]] && export PATH=$HOME/.nimble/bin:$PATH
 
