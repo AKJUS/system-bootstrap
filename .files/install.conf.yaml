@@ -25,6 +25,10 @@
     - mkdir -p ~/.config/alacritty/
     - rm -rf ~/.config/lazygit
     - mkdir -p ~/.config/lazygit/
+    - rm -rf ~/.config/lsd/
+    - mkdir -p ~/.config/lsd/
+    - rm -rf ~/config/yazi
+    - mkdir -p ~/.config/yazi/
 
 - link:
     ~/.tmux.conf: .tmux.conf
@@ -43,3 +47,9 @@
     ~/.config/zellij/layouts/editor.kdl: .config/zellij/layouts/editor.kdl
     ~/.config/zellij/layouts/media.kdl: .config/zellij/layouts/media.kdl
     ~/.config/lazygit/config.yml: .config/lazygit/config.yml
+    ~/.config/lsd/config.yaml: .config/lsd/config.yaml
+    ~/.config/lsd/colors.yaml: .config/lsd/colors.yaml
+    ~/config/yazi/yazi.toml: .config/yazi/yazi.toml
+    ~/config/yazi/theme.toml: .config/yazi/theme.toml
+    ~/config/yazi/keymap.toml: .config/yazi/keymap.toml
+    

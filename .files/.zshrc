@@ -139,8 +139,9 @@ alias projects="cd $HOME/Projects"
 alias myubuntu="cd $HOME/Projects/ubuntu-bootstrap"
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias ls="eza"
-alias lsa="eza -la"
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -lh --icons --git'
+alias lsa='eza -lha --icons --git'
 alias lsda="lsd -la"
 alias lsdar="lsd -laR"
 alias df='df -h'
@@ -225,6 +226,9 @@ export PATH="$PATH:$HOME/.platformio/penv/bin"
 export PATH="$PATH:$HOME/.apps/dotbot/bin"
 # <<< kitty install directory <<<
 
+# >>> yazi install directory >>>
+export PATH="$PATH:$HOME/.apps/yazi/bin"
+# <<< yazi install directory <<<
 
 export PATH="$PATH:$HOME/.local/bin"
 

@@ -7,9 +7,26 @@ ZELLIJ_VERSION=0.43.1
 JJ_VERSION=0.32.0
 DOTBOT_VERSION=1.23.1
 ZIG_VERSION=0.15.2
+YAZI_VERSION=v25.12.29
+
 APPS_DIR=${HOME}/.apps
 
+
 mkdir -p $APPS_DIR
+
+# ---
+echo "Installing Yazi"
+rm -rf $APPS_DIR/yazi/
+mkdir -p $APPS_DIR/yazi/bin
+curl -L -o ${APPS_DIR}/yazi/yazi.tar.gz https://github.com/sxyazi/yazi/releases/download/${YAZI_VERSION}/yazi-x86_64-unknown-linux-gnu.zip
+# /home/worxbend/.apps/yazi/bin/yazi-x86_64-unknown-linux-gnu
+unzip ${APPS_DIR}/yazi/yazi.tar.gz -d ${APPS_DIR}/yazi 1>/dev/null
+mv --force ${APPS_DIR}/yazi/yazi-x86_64-unknown-linux-gnu/* ${APPS_DIR}/yazi/bin/
+chmod +x ${APPS_DIR}/yazi/bin/yazi
+chmod +x ${APPS_DIR}/yazi/bin/ya
+rm -rf ${APPS_DIR}/yazi/yazi.tar.gz
+
+exit 0
 
 # ---
 echo "Installing zig"
