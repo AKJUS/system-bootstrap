@@ -341,5 +341,4 @@ fi
 unset __mamba_setup
 # <<< mamba initialize <<<
 
-[ -f "$HOME/.local/share/../bin/env"] && . "$HOME/.local/share/../bin/env"
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
