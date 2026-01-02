@@ -22,7 +22,7 @@ A comprehensive, multi-distro dotfiles and system bootstrap configuration. Desig
 ## 🚀 Features
 
 *   **Multi-Distro Support**: Tailored scripts for Fedora, Arch, and OpenSUSE.
-*   **Dotfiles Management**: Powered by [Dotbot](https://github.com/anishathalye/dotbot) for reliable, atomic linking.
+*   **Dotfiles Management**: Powered by [Dotbot](https://github.com/anishathalye/dotbot) (installed via `binary-dist.sh`).
 *   **Dev Environment**: Deploys a full stack: Zsh (Oh-My-Zsh), Neovim, Tmux (TPM), Go, Rust, Java (SDKMan).
 *   **Desktop Rice**: Configuration for Hyprland, Gnome extensions, stunning wallpapers, and Alacritty/Kitty/WezTerm theming.
 
@@ -89,6 +89,8 @@ just
 3.  **Cross-Platform Tools**:
     ```bash
     just install-cli-tools        # Zsh, fzf, etc.
+    just install-zsh-plugins      # Syntax highlighting, autosuggestions
+    just install-binaries         # Dotbot, Yazi, Neovim
     just install-gnome-extensions # If using Gnome
     just install-fonts            # Nerd Fonts
     just install-flatpaks         # Desktop apps

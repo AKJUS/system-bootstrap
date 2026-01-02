@@ -23,3 +23,4 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 rm Miniforge3-$(uname)-$(uname -m).sh
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
+

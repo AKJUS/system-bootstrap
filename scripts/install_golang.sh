@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 GOPATH=${HOME}/.go
 
 GO_VERSION=1.24.2

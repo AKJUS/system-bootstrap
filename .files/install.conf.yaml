@@ -43,6 +43,6 @@
       ~/.config/lazygit/config.yml: .config/lazygit/config.yml
       ~/.config/lsd/config.yaml: .config/lsd/config.yaml
       ~/.config/lsd/colors.yaml: .config/lsd/colors.yaml
-      ~/config/yazi/yazi.toml: .config/yazi/yazi.toml
-      ~/config/yazi/theme.toml: .config/yazi/theme.toml
-      ~/config/yazi/keymap.toml: .config/yazi/keymap.toml
+      ~/.config/yazi/yazi.toml: .config/yazi/yazi.toml
+      ~/.config/yazi/theme.toml: .config/yazi/theme.toml
+      ~/.config/yazi/keymap.toml: .config/yazi/keymap.toml

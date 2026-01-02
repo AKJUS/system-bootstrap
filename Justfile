@@ -14,6 +14,14 @@ configure-system:
 install-cli-tools:
     ./scripts/cli-tools.sh
 
+# Install Binary Distributions (Dotbot, Yazi, Neovim, etc.)
+install-binaries:
+    ./scripts/binary-dist.sh
+
+# Install Oh-My-Zsh Plugins
+install-zsh-plugins:
+    ./scripts/oh-my-zsh-plugins.sh
+
 # Install Flatpaks
 install-flatpaks:
     ./scripts/flatpak.sh
@@ -52,10 +60,10 @@ fedora-step-2:
 
 # Install Arch packages
 arch-install:
-    ./scripts/arch/0.sh
-    ./scripts/arch/1.sh
-    ./scripts/arch/2.sh
-    ./scripts/arch/3.sh
+    ./scripts/arch/00-system-update.sh
+    ./scripts/arch/01-aur-packages.sh
+    ./scripts/arch/02-base-packages.sh
+    ./scripts/arch/03-hyprland.sh
 
 # Install OpenSUSE packages
 opensuse-install:
