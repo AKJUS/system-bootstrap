@@ -1,55 +1,48 @@
 - defaults:
-    link:
-      relink: true
+      link:
+          relink: true
+          create: true
 
 - clean: ["~"]
 
 - clean:
-    ~/.config:
-      recursive: true
+      ~/.config:
+          recursive: true
 
 - create:
-    - ~/Downloads
-    - ~/.vim/undo-history
-    - ~/.local/share/gnome-background-properties/
+      - ~/Downloads
+      - ~/.vim/undo-history
+      - ~/.local/share/gnome-background-properties/
 # only remove and recreate all links
 - shell:
-    - rm -rf ~/.config/zathura/
-    - mkdir -p ~/.config/zathura/
-    - rm -rf ~/.config/zellij
-    - mkdir -p ~/.config/zellij/layouts
-    - rm -rf ~/.config/kitty
-    - mkdir -p ~/.config/kitty/
-    - rm -rf ~/.config/nvim
-    - rm -rf ~/.config/alacritty
-    - mkdir -p ~/.config/alacritty/
-    - rm -rf ~/.config/lazygit
-    - mkdir -p ~/.config/lazygit/
-    - rm -rf ~/.config/lsd/
-    - mkdir -p ~/.config/lsd/
-    - rm -rf ~/config/yazi
-    - mkdir -p ~/.config/yazi/
+      - rm -rf ~/.config/zathura/
+      - rm -rf ~/.config/zellij
+      - rm -rf ~/.config/kitty
+      - rm -rf ~/.config/nvim
+      - rm -rf ~/.config/alacritty
+      - rm -rf ~/.config/lazygit
+      - rm -rf ~/.config/lsd/
+      - rm -rf ~/config/yazi
 
 - link:
-    ~/.tmux.conf: .tmux.conf
-    ~/.zshrc: .zshrc
-    ~/.ideavimrc: .ideavimrc
-    ~/.wezterm.lua: .wezterm.lua
-    ~/.config/starship.toml: starship.toml
-    ~/.config/alacritty/alacritty.toml: alacritty.toml
-    ~/.config/alacritty/theme.toml: alacritty_theme.toml
-    ~/.config/kitty/kitty.conf: kitty.conf
-    ~/.hidden: .hidden
-    ~/.config/nvim: nvim
-    ~/.config/zathura/zathurarc: zathurarc
-    ~/.config/zellij/config.kdl: .config/zellij/config.kdl
-    ~/.config/zellij/layouts/default.kdl: .config/zellij/layouts/default.kdl
-    ~/.config/zellij/layouts/editor.kdl: .config/zellij/layouts/editor.kdl
-    ~/.config/zellij/layouts/media.kdl: .config/zellij/layouts/media.kdl
-    ~/.config/lazygit/config.yml: .config/lazygit/config.yml
-    ~/.config/lsd/config.yaml: .config/lsd/config.yaml
-    ~/.config/lsd/colors.yaml: .config/lsd/colors.yaml
-    ~/config/yazi/yazi.toml: .config/yazi/yazi.toml
-    ~/config/yazi/theme.toml: .config/yazi/theme.toml
-    ~/config/yazi/keymap.toml: .config/yazi/keymap.toml
-    
+      ~/.tmux.conf: .tmux.conf
+      ~/.zshrc: .zshrc
+      ~/.ideavimrc: .ideavimrc
+      ~/.wezterm.lua: .wezterm.lua
+      ~/.config/starship.toml: starship.toml
+      ~/.config/alacritty/alacritty.toml: alacritty.toml
+      ~/.config/alacritty/theme.toml: alacritty_theme.toml
+      ~/.config/kitty/kitty.conf: kitty.conf
+      ~/.hidden: .hidden
+      ~/.config/nvim: nvim
+      ~/.config/zathura/zathurarc: zathurarc
+      ~/.config/zellij/config.kdl: .config/zellij/config.kdl
+      ~/.config/zellij/layouts/default.kdl: .config/zellij/layouts/default.kdl
+      ~/.config/zellij/layouts/editor.kdl: .config/zellij/layouts/editor.kdl
+      ~/.config/zellij/layouts/media.kdl: .config/zellij/layouts/media.kdl
+      ~/.config/lazygit/config.yml: .config/lazygit/config.yml
+      ~/.config/lsd/config.yaml: .config/lsd/config.yaml
+      ~/.config/lsd/colors.yaml: .config/lsd/colors.yaml
+      ~/config/yazi/yazi.toml: .config/yazi/yazi.toml
+      ~/config/yazi/theme.toml: .config/yazi/theme.toml
+      ~/config/yazi/keymap.toml: .config/yazi/keymap.toml

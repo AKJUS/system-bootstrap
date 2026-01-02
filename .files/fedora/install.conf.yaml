@@ -1,21 +1,20 @@
 - defaults:
-    link:
-      relink: true
+      link:
+          relink: true
+          create: true
 - clean: ["~"]
 
 - clean:
-    ~/.config:
-      recursive: true
+      ~/.config:
+          recursive: true
 - shell:
-    - rm -rf ~/Pictures/Backgrounds
-    - mkdir -p ~/.local/share/gnome-background-properties
-    - rm -rf ~/system-update.sh
+      - rm -rf ~/Pictures/Backgrounds
+      - rm -rf ~/system-update.sh
 - link:
-    ~/.local/share/gnome-background-properties/adwaita.xml.in: ./gnome-background-properties.xml
-    ~/Pictures/Backgrounds: ../../assets/Backgrounds
-    ~/system-update.sh: ./fedora-system-update.sh
+      ~/.local/share/gnome-background-properties/adwaita.xml.in: ./gnome-background-properties.xml
+      ~/Pictures/Backgrounds: ../../assets/Backgrounds
+      ~/system-update.sh: ./fedora-system-update.sh
 
 - shell:
-    - for i in {1..9}; do; gsettings set org.gnome.shell.keybindings switch-to-application-$i "[]"; done
-    - for i in {1..9}; do; gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-$i "['<Super>$i']"; done
-
+      - for i in {1..9}; do; gsettings set org.gnome.shell.keybindings switch-to-application-$i "[]"; done
+      - for i in {1..9}; do; gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-$i "['<Super>$i']"; done

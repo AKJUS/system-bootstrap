@@ -1,16 +1,13 @@
 - defaults:
-    link:
-      relink: true
+      link:
+          relink: true
+          create: true
 - clean: ["~"]
 
 - clean:
-    ~/.config:
-      recursive: true
-- shell:
-    - rm -rf ~/.local/backgrounds
-    - mkdir -p ~/.local/backgrounds
+      ~/.config:
+          recursive: true
 - link:
-    ~/.local/backgrounds: ../../assets/arch+hypr+backgrounds
+      ~/.local/backgrounds: ../../assets/arch+hypr+backgrounds
 
 - shell:
-    
