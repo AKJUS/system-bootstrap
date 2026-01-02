@@ -8,7 +8,7 @@ fi
 
 gext install dash-to-dock@micxgx.gmail.com
 gext install status-icons@gnome-shell-extensions.gcampax.github.com
-gest install appindicatorsupport@rgcjonas.gmail.com
+gext install appindicatorsupport@rgcjonas.gmail.com
 gext install tilingshell@ferrarodomenico.com
 gext install user-theme@gnome-shell-extensions.gcampax.github.com
 gext install battery-indicator-icon@Deminder

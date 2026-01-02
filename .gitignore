@@ -1,2 +1,17 @@
-.idea
+# System
+.DS_Store
+*.swp
+*~
 
+# Editor
+.idea/
+.vscode/
+
+# Build/Temp
+target/
+build/
+node_modules/
+__pycache__/
+
+# Local override
+local.sh
