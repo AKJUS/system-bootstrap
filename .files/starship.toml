@@ -133,7 +133,7 @@ format = "[$symbol ]($style)"
 
 [os.symbols]
 Ubuntu = "[](fg:peach bg:prev_fg)"
-SUSE = "[](fg:green bg:prev_fg)"
+openSUSE = "[](fg:green bg:prev_fg)"
 Raspbian = "[󰐿](fg:red bg:prev_fg)"
 Mint = "[󰣭](fg:green bg:prev_fg)"
 Macos = "[󰀵](fg:text bg:prev_fg)"
@@ -230,8 +230,29 @@ format = '[ ](fg:prev_bg bg:pink)[ $symbol( $version ) ]($style)'
 symbol = ""
 style = "fg:crust bg:red"
 format = '[ ](fg:prev_bg bg:red)[$symbol( $version) ]($style)'
-detect_files = ["build.sbt", "build.sc", "build.gradle", "build.gradle.kts", "pom.xml", "project/build.properties", "scala.version", "metals.sbt", "scala-cli", "mill", "ammonite", "build.mill", ".mill-version"]
-detect_folders = [ ".metals", ".bloop", ".ammonite", ".mill", ".sbt", ".scala-steward" ]
+detect_files = [
+  "build.sbt",
+  "build.sc",
+  "build.gradle",
+  "build.gradle.kts",
+  "pom.xml",
+  "project/build.properties",
+  "scala.version",
+  "metals.sbt",
+  "scala-cli",
+  "mill",
+  "ammonite",
+  "build.mill",
+  ".mill-version",
+]
+detect_folders = [
+  ".metals",
+  ".bloop",
+  ".ammonite",
+  ".mill",
+  ".sbt",
+  ".scala-steward",
+]
 
 
 [java]
@@ -473,4 +494,3 @@ format = '[ ](fg:prev_bg bg:maroon)[ $symbol( $version) ]($style)'
 [zig]
 style = "fg:crust bg:red"
 format = '[ ](fg:prev_bg bg:red)[ $symbol( $version) ]($style)'
-
