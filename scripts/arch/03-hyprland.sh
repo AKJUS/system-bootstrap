@@ -6,4 +6,6 @@ sudo pacman -Syu hyprlauncher hyprpaper hyprpicker hypridle hyprlock xdg-desktop
 
 sudo pacman -S fuse2
 
-paru appimagelauncher
+paru appimagelauncher rofi-emoji-git
+
+sudo pacman -Syu --needed hyprland hyprpaper hypridle waybar sddm hyprlock konsole dunst libnotify fastfetch ttf-firacode-nerd ttf-jetbrains-mono-nerd pamixer bash-completion cliphist slurp grim github-cli libmtp gvfs-mtp android-tools ntfs-3g noto-fonts-emoji

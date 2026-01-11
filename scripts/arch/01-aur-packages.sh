@@ -6,3 +6,4 @@ paru -S --noconfirm sddm-themes-git
 
 # Install GNOME whole set of packages (just for the sake of login manager)
 sudo pacman -Syu gdm
+
