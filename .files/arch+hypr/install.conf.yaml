@@ -9,5 +9,10 @@
           recursive: true
 - link:
       ~/.local/backgrounds: ../../assets/arch+hypr+backgrounds
+      ~/.config/hypr: .config/hypr
+      ~/.config/waybar: .config/waybar
+      ~/.config/swaylock: .config/swaylock
+      ~/.config/rofi: .config/rofi
+      ~/.config/dunst: .config/dunst
+      ~/system-update.sh: ./arch-system-update.sh
 
-- shell:
