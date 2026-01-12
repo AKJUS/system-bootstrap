@@ -36,10 +36,12 @@ A comprehensive, multi-distro dotfiles and system bootstrap configuration. Desig
 │   ├── opensuse/         # OpenSUSE-specific configs
 │   └── install.conf.yaml # Main Dotbot configuration
 ├── scripts/              # Installation & setup scripts
-│   ├── arch/             # Arch package installation steps
-│   ├── fedora/           # Fedora package installation steps
-│   ├── opensuse/         # OpenSUSE package installation steps
-│   └── ...               # Common setup scripts (Flatpak, Fonts, Dev Tools)
+│   ├── arch/             # Arch installation steps (00-03)
+│   ├── fedora/           # Fedora installation steps (00-02)
+│   ├── opensuse/         # OpenSUSE installation steps (00-02)
+│   ├── binary-dist.sh    # Installs binaries (Dotbot, Yazi, Neovim, etc.)
+│   ├── cli-tools.sh      # Installs CLI tools (Rust, Python, Node, etc.)
+│   └── ...               # Common setup scripts
 ├── assets/               # Wallpapers and resources
 ├── Justfile              # Command runner for orchestration
 └── README.md             # This file
@@ -89,12 +91,12 @@ just
 3.  **Cross-Platform Tools**:
     ```bash
     just install-cli-tools        # Zsh, fzf, etc.
+    just install-binaries         # Dotbot, Yazi, Neovim, LazyGit, Zellij, etc.
     just install-zsh-plugins      # Syntax highlighting, autosuggestions
-    just install-binaries         # Dotbot, Yazi, Neovim
     just install-gnome-extensions # If using Gnome
     just install-fonts            # Nerd Fonts
     just install-flatpaks         # Desktop apps
-    just install-dev-tools        # Go, Rust, etc.
+    just install-dev-tools        # Go, Rust, Java (SDKMan)
     ```
 
 4.  **Link Dotfiles**:
@@ -104,15 +106,16 @@ just
 
 ### Manual Execution
 
-If you prefer to run scripts one-by-one (e.g., to handle reboots), simply navigate to `scripts/` and execute them.
+If you prefer to run scripts one-by-one (e.g., to handle reboots), navigate to `scripts/` and execute them.
 
 **Fedora Example:**
 ```bash
-./scripts/fedora/exec.0.sh
+./scripts/fedora/00-system-update.sh
 # Reboot if kernel updated
-./scripts/fedora/exec.1.sh
+./scripts/fedora/01-packages.sh
 ./scripts/configurations.sh
-./scripts/install_golang.sh
+./scripts/cli-tools.sh
+./scripts/binary-dist.sh
 ```
 
 ## 🔧 Configuration Details
