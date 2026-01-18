@@ -26,8 +26,6 @@ chmod +x ${APPS_DIR}/yazi/bin/yazi
 chmod +x ${APPS_DIR}/yazi/bin/ya
 rm -rf ${APPS_DIR}/yazi/yazi.tar.gz
 
-exit 0
-
 # ---
 echo "Installing zig"
 rm -rf $APPS_DIR/zig/

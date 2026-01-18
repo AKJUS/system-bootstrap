@@ -55,8 +55,6 @@ sudo pacman -S --noconfirm texlive-core texlive-bin texlive-xetex
 # Crystal language (AUR)
 paru -S --noconfirm crystal
 
-# Swap to ffmpeg (non-free) – already covered above in Arch via main repos
-
 # Done
 echo "✅ All packages installed and configured."
 
