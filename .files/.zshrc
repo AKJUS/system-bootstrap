@@ -245,7 +245,6 @@ export GOPATH="$HOME/.go-workspace"
 export GOCACHE="$GOPATH/pkg/cache"
 export GOMODCACHE="$GOPATH/pkg/mod"
 export PATH="$PATH:$GOPATH/bin"
-export SSH_AUTH_SOCK="/run/user/1000/keyring/ssh"
 
 
 ### EZA Themes
