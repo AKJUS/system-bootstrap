@@ -105,14 +105,15 @@ input * {
  
     exec_always --no-startup-id bash -c '\
         for i in {1..5}; do swaymsg "workspace $i"; done && \
-        swaymsg "workspace 1; move workspace to output HDMI-A-2" && \
-        swaymsg "workspace 2; move workspace to output HDMI-A-2" && \
-        swaymsg "workspace 3; move workspace to output HDMI-A-2" && \
-        swaymsg "workspace 4; move workspace to output HDMI-A-2" && \
-        swaymsg "workspace 6; move workspace to output DP-2" && \
-        swaymsg "workspace 7; move workspace to output DP-2" && \
-        swaymsg "workspace 8; move workspace to output DP-2" && \
-        swaymsg "workspace 9; move workspace to output DP-2" && \
+        swaymsg "workspace 1; move workspace to output HDMI-A-1" && \
+        swaymsg "workspace 2; move workspace to output HDMI-A-1" && \
+        swaymsg "workspace 3; move workspace to output HDMI-A-1" && \
+        swaymsg "workspace 4; move workspace to output HDMI-A-1" && \
+        swaymsg "workspace 5; move workspace to output HDMI-A-1" && \
+        swaymsg "workspace 6; move workspace to output HDMI-A-2" && \
+        swaymsg "workspace 7; move workspace to output HDMI-A-2" && \
+        swaymsg "workspace 8; move workspace to output HDMI-A-2" && \
+        swaymsg "workspace 9; move workspace to output HDMI-A-2" && \
         swaymsg "workspace 1;"'
 
     # Switch to workspace
