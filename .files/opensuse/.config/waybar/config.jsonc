@@ -13,13 +13,16 @@
     "sway/window",
   ],
   "modules-center": [
+    "mpris",
     "custom/spotify",
     "clock",
     "idle_inhibitor"
   ],
   "modules-right": [
+    "privacy",
     "custom/privacycheck",
-    "custom/layout",
+    "keyboard-state",
+    "sway/language",
     "tray",
     "custom/zypper",
     "network",
@@ -27,9 +30,37 @@
     "cpu",
     "memory",
     "temperature",
+    "wireplumber",
+    "wireplumber#source",
     "pulseaudio",
     "custom/notifications",
   ],
+  "wireplumber#source": {
+    "node-type": "Audio/Source",
+    "format": "<span></span> <span>{volume}%</span>",
+    "format-muted": "<span>󰍭</span>",
+    "on-click-right": "pavucontrol",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "scroll-step": 5,
+    "tooltip": true,
+    "tooltip-format": "{source_desc} {volume}%",
+    "reverse-scrolling": true,
+  },
+  "wireplumber": {
+    "format": "<span>{icon}</span> {volume}%",
+    "format-muted": "<span>󰖁 </span>",
+    "on-click-right": "pavucontrol",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
+    "scroll-step": 5,
+    "tooltip": true,
+    "tooltip-format": "{node_name} {volume}%",
+    "reverse-scrolling": true,
+  },
   "custom/privacycheck": {
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/privacy-check.sh",
@@ -69,10 +100,9 @@
     "tooltip": true,
     "icon": true,
   },
-  "custom/layout": {
-    "tooltip": false,
-    "format": "󰌌 {}",
-    "exec": "swaymsg -mrt subscribe '[\"input\"]' | jq -r --unbuffered \"select(.change == \\\"xkb_layout\\\") | .input | select(.type == \\\"keyboard\\\") | .xkb_active_layout_name | .[0:2]\"",
+  "sway/language": {
+    "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
+    "format": " 󰌓 {short} {variant}",
   },
   //  Modules configuration
   "sway/workspaces": {
@@ -126,6 +156,70 @@
       "on-scroll-down": "shift_down",
     },
     "interval": 10,
+  },
+  "privacy": {
+    "icon-spacing": 4,
+    "icon-size": 18,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+    ],
+    "ignore-monitor": true,
+    "ignore": [
+      {
+        "type": "audio-in",
+        "name": "cava",
+      },
+      {
+        "type": "screenshare",
+        "name": "obs",
+      },
+    ],
+  },
+  "mpris": {
+    "format": "{player_icon} {title}",
+    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "player-icons": {
+      "default": "▶",
+      "mpv": "🎵",
+      "spotify": "󰓇",
+      "vlc": "🎞",
+      "firefox": "",
+      "chromium": "",
+      "brave": "",
+      "opera": "",
+      "vivaldi": "",
+      "slack": "",
+    },
+    "status-icons": {
+      "paused": "⏸",
+    },
+  },
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": {
+      "numlock": "N {icon}",
+      "capslock": "C {icon}",
+    },
+    "format-icons": {
+      "locked": "",
+      "unlocked": "",
+    },
   },
   "cpu": {
     "format": "󰻠 {usage}% ",
