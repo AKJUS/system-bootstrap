@@ -364,4 +364,3 @@ unset __mamba_setup
 
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
-. "$HOME/.local/share/../bin/env"
