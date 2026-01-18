@@ -303,6 +303,30 @@ scrollbar trough {
   font-size: 2.5rem;
 }
 
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  font-size: 2.5rem;
+  border: 1px solid #181825;
+  box-shadow:
+    0 0 8px 0 rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px #45475a;
+  border-radius: 12.6px;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+
+/* hover effect for widget-buttons-grid buttons */
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  font-size: 2.5rem;
+  border: 1px solid #181825;
+  box-shadow:
+    0 0 8px 0 rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px #45475a;
+  border-radius: 12.6px;
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: #45475a;
+}
+
 .widget-volume {
   padding: 1rem 0;
 }
