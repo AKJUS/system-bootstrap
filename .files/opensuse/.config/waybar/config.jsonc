@@ -11,10 +11,15 @@
     "custom/scratchpad",
     "sway/mode",
     "sway/window",
+    "mpris",
   ],
-  "modules-center": ["mpris", "custom/spotify", "clock", "idle_inhibitor"],
+  "modules-center": [
+    // "custom/spotify",
+    "clock",
+  ],
   "modules-right": [
     "custom/privacycheck",
+    "idle_inhibitor",
     "privacy",
     "sway/language",
     "tray",
@@ -26,7 +31,7 @@
     "temperature",
     "wireplumber",
     "wireplumber#source",
-    "pulseaudio",
+    //"pulseaudio",
     "custom/notifications",
   ],
   "wireplumber#source": {
@@ -45,7 +50,11 @@
     "format-muted": "<span>󰖁 </span>",
     "on-click-right": "pavucontrol",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "format-icons": ["", "", ""],
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
     "scroll-step": 5,
     "tooltip": true,
     "tooltip-format": "{node_name} {volume}%",
@@ -71,10 +80,7 @@
   "custom/icon": {
     "tooltip": true,
     "tooltip-format": "<span color='#c4bd99'><tt><small>OpenSUSE Tumbleweed</small></tt></span>",
-    "format": "  ",
-  },
-  "custom/clock-icon": {
-    "format": "",
+    "format": " ",
   },
   "custom/separator-icon": {
     "format": " ",
@@ -103,11 +109,11 @@
     "format-icons": {
       "1": "",
       "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
+      "3": " ",
+      "4": " ",
+      "5": " ",
+      "6": " ",
+      "7": " ",
       "8": "",
       "9": "",
     },
@@ -120,8 +126,8 @@
     },
   },
   "tray": {
-    "icon-size": 18,
-    "spacing": 10,
+    "icon-size": 16,
+    "spacing": 8,
   },
   "clock": {
     // "timezone": "America/New_York",
@@ -181,8 +187,8 @@
     ],
   },
   "mpris": {
-    "format": "{player_icon} {title}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "format": "<span>{player_icon}</span> {title}",
+    "format-paused": "<span>{status_icon}</span> <span>{player_icon}</span> <i>{title}</i>",
     "player-icons": {
       "default": "▶",
       "mpv": "🎵",
@@ -208,37 +214,41 @@
     "format": " {}%",
   },
   "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C {icon}",
     "format": "{icon} {temperatureC}°C",
-    "format-icons": ["", "", ""],
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "",
-    "format-ethernet": "",
-    "format-linked": "",
+    "format-ethernet": " ",
+    "format-linked": "",
     "format-disconnected": "⚠",
-    "format-alt": "{ifname} {essid} ({signalStrength}%)",
+    "format-alt": " {ipaddr}",
+    "tooltip-format": "{ifname} via {ipaddr} ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
   },
   "bluetooth": {
     "format": "",
     "format-disabled": "",
     "format-off": "",
     "format-connected": " {num_connections}",
-    // "format-connected": " {device_alias}",
     "tooltip-format": "{controller_address} {status}\n\n{num_connections} connected",
     "tooltip-format-disabled": "{status}",
     "tooltip-format-connected": "{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "format-connected-battery": " {device_alias} {device_battery_percentage}%",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
     "on-click": "bluetooth toggle; pkill -SIGRTMIN+8 waybar",
     "on-click-right": "exec alacritty -e sh -c 'bluetoothctl'",
   },
+  // Not used now because of the new wireplumber module
   "pulseaudio": {
     "format": "<span size='13000' foreground='#EBDDAA'>{icon}</span> {volume}%",
     "format-muted": "<span size='14000' foreground='#EBDDAA'></span> Muted",
@@ -249,7 +259,11 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""],
+      "default": [
+        "",
+        "",
+        ""
+      ],
     },
     "format-alt": "{volume} {icon}",
     "format-alt-click": "click-middle",
@@ -269,12 +283,12 @@
   },
   "custom/notifications": {
     "tooltip": true,
-    "format": "<span foreground='#b7bdf8'>{icon}</span>",
+    "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
-      "none": " ",
-      "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
-      "dnd-none": " ",
+      "notification": "<span foreground='#eba0ac' weight='bold'></span><span foreground='red'><small><sup>⬤</sup></small></span>",
+      "none": "<span foreground='#eba0ac' weight='bold'> </span>",
+      "dnd-notification": "<span foreground='#7f849c' weight='bold'></span><span foreground='red'><small><sup>⬤</sup></small></span>",
+      "dnd-none": "<span foreground='#7f849c' weight='bold'> </span>",
     },
     "return-type": "json",
     "exec-if": "which swaync-client",

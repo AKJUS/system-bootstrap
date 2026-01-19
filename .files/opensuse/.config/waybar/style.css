@@ -28,63 +28,139 @@
 @define-color suse-green #008000;
 * {
   border-radius: 0;
-  font-family: "FiraCode Nerd Font";
-  font-size: 12pt;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 14pt;
   min-height: 0;
 }
-
-window#waybar {
-  background: @base;
-  color: @text;
-}
-
 tooltip {
-  background: @mantle;
+  background: @crust;
   border-radius: 15px;
   border-width: 2px;
   border-style: solid;
-  border-color: @yellow;
+  border-color: @rosewater;
+  color: @flamingo;
+}
+window#waybar {
+  background: @crust;
+  color: @text;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 0px;
+  border-width: 2px;
+  font-family: "Ubuntu Nerd Font";
 }
 
-#workspaces {
-  background: @surface1;
-  border-radius: 15px;
+#waybar .horizontal {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-#workspaces button {
-  padding-right: 3px;
-  padding-left: 0px;
-  margin-left: 5px;
-  margin-right: 3px;
-  color: @subtext1;
+window#waybar.hidden {
+  opacity: 0.2;
 }
 
-#workspaces button.empty {
-  color: @surface2;
-  background: @mantle;
+window#waybar.empty {
+  background-color: transparent;
 }
 
-#workspaces button.visible {
-  color: @mauve;
+window#waybar.empty #window {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  /*  background-color: rgba(66,66,66,0.5); */ /* transparent */
+  background-color: transparent;
 }
 
-#workspaces button.focused {
-  color: @peach;
+window#waybar.solo #window {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @text;
 }
 
-#workspaces button.urgent {
+window#waybar.floating #window {
+  padding-left: 5px;
+  padding-right: 5px;
   color: @red;
 }
 
-#workspaces button:hover {
-  background: @mantle;
-  border-color: @mantle;
-  color: @green;
+window#waybar.tiled #window {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @text;
+}
+window#waybar.stacked #window {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @blue;
+}
+window#waybar.tabbed #window {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @text;
 }
 
-#clock,
+window#waybar.firefox {
+  color: @yellow;
+  font-family: "Ubuntu Nerd Font";
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#workspaces label {
+  font-size: 16px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+box#workspaces {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-radius: 18px;
+  background-color: alpha(@surface0, 0.7);
+}
+
+#workspaces button {
+  color: alpha(@lavender, 0.35);
+  background-color: transparent;
+  border-radius: 8px;
+  border: none;
+}
+
+#workspaces button:hover {
+  color: alpha(@teal, 0.95);
+  /* cursor: pointer; */
+  background: alpha(@on-secondary-container, 0.5);
+  border-radius: 8px;
+  border: none;
+}
+
+#workspaces button.focused {
+  color: @mauve;
+  border: none;
+}
+
+#workspaces button.active {
+  color: @pink;
+  border: none;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  border: none;
+}
+
 #battery,
-#pulseaudio,
+#wireplumber,
 #workspaces,
 #memory,
 #cpu,
@@ -98,21 +174,34 @@ tooltip {
   margin-bottom: 5px;
 }
 
+#clock {
+  color: @sky;
+  background: transparent;
+}
+
 #battery:hover,
-#pulseaudio:hover,
+#wireplumber:hover,
 #workspaces:hover,
 #memory:hover,
 #cpu:hover,
 #temperature:hover,
 #custom-notifications:hover,
-#bluetooth:hover {
-  color: @green;
+#bluetooth:hover,
+#network:hover {
+  color: @sapphire;
 }
 
 #custom-icon {
-  color: @suse-green;
+  color: @crust;
+  background: @suse-green;
+  border-radius: 50%;
+  min-width: 25px;
+  min-height: 25px;
+  font-size: 12px;
+  margin: 5px;
+  padding: 5px;
 }
-#custom-icon,
+
 #window,
 #mode {
   font-family: "JetBrainsMono Nerd Font";
@@ -128,17 +217,55 @@ tooltip {
 }
 
 #idle_inhibitor {
+  margin: 5px;
   padding-left: 5px;
   padding-right: 5px;
+  color: @blue;
+}
+
+#idle_inhibitor:hover {
+  color: @sapphire;
+}
+
+#idle_inhibitor.activated {
+  color: @peach;
+}
+
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#temperature {
+  padding-left: 12px;
+  padding-right: 5px;
+  background: @mantle;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Symbols Nerd Font";
 }
 
 #network {
-  padding-left: 10px;
-  padding-right: 5px;
-  background: @mantle;
+  color: @sapphire;
   border-radius: 15px 0px 0px 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-left: 18px;
+}
+
+#bluetooth {
+  color: @peach;
+}
+
+#cpu {
+  color: @red;
+}
+
+#memory {
+  color: @yellow;
+}
+
+#temperature {
+  color: @green;
 }
 
 #clock {
@@ -150,28 +277,48 @@ tooltip {
 }
 
 #tray {
-  padding-right: 5px;
-  padding-left: 5px;
+  background: transparent;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+}
+
+#tray menu {
   background: @mantle;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 15px;
+  border-radius: 1px;
+  border: 1px solid @rosewater;
 }
 
-#pulseaudio {
-  padding-right: 5px;
-}
-
-#pulseaudio:hover {
-  color: @green;
-}
-
-#custom-layout {
-  padding-right: 5px;
+#wireplumber {
   padding-left: 5px;
+  padding-right: 5px;
+  color: @flamingo;
+  font-family: "Symbols Nerd Font";
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#language {
+  padding-right: 15px;
+  padding-left: 15px;
   margin-top: 5px;
   margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
   border-radius: 15px;
+}
+
+#language.ua {
+  background: @blue;
+  color: @crust;
+}
+
+#language.us {
+  background: @red;
+  color: @crust;
+}
+#language:hover {
+  color: @crust;
 }
 
 #custom-notifications {
@@ -181,10 +328,16 @@ tooltip {
   margin-top: 5px;
   margin-bottom: 5px;
   border-radius: 0px 15px 15px 0px;
+  font-family: "Symbols Nerd Font";
+  font-size: 20px;
+  font-weight: bold;
+  color: @yellow;
 }
 
-#custom-spotify {
+#custom-spotify,
+#mpris {
   margin-top: 10px;
+  margin-left: 15px;
   margin-bottom: 10px;
   padding-right: 5px;
   padding-left: 5px;
@@ -195,6 +348,37 @@ tooltip {
 
 #custom-privacycheck {
   margin-right: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#privacy {
+  padding-right: 5px;
+  padding-left: 5px;
+  background: @base;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+}
+
+#privacy-item.audio-in {
+  color: @sapphire;
+}
+
+#privacy-item.audio-out {
+  color: @spotify-green;
+}
+
+#privacy-item.screenshare {
+  color: @peach;
+}
+
+#privacy-item:hover {
+  color: @green;
+}
+
+#privacy-item {
+  color: @sky;
   padding-right: 5px;
   padding-left: 5px;
 }
