@@ -155,7 +155,7 @@ box#workspaces {
 }
 
 #workspaces button.urgent {
-  background-color: @red;
+  color: @red;
   border: none;
 }
 
