@@ -9,5 +9,8 @@
           recursive: true
 - link:
       ~/.local/backgrounds: ../../assets/arch+hypr+backgrounds
-
-- shell:
+      ~/.config/hypr: .config/hypr
+      ~/.config/waybar: .config/waybar
+      ~/.config/rofi: .config/rofi
+      ~/.config/vicinae: .config/vicinae
+- shell: []
