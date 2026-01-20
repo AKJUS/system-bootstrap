@@ -13,4 +13,8 @@
       ~/.config/waybar: .config/waybar
       ~/.config/rofi: .config/rofi
       ~/.config/vicinae: .config/vicinae
-- shell: []
+      ~/.config/dunst: .config/dunst
+- shell: 
+    - systemctl --user daemon-reload
+    - systemctl --user enable waybar.service
+    - systemctl --user start waybar.service

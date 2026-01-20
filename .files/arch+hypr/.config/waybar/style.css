@@ -203,15 +203,23 @@ box#workspaces {
 }
 
 #custom-icon {
-  color: @crust;
-  background: @blue;
-  border-radius: 50%;
+  color: @blue;
+  border-radius: 15%;
   min-width: 25px;
   min-height: 25px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
-  margin: 5px;
-  padding: 5px;
+
+
+  min-width: 25px;
+  min-height: 25px;
+
+  font-size: 25px;
+  font-weight: bold;
+
+  border-radius: 15%;
+  /* Remove padding — this is key */
+  padding-right: 15px; 
 }
 
 #window,
@@ -308,6 +316,7 @@ box#workspaces {
   font-family: "Symbols Nerd Font";
   font-size: 20px;
   font-weight: bold;
+
 }
 
 #language {
@@ -324,19 +333,40 @@ box#workspaces {
 #language:hover {
   color: @crust;
 }
-#custom-notifications {
+#battery {
   padding-right: 15px;
   padding-left: 15px;
   background: @mantle;
   margin-top: 5px;
   margin-bottom: 5px;
-  border-radius: 0px 15px 15px 0px;
   font-family: "Symbols Nerd Font";
   font-size: 20px;
   font-weight: bold;
   color: @yellow;
 }
 
+#battery:hover {
+  color: @maroon;
+}
+
+#power-profiles-daemon {
+  padding-right: 15px;
+  padding-left: 1px;
+  background: @mantle;
+  color: @teal;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 0px 15px 15px 0px;
+}
+#power-profiles-daemon.performance {
+  color: @red;
+}
+#power-profiles-daemon.balanced {
+  color: @yellow;
+}
+#power-profiles-daemon.power-saver {
+  color: @green;
+}
 #custom-spotify,
 #mpris {
   margin-top: 10px;
@@ -384,4 +414,27 @@ box#workspaces {
   color: @sky;
   padding-right: 5px;
   padding-left: 5px;
+}
+
+#windowcount {
+  margin: 8px;
+  padding: 5px;
+  background: @overlay2;
+  color: @crust;
+  border-radius: 15px 15px 15px 15px;
+}
+
+#custom-power {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: @teal;
+  font-family: "Symbols Nerd Font";
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#custom-power:hover {
+  color: @red;
 }

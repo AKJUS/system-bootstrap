@@ -8,9 +8,9 @@
   "modules-left": [
     "custom/icon",
     "hyprland/workspaces",
-    "hyprland/submap",
-    "hyprland/window",
     "hyprland/windowcount",
+    "hyprland/window",
+    "hyprland/submap",
     "mpris",
   ],
   "modules-center": [
@@ -33,7 +33,9 @@
     "wireplumber",
     "wireplumber#source",
     //"pulseaudio",
-    "custom/notifications",
+    "battery",
+    "power-profiles-daemon",
+    "custom/power",
   ],
   "group/hardware": {
     "orientation": "inherit",
@@ -94,28 +96,28 @@
   "custom/icon": {
     "tooltip": true,
     "tooltip-format": "<span color='#c4bd99'><tt><small>CachyOS</small></tt></span>",
-    "format": "",
+    "format": "󰣇",
+    "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
   },
   "custom/separator-icon": {
     "format": " ",
     "tooltip": false,
   },
   "hyprland/submap": {
-    "format": "> {}",
+    "format": " {}",
     "max-length": 8,
-    "tooltip": false
+    "tooltip": true
   },
   "hyprland/windowcount": {
-    "format": "[{}]",
-    "format-empty": "[X]",
-    "format-windowed": "[T]",
+    "format": " {}",
+    "format-empty": " {}",
+    "format-windowed": " {}",
     "separate-outputs": true
   },
   "hyprland/window": {
     "format": "{title}",
     "rewrite": {
-      "(.*) — Mozilla Firefox": "🌎 $1",
-      "(.*) - fish": "> [$1]"
+      "(.*) — Mozilla Firefox": " $1",
     },
     "separate-outputs": true,
     "expand": true,
@@ -318,4 +320,36 @@
     "tooltip": true,
     "format": "{icon}",
   },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "max-length": 25
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "custom/power": {
+    "format": "󰤆",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/powermenu/type-2/powermenu.sh &"
+  }
 }
