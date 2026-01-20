@@ -56,7 +56,7 @@
     padding = 12
     horizontal_padding = 8
     markup = full
-    format = "%i<b>%a</b>\n<b>%s</b>\n%b"
+    format = "<b>%a</b>\n<b>%s</b>\n%b"
     corner_radius = 10
 
 
