@@ -29,11 +29,25 @@
     "cpu",
     "memory",
     "temperature",
+    //"group/hardware",
     "wireplumber",
     "wireplumber#source",
     //"pulseaudio",
     "custom/notifications",
   ],
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false,
+    },
+    "modules": [
+      "cpu",
+      "memory",
+      "temperature"
+    ],
+  },
   "wireplumber#source": {
     "node-type": "Audio/Source",
     "format": "<span></span> <span>{volume}%</span>",

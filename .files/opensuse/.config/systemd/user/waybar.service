@@ -1,0 +1,21 @@
+[Unit]
+Description=Waybar status bar with Audio Dependencies
+Documentation=https://github.com/Alexays/Waybar/wiki/
+# Wait for the graphical session
+After=graphical-session.target
+# Dependency on PipeWire and WirePlumber services AND sockets
+After=pipewire.service wireplumber.service 
+Requires=wireplumber.service
+# Binds lifecycle to the session
+PartOf=graphical-session.target
+
+[Service]
+# Adds a 2-second delay before starting the binary
+ExecStartPre=/usr/bin/sleep 2
+ExecStart=/usr/bin/waybar
+ExecReload=kill -SIGUSR2 $MAINPID
+Restart=on-failure
+RestartSec=3s
+
+[Install]
+WantedBy=graphical-session.target

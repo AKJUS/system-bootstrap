@@ -32,6 +32,16 @@
   font-size: 14pt;
   min-height: 0;
 }
+window.HDMI-A-2 * {
+  font-size: 10px;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
 tooltip {
   background: @crust;
   border-radius: 15px;
@@ -40,6 +50,7 @@ tooltip {
   border-color: @rosewater;
   color: @flamingo;
 }
+
 window#waybar {
   background: @crust;
   color: @text;
@@ -60,7 +71,7 @@ window#waybar.hidden {
 }
 
 window#waybar.empty {
-  background-color: transparent;
+  background-color: @crust;
 }
 
 window#waybar.empty #window {

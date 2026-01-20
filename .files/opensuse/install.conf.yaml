@@ -16,7 +16,6 @@
     - rm -rf ~/.config/swaylock
     - rm -rf ~/.config/swaync
     - rm -rf ~/.config/wob
-    - rm ~/.config/systemd/user/waybar.service
 - link:
     ~/.config/sway: .config/sway
     ~/.config/waybar: .config/waybar
@@ -26,7 +25,9 @@
     ~/.config/swaync: .config/swaync
     ~/.config/wob: .config/wob
     ~/.config/systemd/user/waybar.service: .config/systemd/user/waybar.service
+    ~/.config/environment.d/sway.conf: .config/environment.d/sway.conf
     ~/system-update.sh: ./suse-system-update.sh
+    ~/.local/walls/background.png: ../../assets/opensuse-black-4k.png
 - shell:
     - systemctl --user daemon-reload
     - systemctl --user enable waybar.service

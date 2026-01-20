@@ -35,7 +35,7 @@ seat * xcursor_theme volantes_cursors 24
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/worxbend/.system-bootstrap/assets/opensuse-black-4k.png fill 
+output * bg ~/.local/walls/background.png fill 
 #
 # Example configuration:
 #
