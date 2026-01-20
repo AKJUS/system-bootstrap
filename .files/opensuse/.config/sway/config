@@ -3,7 +3,7 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-exec dbus-update-activation-environment --systemd display wayland_display swaysock 
+exec dbus-update-activation-environment --systemd display wayland_display swaysock SSH_AUTH_SOCK 
 exec_always --no-startup-id bash -c 'source ~/.config/sway/env'
 
 ### Variables

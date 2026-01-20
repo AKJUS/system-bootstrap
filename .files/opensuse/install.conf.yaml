@@ -17,6 +17,7 @@
     - rm -rf ~/.config/swaync
     - rm -rf ~/.config/wob
 - link:
+    ~/.custom.zsh: ./.custom.zsh
     ~/.config/sway: .config/sway
     ~/.config/waybar: .config/waybar
     ~/.config/fuzzel: .config/fuzzel
