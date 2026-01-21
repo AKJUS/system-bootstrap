@@ -11,7 +11,7 @@
 {
    "$schema": "https://vicinae.com/schemas/config.json",
    "imports": [],
-   "close_on_focus_loss": false,
+   "close_on_focus_loss": true,
    "consider_preedit": false,
    "pop_to_root_on_close": false,
    "escape_key_behavior": "navigate_back",
@@ -20,8 +20,8 @@
    "search_files_in_root": false,
    "font": {
       "normal": {
-         "family": "auto",
-         "size": 10.5
+         "family": "JetBrainsMono NF",
+         "size": 12
       }
    },
    "theme": {
@@ -30,12 +30,12 @@
          "icon_theme": "auto"
       },
       "dark": {
-         "name": "catppuccin-macchiato",
+         "name": "catppuccin-mocha",
          "icon_theme": "auto"
       }
    },
    "launcher_window": {
-      "opacity": 0.95,
+      "opacity": 0.75,
       "client_side_decorations": {
          "enabled": true,
          "rounding": 10,

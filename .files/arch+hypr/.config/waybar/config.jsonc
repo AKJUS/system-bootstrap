@@ -274,8 +274,8 @@
     "format-disconnected": "⚠",
     "format-alt": " {ipaddr}",
     "tooltip-format": "{ifname} via {ipaddr} ",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)  {ipaddr}",
+    "tooltip-format-ethernet": "{ifname}   {ipaddr}",
     "tooltip-format-disconnected": "Disconnected",
   },
   "bluetooth": {

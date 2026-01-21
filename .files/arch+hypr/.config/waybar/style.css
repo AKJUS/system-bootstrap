@@ -417,11 +417,10 @@ box#workspaces {
 }
 
 #windowcount {
-  margin: 8px;
-  padding: 5px;
-  background: @overlay2;
-  color: @crust;
-  border-radius: 15px 15px 15px 15px;
+  color: @pink;
+  font-family: "Symbols Nerd Font";
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 #custom-power {

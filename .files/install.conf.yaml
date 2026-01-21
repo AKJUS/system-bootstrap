@@ -23,6 +23,7 @@
       - rm -rf ~/.config/lazygit
       - rm -rf ~/.config/lsd/
       - rm -rf ~/config/yazi
+      - rm -rf ~/.config/btop
 
 - link:
       ~/.tmux.conf: .tmux.conf
@@ -35,6 +36,7 @@
       ~/.config/kitty/kitty.conf: kitty.conf
       ~/.hidden: .hidden
       ~/.config/nvim: nvim
+      ~/.config/btop: .config/btop
       ~/.config/zathura/zathurarc: zathurarc
       ~/.config/zellij/config.kdl: .config/zellij/config.kdl
       ~/.config/zellij/layouts/default.kdl: .config/zellij/layouts/default.kdl
