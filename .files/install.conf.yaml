@@ -15,6 +15,7 @@
       - ~/.local/share/gnome-background-properties/
 # only remove and recreate all links
 - shell:
+      - conda config --set changeps1 False
       - rm -rf ~/.config/zathura/
       - rm -rf ~/.config/zellij
       - rm -rf ~/.config/kitty
