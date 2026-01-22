@@ -8,6 +8,7 @@
       ~/.config:
           recursive: true
 - link:
+      ~/system-update.sh: ./arch-system-update.sh
       ~/.local/backgrounds: ../../assets/arch+hypr+backgrounds
       ~/.config/hypr: .config/hypr
       ~/.config/waybar: .config/waybar
