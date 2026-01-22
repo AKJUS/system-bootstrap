@@ -117,11 +117,11 @@
   "hyprland/window": {
     "format": "{title}",
     "rewrite": {
-      "(.*) — Mozilla Firefox": " $1",
+      "(.*) — Mozilla Firefox": "$1",
     },
     "separate-outputs": true,
     "expand": true,
-    "max-length": 55,
+    "max-length": 25,
     "tooltip": true,
     "icon": true,
   },
@@ -246,8 +246,9 @@
       "slack": "",
     },
     "status-icons": {
-      "paused": "⏸",
+      "paused": "",
     },
+    "max-length": 25,
   },
   "cpu": {
     "format": "󰻠 {usage}% ",
