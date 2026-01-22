@@ -13,9 +13,12 @@ echo "Updating system via 'dnf'..."
 # Paru handles both official repos and AUR
 # -Syu: Sync, Refresh, Upgrade
 # --noconfirm: Equivalent to -y
+echo ""
 echo "Updating system via 'paru'..."
 paru -Syu --noconfirm
 
+echo ""
+echo "Flatpak update..."
 flatpak update -y
 
 echo ""
@@ -32,14 +35,15 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk update
 sdk upgrade
 
+echo ""
 echo "Updating NVM..."
 nvm install node --reinstall-packages-from=current --latest-npm
 
+echo ""
 echo "Updating Miniforge3"
 mamba update --all
 
+echo ""
 echo "Updating astral.uv"
 uv self update
 
-echo "\nSystem maintenance: Cleaning pacman cache..."
-sudo pacman -Sc --noconfirm
