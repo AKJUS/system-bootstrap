@@ -51,13 +51,19 @@ tooltip label {
 
 }
 window#waybar {
-  background: @crust;
+  background-color: alpha(@base, 0.8);
   color: @text;
   padding: 0px;
   margin: 0px;
   border-radius: 0px;
   border-width: 2px;
   font-family: "Ubuntu Nerd Font";
+  transition-property: background-color;
+}
+
+window#waybar > box {
+  box-shadow: 0px 1px 1px 0px alpha(@blue, 0.4);
+  margin-bottom: 5px;
 }
 
 #waybar .horizontal {
@@ -70,7 +76,7 @@ window#waybar.hidden {
 }
 
 window#waybar.empty {
-  background-color: @crust;
+  background-color: alpha(@base, 0.5);
 }
 
 window#waybar.empty #window {
@@ -124,9 +130,12 @@ window#waybar.firefox {
 }
 
 #workspaces label {
-  font-size: 16px;
+  font-size: 1.4em;
   margin-left: 0px;
   margin-right: 0px;
+  font-weight: bold;
+  font-family: "Symbols Nerd Font";
+
 }
 
 box#workspaces {
@@ -143,6 +152,8 @@ box#workspaces {
   background-color: transparent;
   border-radius: 8px;
   border: none;
+  font-weight: bold;
+  font-family: "Symbols Nerd Font";
 }
 
 #workspaces button:hover {
@@ -151,6 +162,9 @@ box#workspaces {
   background: alpha(@on-secondary-container, 0.5);
   border-radius: 8px;
   border: none;
+  font-weight: bold;
+  font-family: "Symbols Nerd Font";
+
 }
 
 #workspaces button.focused {
@@ -184,7 +198,9 @@ box#workspaces {
 }
 
 #clock {
-  color: @sky;
+  color: @text;
+  font-family: "ComicShannsMono Nerd Font"; 
+  font-size: 1.2em;
   background: transparent;
 }
 

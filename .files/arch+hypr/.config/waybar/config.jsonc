@@ -1,4 +1,5 @@
 {
+  "margin-bottom": 7,
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   // "width": 1280, // Waybar width
