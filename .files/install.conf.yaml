@@ -38,6 +38,7 @@
       ~/.hidden: .hidden
       ~/.config/nvim: nvim
       ~/.config/btop: .config/btop
+      ~/.config/ghostty: .config/ghostty
       ~/.config/zathura/zathurarc: zathurarc
       ~/.config/zellij/config.kdl: .config/zellij/config.kdl
       ~/.config/zellij/layouts/default.kdl: .config/zellij/layouts/default.kdl

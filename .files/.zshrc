@@ -363,3 +363,4 @@ unset __mamba_setup
 
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
+source ~/.cache/mill/download/mill-completion.sh # MILL_SOURCE_COMPLETION_LINE
