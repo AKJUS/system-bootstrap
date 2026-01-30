@@ -5,7 +5,7 @@ Documentation=https://github.com/Alexays/Waybar/wiki/
 After=graphical-session.target
 # Dependency on PipeWire and WirePlumber services AND sockets
 After=pipewire.service wireplumber.service 
-Requires=wireplumber.service
+Requires=wireplumber.service pipewire.service
 # Binds lifecycle to the session
 PartOf=graphical-session.target
 
