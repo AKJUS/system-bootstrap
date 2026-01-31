@@ -16,6 +16,7 @@
       ~/.config/vicinae: .config/vicinae
       ~/.config/dunst: .config/dunst
       ~/.config/swayosd: .config/swayosd
+      ~/.config/fuzzel: .config/fuzzel
 - shell: 
     - systemctl --user daemon-reload
     - systemctl --user enable waybar.service
