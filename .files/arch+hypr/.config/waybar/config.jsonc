@@ -132,6 +132,8 @@
   },
   //  Modules configuration
   "hyprland/workspaces": {
+    "all-outputs": false,
+    "format": "<sub>{icon}</sub>",
     "format-icons": {
       "1": "",
       "2": "",
@@ -149,7 +151,30 @@
       "occupied": "",
       "empty": " ",
     },
-    "format": "<sub>{icon}</sub>",
+    "persistent-workspaces": {
+      "*": 5, // This ensures 5 workspaces always show on WHATEVER the main monitor is
+      "eDP-1": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "HDMI-A-1": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "HDMI-A-2": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+    },
     "window-rewrite-default": "",
     "window-rewrite": {
       "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
