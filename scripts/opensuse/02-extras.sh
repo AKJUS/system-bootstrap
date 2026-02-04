@@ -3,6 +3,9 @@
 
 # openSUSE Script Section: VS Code, Podman, Time Config
 
+# Install additional fonts to support waybar icons and emojis
+echo "Installing additional fonts..."
+sudo zypper --non-interactive install google-noto-coloremoji-fonts fontawesome-fonts
 # --- VS Code Installation ---
 echo "Adding VS Code repository and installing..."
 # Import the Microsoft GPG key

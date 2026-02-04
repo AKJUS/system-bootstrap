@@ -35,19 +35,6 @@
     //"pulseaudio",
     "custom/notifications",
   ],
-  "group/hardware": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "children-class": "not-power",
-      "transition-left-to-right": false,
-    },
-    "modules": [
-      "cpu",
-      "memory",
-      "temperature"
-    ],
-  },
   "wireplumber#source": {
     "node-type": "Audio/Source",
     "format": "<span></span> <span>{volume}%</span>",
@@ -202,7 +189,7 @@
   },
   "mpris": {
     "format": "<span>{player_icon}</span> {title}",
-    "format-paused": "<span>{status_icon}</span> <span>{player_icon}</span> <i>{title}</i>",
+    "format-paused": "<span>{status_icon}</span> <span>{player_icon}</span> <b>{title}</b>",
     "player-icons": {
       "default": "▶",
       "mpv": "🎵",
@@ -218,6 +205,7 @@
     "status-icons": {
       "paused": "⏸",
     },
+    "max-length": 25,
   },
   "cpu": {
     "format": "󰻠 {usage}% ",

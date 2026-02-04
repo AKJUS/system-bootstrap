@@ -354,6 +354,9 @@ box#workspaces {
   padding-left: 5px;
   background: @spotify-green;
   color: @base;
+  font-family: "JetBrainsMono Nerd Font", "FontAwesome";
+  font-size: 1em;
+  font-weight: bold;
   border-radius: 15px 15px 15px 15px;
 }
 
