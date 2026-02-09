@@ -4,7 +4,6 @@ curl -fsSL https://vicinae.com/install.sh | bash
 
 sudo dnf install sway \
 	dunst \
-	mako \
 	ncmpcpp \
 	pavucontrol \
 	ranger \
