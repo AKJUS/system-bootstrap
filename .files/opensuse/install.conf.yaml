@@ -25,7 +25,6 @@
     ~/.config/swaylock: .config/swaylock
     ~/.config/swaync: .config/swaync
     ~/.config/wob: .config/wob
-    ~/.config/systemd/user/waybar.service: .config/systemd/user/waybar.service
     ~/.config/environment.d/sway.conf: .config/environment.d/sway.conf
     ~/system-update.sh: ./suse-system-update.sh
     ~/.local/walls/background.png: ../../assets/opensuse-black-4k.png
