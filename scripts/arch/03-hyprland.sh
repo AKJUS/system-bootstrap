@@ -8,6 +8,7 @@ sudo pacman -S wf-recorder grim slurp jq wl-clipboard hyprpicker libnotify
 
 sudo pacman -S fuse2
 
-paru -Syu appimagelauncher
+paru -S appimagelauncher
+paru -S network-manager-applet
 
 paru -Syu dunst rofi swayosd hyprcap
