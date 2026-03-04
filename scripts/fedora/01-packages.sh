@@ -2,6 +2,14 @@
 
 sudo dnf -y install alacritty
 sudo dnf -y install bat
+sudo dnf -y install bottom
+sudo dnf -y install btop
+sudo dnf -y install curl
+sudo dnf -y install fd-find
+sudo dnf -y install fzf
+sudo dnf -y install git
+sudo dnf -y install htop
+sudo dnf -y install neofetch
 # media
 sudo dnf -y install vlc
 sudo dnf -y install gstreamer1-plugins-{good-\*,base} gstreamer1-plugin-openh264 --exclude=gstreamer1-plugins-bad-free-devel
@@ -83,3 +91,5 @@ sudo dnf install kitty -y
 sudo dnf install hyperfine -y
 
 sudo dnf install asciinema gdu fastfetch libsecret libsecret-devel libgnome-keyring -y
+
+sudo dnf install toolbox -y

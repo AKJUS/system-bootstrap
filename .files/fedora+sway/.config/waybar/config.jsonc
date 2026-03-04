@@ -1,20 +1,24 @@
 {
+  "margin-bottom": 3,
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
-  "height": 14, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
   // "gtk-layer-shell": "false",
   // Choose the order of the modules
   "modules-left": [
     "custom/icon",
     "sway/workspaces",
-    "custom/scratchpad",
-    "sway/mode",
     "sway/window",
+    "mpris",
+    "sway/mode",
   ],
-  "modules-center": ["mpris", "custom/spotify", "clock", "idle_inhibitor"],
+  "modules-center": [
+    // "custom/spotify",
+    "clock",
+  ],
   "modules-right": [
     "custom/privacycheck",
+    "idle_inhibitor",
     "privacy",
     "sway/language",
     "tray",
@@ -24,10 +28,13 @@
     "cpu",
     "memory",
     "temperature",
+    //"group/hardware",
     "wireplumber",
     "wireplumber#source",
-    "pulseaudio",
-    "custom/notifications",
+    //"pulseaudio",
+    "battery",
+    "power-profiles-daemon",
+    "custom/power",
   ],
   "wireplumber#source": {
     "node-type": "Audio/Source",
@@ -45,7 +52,11 @@
     "format-muted": "<span>󰖁 </span>",
     "on-click-right": "pavucontrol",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "format-icons": ["", "", ""],
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
     "scroll-step": 5,
     "tooltip": true,
     "tooltip-format": "{node_name} {volume}%",
@@ -70,46 +81,82 @@
   },
   "custom/icon": {
     "tooltip": true,
-    "tooltip-format": "<span color='#c4bd99'><tt><small>OpenSUSE Tumbleweed</small></tt></span>",
-    "format": "  ",
-  },
-  "custom/clock-icon": {
-    "format": "",
+    "tooltip-format": "<span color='#c4bd99'><tt><small>Fedora</small></tt></span>",
+    "format": "󰮤",
+    "on-click": "~/.config/rofi/launchers/misc/launcher.sh &"
   },
   "custom/separator-icon": {
     "format": " ",
     "tooltip": false,
   },
   "sway/mode": {
-    "format": " {}",
+    "format": " {}",
+    "max-length": 25,
+    "tooltip": true
   },
   "sway/window": {
     "format": "{title}",
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "$1",
+    },
+    "separate-outputs": true,
     "expand": true,
-    "max-length": 55,
+    "max-length": 25,
     "tooltip": true,
     "icon": true,
   },
   "sway/language": {
-    "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
-    "format": " 󰌓 {short} {variant}",
+    "format": " 󰌓 {}",
+    "format-en": "US  ",
+    "format-uk": "UA  ",
   },
   //  Modules configuration
   "sway/workspaces": {
     "disable-scroll": true,
-    "sort-by-number": true,
-    "all-outputs": false,
-    "format": "{icon}",
+    "all-outputs": true,
+    "format": "<sub>{icon}</sub>",
     "format-icons": {
       "1": "",
       "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
+      "3": " ",
+      "4": " ",
+      "5": " ",
+      "6": " ",
+      "7": " ",
       "8": "",
       "9": "",
+      "active": "",
+      "default": "",
+      "urgent": "",
+      "occupied": "",
+      "empty": "",
+      "high-priority-named": [
+        "1",
+        "2"
+      ]
+    },
+    "persistent-workspaces": {
+      "1": [
+        "eDP-1"
+      ],
+      "2": [
+        "eDP-1"
+      ],
+      "3": [
+        "eDP-1"
+      ],
+      "4": [
+        "eDP-1"
+      ],
+      "5": [
+        "eDP-1"
+      ],
+      "6": [
+        "eDP-1"
+      ],
+      "7": [
+        "eDP-1"
+      ],
     },
   },
   "idle_inhibitor": {
@@ -120,13 +167,13 @@
     },
   },
   "tray": {
-    "icon-size": 18,
-    "spacing": 10,
+    "icon-size": 16,
+    "spacing": 8,
   },
   "clock": {
     // "timezone": "America/New_York",
-    "format": " {:%b %d %Y %R}",
-    "format-alt": "{:%a %d %b w:%V %H:%M}",
+    "format": " {:%R}",
+    "format-alt": " {:%a %d %b w:%V %H:%M}",
     "tooltip-format": "<span color='#c4bd99'><tt><small>{calendar}</small></tt></span>",
     "calendar": {
       "mode-mon-col": 4,
@@ -181,13 +228,13 @@
     ],
   },
   "mpris": {
-    "format": "{player_icon} {title}",
-    "format-paused": "{status_icon} <i>{dynamic}</i>",
+    "format": "<span>{player_icon}</span> {title}",
+    "format-paused": "<span>{status_icon}</span> <span>{player_icon}</span> <i>{title}</i>",
     "player-icons": {
       "default": "▶",
-      "mpv": "🎵",
+      "mpv": "󰦚",
       "spotify": "󰓇",
-      "vlc": "🎞",
+      "vlc": "󰕼",
       "firefox": "",
       "chromium": "",
       "brave": "",
@@ -196,8 +243,9 @@
       "slack": "",
     },
     "status-icons": {
-      "paused": "⏸",
+      "paused": "",
     },
+    "max-length": 25,
   },
   "cpu": {
     "format": "󰻠 {usage}% ",
@@ -208,37 +256,41 @@
     "format": " {}%",
   },
   "temperature": {
-    // "thermal-zone": 2,
-    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
-    // "format-critical": "{temperatureC}°C {icon}",
     "format": "{icon} {temperatureC}°C",
-    "format-icons": ["", "", ""],
+    "format-icons": [
+      "",
+      "",
+      ""
+    ],
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "",
-    "format-ethernet": "",
-    "format-linked": "",
+    "format-ethernet": " ",
+    "format-linked": "",
     "format-disconnected": "⚠",
-    "format-alt": "{ifname} {essid} ({signalStrength}%)",
+    "format-alt": " {ipaddr}",
+    "tooltip-format": "{ifname} via {ipaddr} ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)  {ipaddr}",
+    "tooltip-format-ethernet": "{ifname}   {ipaddr}",
+    "tooltip-format-disconnected": "Disconnected",
   },
   "bluetooth": {
     "format": "",
     "format-disabled": "",
     "format-off": "",
     "format-connected": " {num_connections}",
-    // "format-connected": " {device_alias}",
     "tooltip-format": "{controller_address} {status}\n\n{num_connections} connected",
     "tooltip-format-disabled": "{status}",
     "tooltip-format-connected": "{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
     "format-connected-battery": " {device_alias} {device_battery_percentage}%",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-    // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
     "on-click": "bluetooth toggle; pkill -SIGRTMIN+8 waybar",
     "on-click-right": "exec alacritty -e sh -c 'bluetoothctl'",
   },
+  // Not used now because of the new wireplumber module
   "pulseaudio": {
     "format": "<span size='13000' foreground='#EBDDAA'>{icon}</span> {volume}%",
     "format-muted": "<span size='14000' foreground='#EBDDAA'></span> Muted",
@@ -249,7 +301,11 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""],
+      "default": [
+        "",
+        "",
+        ""
+      ],
     },
     "format-alt": "{volume} {icon}",
     "format-alt-click": "click-middle",
@@ -258,29 +314,40 @@
     "on-click-right": "pavucontrol",
     "tooltip": true,
   },
-  "custom/scratchpad": {
-    "format-text": "{}",
-    "return-type": "json",
-    "interval": 3,
-    "exec": "/usr/share/openSUSEway/helpers/scratchpad-indicator.sh 2> /dev/null",
-    "exec-if": "exit 0",
-    "on-click": "swaymsg 'scratchpad show'",
-    "on-click-right": "swaymsg 'move scratchpad'",
-  },
   "custom/notifications": {
     "tooltip": true,
-    "format": "<span foreground='#b7bdf8'>{icon}</span>",
-    "format-icons": {
-      "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
-      "none": " ",
-      "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
-      "dnd-none": " ",
-    },
-    "return-type": "json",
-    "exec-if": "which swaync-client",
-    "exec": "swaync-client -swb",
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "escape": true,
+    "format": "{icon}",
   },
+  "battery": {
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "max-length": 25
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  },
+  "custom/power": {
+    "format": "󰤆",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/powermenu/type-2/powermenu.sh &"
+  }
 }

@@ -23,7 +23,7 @@ set $term alacritty --config-file $HOME/.config/alacritty/alacritty.toml
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu fuzzel
+set $menu vicinae toggle
 # it is set in config.d/50-openSUSE.conf
 exec_always --no-startup-id kanshi
 
@@ -35,7 +35,7 @@ seat * xcursor_theme volantes_cursors 24
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/worxbend/.system-bootstrap/assets/opensuse-black-4k.png fill 
+output * bg ~/.local/backgrounds/fedora-black-4k.png fill 
 #
 # Example configuration:
 #
@@ -44,7 +44,7 @@ output * bg /home/worxbend/.system-bootstrap/assets/opensuse-black-4k.png fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 
-input * {
+input "1:1:AT_Translated_Set_2_keyboard" {
 	xkb_layout us,ua
 	xkb_options grp:win_space_toggle
     natural_scroll enabled

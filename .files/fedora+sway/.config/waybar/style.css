@@ -28,63 +28,167 @@
 @define-color suse-green #008000;
 * {
   border-radius: 0;
-  font-family: "FiraCode Nerd Font";
+  font-family: "JetBrainsMono Nerd Font";
   font-size: 12pt;
   min-height: 0;
 }
-
-window#waybar {
-  background: @base;
-  color: @text;
+window.HDMI-A-2 * {
+  font-size: 13pt;
 }
 
 tooltip {
+  color: @flamingo;
   background: @mantle;
   border-radius: 15px;
   border-width: 2px;
-  border-style: solid;
-  border-color: @yellow;
+ }
+
+tooltip label {
+  color: @flamingo;
+  font-family: "Ubuntu Nerd Font";
+  font-size: 12pt;
+  font-weight: bold;
+
+}
+window#waybar {
+  background-color: alpha(@base, 0.8);
+  color: @text;
+  padding: 0px;
+  margin: 0px;
+  border-radius: 0px;
+  border-width: 2px;
+  font-family: "Ubuntu Nerd Font";
+  transition-property: background-color;
 }
 
-#workspaces {
-  background: @surface1;
-  border-radius: 15px;
+window#waybar > box {
+  box-shadow: 0px 1px 1px 0px alpha(@blue, 0.4);
+  margin-bottom: 5px;
+}
+
+#waybar .horizontal {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+window#waybar.hidden {
+  opacity: 0.7;
+}
+
+window#waybar.empty {
+  background-color: alpha(@base, 0.5);
+}
+
+window#waybar.empty #window {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  background-color: @crust;
+}
+
+window#waybar.solo #window {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @text;
+}
+
+window#waybar.floating #window {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @red;
+}
+
+window#waybar.tiled #window {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @text;
+}
+window#waybar.stacked #window {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @blue;
+}
+window#waybar.tabbed #window {
+  padding-left: 5px;
+  padding-right: 5px;
+  color: @text;
+}
+
+window#waybar.firefox {
+  color: @yellow;
+  font-family: "Ubuntu Nerd Font";
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#workspaces label {
+  font-size: 1em;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-weight: bold;
+  font-family: "Symbols Nerd Font";
+  border: none;
+}
+
+box#workspaces {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
+  border-radius: 18px;
+  background-color: alpha(@surface0, 0.7);
+  border: none;
 }
 
 #workspaces button {
-  padding-right: 3px;
-  padding-left: 0px;
-  margin-left: 5px;
-  margin-right: 3px;
-  color: @subtext1;
+  font-size: 1.2em;
+  color: alpha(@lavender, 0.35);
+  background-color: transparent;
+  font-weight: bold;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 0px 5px 0px 5px;
+  font-family: "Symbols Nerd Font";
 }
 
-#workspaces button.empty {
-  color: @surface2;
-  background: @mantle;
-}
+#workspaces button:hover {
+  color: alpha(@teal, 0.95);
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+  
+  background: alpha(@mantle, 0.01);
 
-#workspaces button.visible {
-  color: @mauve;
+  font-weight: bold;
+  font-family: "Symbols Nerd Font";
 }
 
 #workspaces button.focused {
-  color: @peach;
+  color: @mauve;
+  border: none;
+}
+
+#workspaces button.active {
+  color: @pink;
+  border: none;
 }
 
 #workspaces button.urgent {
   color: @red;
+  border: none;
 }
 
-#workspaces button:hover {
-  background: @mantle;
-  border-color: @mantle;
-  color: @green;
-}
-
-#clock,
 #battery,
-#pulseaudio,
+#wireplumber,
 #workspaces,
 #memory,
 #cpu,
@@ -98,21 +202,34 @@ tooltip {
   margin-bottom: 5px;
 }
 
+#clock {
+  color: @text;
+  font-family: "ComicShannsMono Nerd Font"; 
+  background: transparent;
+}
+
 #battery:hover,
-#pulseaudio:hover,
+#wireplumber:hover,
 #workspaces:hover,
 #memory:hover,
 #cpu:hover,
 #temperature:hover,
 #custom-notifications:hover,
-#bluetooth:hover {
-  color: @green;
+#bluetooth:hover,
+#network:hover {
+  color: @sapphire;
 }
 
 #custom-icon {
-  color: @suse-green;
+  color: @blue;
+  border-radius: 15%;
+  min-width: 25px;
+  min-height: 25px;
+  font-size: 25px;
+  font-weight: bold;
+  padding-right: 15px; 
 }
-#custom-icon,
+
 #window,
 #mode {
   font-family: "JetBrainsMono Nerd Font";
@@ -128,17 +245,55 @@ tooltip {
 }
 
 #idle_inhibitor {
+  margin: 5px;
   padding-left: 5px;
   padding-right: 5px;
+  color: @blue;
+}
+
+#idle_inhibitor:hover {
+  color: @sapphire;
+}
+
+#idle_inhibitor.activated {
+  color: @peach;
+}
+
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#temperature {
+  padding-left: 12px;
+  padding-right: 5px;
+  background: @mantle;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  font-family: "Symbols Nerd Font";
 }
 
 #network {
-  padding-left: 10px;
-  padding-right: 5px;
-  background: @mantle;
+  color: @sapphire;
   border-radius: 15px 0px 0px 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  padding-left: 18px;
+}
+
+#bluetooth {
+  color: @peach;
+}
+
+#cpu {
+  color: @red;
+}
+
+#memory {
+  color: @yellow;
+}
+
+#temperature {
+  color: @green;
 }
 
 #clock {
@@ -150,41 +305,95 @@ tooltip {
 }
 
 #tray {
-  padding-right: 5px;
-  padding-left: 5px;
+  background: transparent;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+}
+
+#tray menu {
   background: @mantle;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 15px;
+  border-radius: 1px;
+  border: 1px solid @rosewater;
 }
 
-#pulseaudio {
-  padding-right: 5px;
-}
-
-#pulseaudio:hover {
-  color: @green;
-}
-
-#custom-layout {
-  padding-right: 5px;
+#wireplumber {
   padding-left: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-radius: 15px;
+  padding-right: 5px;
+  color: @flamingo;
+  font-family: "Symbols Nerd Font";
+  font-size: 1em;
+  font-weight: bold;
+
 }
 
-#custom-notifications {
+#language {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  border-radius: 15px;
+  background: @sky;
+  color: @mantle;
+}
+
+#language.ua {
+  background: @blue;
+  color: @crust;
+}
+
+#language.us {
+  background: @red;
+  color: @crust;
+}
+#language:hover {
+  color: @crust;
+}
+
+
+#language:hover {
+  color: @crust;
+}
+#battery {
   padding-right: 15px;
   padding-left: 15px;
   background: @mantle;
   margin-top: 5px;
   margin-bottom: 5px;
-  border-radius: 0px 15px 15px 0px;
+  font-family: "Symbols Nerd Font";
+  font-size: 1em;
+  font-weight: bold;
+  color: @yellow;
 }
 
-#custom-spotify {
+#battery:hover {
+  color: @maroon;
+}
+
+#power-profiles-daemon {
+  padding-right: 15px;
+  padding-left: 1px;
+  background: @mantle;
+  color: @teal;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 0px 15px 15px 0px;
+}
+#power-profiles-daemon.performance {
+  color: @red;
+}
+#power-profiles-daemon.balanced {
+  color: @yellow;
+}
+#power-profiles-daemon.power-saver {
+  color: @green;
+}
+#custom-spotify,
+#mpris {
   margin-top: 10px;
+  margin-left: 15px;
   margin-bottom: 10px;
   padding-right: 5px;
   padding-left: 5px;
@@ -197,4 +406,50 @@ tooltip {
   margin-right: 5px;
   padding-right: 5px;
   padding-left: 5px;
+}
+
+#privacy {
+  padding-right: 5px;
+  padding-left: 5px;
+  background: @base;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+}
+
+#privacy-item.audio-in {
+  color: @sapphire;
+}
+
+#privacy-item.audio-out {
+  color: @spotify-green;
+}
+
+#privacy-item.screenshare {
+  color: @peach;
+}
+
+#privacy-item:hover {
+  color: @green;
+}
+
+#privacy-item {
+  color: @sky;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+#custom-power {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+  color: @teal;
+  font-family: "Symbols Nerd Font";
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+#custom-power:hover {
+  color: @red;
 }

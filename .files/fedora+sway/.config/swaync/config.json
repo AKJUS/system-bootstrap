@@ -30,8 +30,8 @@
   "widgets": [
     "title",
     "dnd",
-    "mpris",
     "notifications",
+    "mpris",
     "inhibitors",
     "buttons-grid"
   ],
@@ -53,7 +53,7 @@
       "blacklist": [
         "playerctld"
       ],
-      "autohide": false,
+      "autohide": true,
       "show-album-art": "always",
       "loop-carousel": true
     },
@@ -61,19 +61,19 @@
       "buttons-per-row": 3,
       "actions": [
         {
-          "label": "🔒",
+          "label": "",
           "command": "swaylock"
         },
         {
-          "label": "🚪",
+          "label": "󰍃",
           "command": "swaymsg exit"
         },
         {
-          "label": "󰏥 ",
+          "label": "󰏥",
           "command": "systemctl suspend"
         },
         {
-          "label": "🔄",
+          "label": "󰜉",
           "command": "systemctl reboot"
         },
         {

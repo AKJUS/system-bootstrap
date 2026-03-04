@@ -20,8 +20,9 @@ sudo dnf install sway \
 	slurp \
 	zathura \
 	wob \
-	SwayNotificationCenter
+	SwayNotificationCenter \
+	brightnessctl
 
 # Install sway-osd
-dnf copr enable erikreider/swayosd
-dnf install swayosd
+sudo dnf copr enable erikreider/swayosd
+sudo dnf install swayosd
