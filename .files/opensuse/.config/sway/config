@@ -3,12 +3,9 @@
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
 # Read `man 5 sway` for a complete reference.
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP SSH_AUTH_SOCK
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP SSH_AUTH_SOCK
-     
-exec dbus-update-activation-environment --systemd display wayland_display swaysock SSH_AUTH_SOCK 
-exec_always --no-startup-id bash -c 'source ~/.config/sway/env'
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway XDG_SESSION_TYPE=wayland SSH_AUTH_SOCK GTK_THEME ICON_THEME && \
+    systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE SSH_AUTH_SOCK GTK_THEME ICON_THEME && \
+    systemctl --user start --no-block sway-session.target
 
 ### Variables
 #
@@ -29,6 +26,7 @@ set $term alacritty --config-file $HOME/.config/alacritty/alacritty.toml
 # on the original workspace that the command was run on.
 set $menu fuzzel
 # it is set in config.d/50-openSUSE.conf
+
 exec_always --no-startup-id kanshi
 
 focus_follows_mouse no
