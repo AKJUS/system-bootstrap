@@ -116,7 +116,7 @@ input * {
         swaymsg "workspace 7; move workspace to output HDMI-A-2" && \
         swaymsg "workspace 8; move workspace to output HDMI-A-2" && \
         swaymsg "workspace 9; move workspace to output HDMI-A-2" && \
-        swaymsg "workspace 1;"'
+        swaymsg "workspace 6;"'
 
     # Switch to workspace
 
