@@ -1,6 +1,37 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":semanticCommits",
+    ":prHourlyLimitNone",
+    ":prConcurrentLimit10"
+  ],
+  "schedule": [
+    "before 6am on monday"
+  ],
+  "labels": [
+    "renovate"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "scripts/binary-dist\\.sh"
+      ],
+      "matchStrings": [
+        "YAZI_VERSION=(?<currentValue>v[\\d.]+)"
+      ],
+      "depNameTemplate": "sxyazi/yazi",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": [
+        "scripts/cli-tools\\.sh"
+      ],
+      "matchStrings": [
+        "nvm-sh/nvm/(?<currentValue>v[\\d.]+)/install\\.sh"
+      ],
+      "depNameTemplate": "nvm-sh/nvm",
+      "datasourceTemplate": "github-tags"
+    }
   ]
 }
