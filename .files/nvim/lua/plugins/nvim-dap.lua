@@ -1,5 +1,6 @@
 return {
   "mfussenegger/nvim-dap",
+  dependencies = "igorlfs/nvim-dap-view",
   config = function()
     local dap = require "dap"
     dap.adapters.python = {
@@ -53,5 +54,10 @@ return {
       },
     }
   end,
+  opts = function()
+    local dap, dap_view = require "dap", require "dap-view"
+    dap.listeners.after.event_initialized.dapview_config = function() dap_view.open() end
+    dap.listeners.before.event_terminated.dapview_config = function(session) vim.notify(tostring(session)) end
+    dap.listeners.before.event_exited.dapview_config = function() vim.notify "DAP Session closed" end
+  end,
 }
-
