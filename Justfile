@@ -70,3 +70,7 @@ opensuse-install:
     ./scripts/opensuse/00-system-update.sh
     ./scripts/opensuse/01-packages.sh
     ./scripts/opensuse/02-extras.sh
+
+# Configure SDDM greeter for Wayland + Sway (system-level, requires sudo)
+opensuse-sddm:
+    ./scripts/opensuse/03-sddm.sh
