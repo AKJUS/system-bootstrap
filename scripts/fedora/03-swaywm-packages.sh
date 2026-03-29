@@ -1,28 +1,24 @@
+#!/usr/bin/env zsh
+
+# ── Vicinae ───────────────────────────────────────────────────────────────────────
 curl -fsSL https://vicinae.com/install.sh | bash
 
-# Install sway
+# ── Sway & compositor ─────────────────────────────────────────────────────────────
+sudo dnf install -y sway swaylock waybar wob SwayNotificationCenter
 
-sudo dnf install sway \
-	dunst \
-	ncmpcpp \
-	pavucontrol \
-	ranger \
-	rofi \
-	fuzzel \
-	swaylock \
-	kitty \
-	waybar \
-	wl-clipboard \
-	mpc \
-	mpd \
-	mpv \
-	grim \
-	slurp \
-	zathura \
-	wob \
-	SwayNotificationCenter \
-	brightnessctl
+# ── Wayland utilities ─────────────────────────────────────────────────────────────
+sudo dnf install -y wl-clipboard wev grim slurp brightnessctl
 
-# Install sway-osd
+# ── Notifications & OSD ───────────────────────────────────────────────────────────
+sudo dnf install -y dunst
 sudo dnf copr enable erikreider/swayosd
-sudo dnf install swayosd
+sudo dnf install -y swayosd
+
+# ── Audio & media ─────────────────────────────────────────────────────────────────
+sudo dnf install -y pavucontrol mpd mpc ncmpcpp mpv
+
+# ── Launchers & UI ────────────────────────────────────────────────────────────────
+sudo dnf install -y rofi fuzzel
+
+# ── Terminal & file manager ───────────────────────────────────────────────────────
+sudo dnf install -y kitty ranger zathura mupdf mupdf-libs
