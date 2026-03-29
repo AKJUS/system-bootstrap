@@ -36,6 +36,8 @@ flatpak install flathub io.gitlab.liferooter.TextPieces -y
 flatpak install flathub org.gnome.gitlab.somas.Apostrophe -y
 flatpak install flathub org.gnome.gitlab.ilhooq.Bookup -y
 flatpak install flathub io.github.diegopvlk.Dosage -y
+flatpak install flathub page.codeberg.censor.Censor -y
+flatpak install flathub com.logseq.Logseq -y
 
 # ===================== Terminal & Shell =====================
 flatpak install flathub app.devsuite.Ptyxis -y
@@ -71,6 +73,10 @@ flatpak install flathub com.vscodium.codium -y
 
 # ===================== News & Feeds =====================
 flatpak install flathub io.gitlab.news_flash.NewsFlash -y
+
+# ===================== Health & Fitness ====================
+flatpak install flathub io.github.diegopvlk.Dosage -y
+flatpak install flathub dev.Cogitri.Health -y
 
 # ===================== Exhibit & Miscellaneous =====================
 flatpak install flathub io.github.nokse22.Exhibit -y
