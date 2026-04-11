@@ -92,7 +92,7 @@ sudo zypper --non-interactive install stress
 echo "Installing v4l2loopback and OBS Studio..."
 # v4l2loopback might require kernel headers/devel if not pre-built
 sudo zypper --non-interactive install kernel-devel # Ensure kernel headers are present for module builds
-sudo zypper --non-interactive install v4l2loopback
+sudo zypper --non-interactive install v4l2loopback-utils v4l2loopback-kmp-default 
 
 # --- Multimedia Group/Pattern Update ---
 # This approximates the 'dnf groupupdate multimedia'
