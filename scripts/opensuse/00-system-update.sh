@@ -8,13 +8,13 @@
 echo "Refreshing repositories and updating installed packages..."
 sudo zypper refresh && sudo zypper --non-interactive update
 # If on Tumbleweed, consider uncommenting the line below and commenting out the one above:
-# sudo zypper --non-interactive dup
+sudo zypper --non-interactive dup
 
 # --- Install Essential Packages ---
 # Install common utilities and dependencies.
 # Note: gpg2 is the typical package name for GnuPG functions in openSUSE.
 echo "Installing ca-certificates, curl, gpg2..."
-sudo zypper --non-interactive install ca-certificates curl gpg2 zip
+sudo zypper --non-interactive install ca-certificates curl gpg2 zip git
 
 # --- Install PipeWire ALSA compatibility ---
 # Needed for applications expecting ALSA to work via PipeWire.
@@ -65,11 +65,11 @@ echo "Remember to manually add the Packman repository if needed."
 echo "Log out and log back in to use the Zsh shell with Oh My Zsh."
 echo "-----------------------------------------------------"
 
-sudo zypper install python3-pipx
 sudo zypper install 1password
 
-sudo zypper install hackrf
-sudo zypper install inspectrum
-sudo zypper install urh
+# sudo zypper install hackrf
+# sudo zypper install inspectrum
+# sudo zypper install urh
+
 sudo zypper install jujutsu
 sudo zypper install sddm-qt6
