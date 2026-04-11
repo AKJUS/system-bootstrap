@@ -38,9 +38,9 @@ cd nerd-fonts
 ./install.sh -U CascadiaCode
 ./install.sh -U Hasklig
 ./install.sh -U DejaVuSansMono
+./install.sh -U ZedMono
 ./install.sh -U Inconsolata
 ./install.sh -U Hermit
-./install.sh -U ZedMono
 ./install.sh -U CommitMono
 ./install.sh -U Terminus
 ./install.sh -U Agave
@@ -49,11 +49,12 @@ cd nerd-fonts
 ./install.sh -U ShareTechMono
 ./install.sh -U Recursive
 ./install.sh -U D2Coding
-./install.sh -U ZedMono
 ./install.sh -U EnvyCodeR
 ./install.sh -U IosevkaTerm
 ./install.sh -U Lekton
 ./install.sh -U Lilex
+./install.sh -U VictorMono
+
 
 sudo fc-cache -vf
 

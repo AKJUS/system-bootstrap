@@ -81,13 +81,13 @@ config.keys = {
 }
 
 -- For example, changing the color scheme:
-config.font = wezterm.font("FiraCode Nerd Font")
+config.font = wezterm.font("VictorMono Nerd Font")
 -- config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
 config.set_environment_variables = {
   -- This changes the default prompt for cmd.exe to report the
   -- current directory using OSC 7, show the current time and
   -- the current directory colored in the prompt.
-  -- WITH_TMUX = 'true',
+  WITH_TMUX = 'true',
 }
 
 -- Spawn a fish shell in login mode
