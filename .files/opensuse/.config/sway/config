@@ -65,6 +65,9 @@ input "type:touchpad" {
 
     # Click method
     click_method clickfinger       # or button_areas
+
+    drag enabled              # this is likely the culprit
+    drag_lock disabled        # THIS — disables the sticky tap behavior
 }
 
 input * {
