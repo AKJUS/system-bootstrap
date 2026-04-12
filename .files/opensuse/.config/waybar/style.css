@@ -179,7 +179,7 @@ box#workspaces {
 #temperature,
 #bluetooth {
   color: @lavender;
-  padding-right: 5px;
+  padding-right: 2px;
   padding-left: 1px;
   background: @mantle;
   margin-top: 5px;
@@ -249,7 +249,7 @@ box#workspaces {
 #memory,
 #temperature,
 #power-profiles-daemon {
-  padding-left: 12px;
+  padding-left: 5px;
   padding-right: 5px;
   background: @mantle;
   margin-top: 5px;
@@ -281,6 +281,14 @@ box#workspaces {
   color: @green;
 }
 
+#battery {
+  color: @maroon;
+}
+
+#wireplumber {
+  color: @flamingo;
+}
+
 #clock {
   padding-right: 5px;
   padding-left: 5px;
@@ -302,32 +310,28 @@ box#workspaces {
   border: 1px solid @rosewater;
 }
 
-#wireplumber {
-  padding-left: 2px;
+#wireplumber, #battery {
+  padding-left: 4px;
   padding-right: 2px;
-  color: @flamingo;
   font-family: "Symbols Nerd Font";
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 #language {
-  padding: 5px;
-  margin: 5px;
   border-radius: 15px;
+
 }
 
 #language.ua {
-  background: @blue;
-  color: @crust;
+  color: @blue;
 }
 
 #language.us {
-  background: @red;
-  color: @crust;
+  color: @red;
 }
 #language:hover {
-  color: @crust;
+  color: @maroon;
 }
 
 #custom-notifications {
@@ -343,7 +347,6 @@ box#workspaces {
   color: @yellow;
 }
 
-#custom-spotify,
 #mpris {
   margin-top: 10px;
   margin-left: 15px;
@@ -356,12 +359,6 @@ box#workspaces {
   font-size: 1em;
   font-weight: bold;
   border-radius: 15px 15px 15px 15px;
-}
-
-#custom-privacycheck {
-  margin-right: 5px;
-  padding-right: 5px;
-  padding-left: 5px;
 }
 
 #privacy {

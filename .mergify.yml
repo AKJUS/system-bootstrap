@@ -1,3 +1,4 @@
+---
 pull_request_rules:
   - name: Merge PRs that are ready
     conditions:

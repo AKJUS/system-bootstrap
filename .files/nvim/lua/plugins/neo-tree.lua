@@ -9,23 +9,23 @@ return {
                     hide_dotfiles = false,
                     hide_gitignored = true,
                     hide_by_name = {
-                        '.git',
-                        'target',
-                        '.bsp',
-                        '.clangd',
-                        '.vscode',
-                        '.idea',
-                        '.cache',
-                        '.venv',
-                        '.pytest_cache',
-                        '__pycache__',
-                        '.'
+                        ".git",
+                        "target",
+                        ".bsp",
+                        ".clangd",
+                        ".vscode",
+                        ".idea",
+                        ".cache",
+                        ".venv",
+                        ".pytest_cache",
+                        "__pycache__",
+                        ".",
                     },
                     never_show = {
-                        '.git',
-                    }
-                }
-            }
-        }
-    }
+                        ".git",
+                    },
+                },
+            },
+        },
+    },
 }
