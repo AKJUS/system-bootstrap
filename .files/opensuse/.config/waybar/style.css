@@ -171,6 +171,7 @@ box#workspaces {
 }
 
 #battery,
+#power-profiles-daemon,
 #wireplumber,
 #workspaces,
 #memory,
@@ -246,7 +247,8 @@ box#workspaces {
 #bluetooth,
 #cpu,
 #memory,
-#temperature {
+#temperature,
+#power-profiles-daemon {
   padding-left: 12px;
   padding-right: 5px;
   background: @mantle;

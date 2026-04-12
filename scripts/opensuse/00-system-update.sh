@@ -37,7 +37,7 @@ sudo zypper refresh
 # Install the Z shell and other useful command-line tools.
 # 'fuse' might be 'fuse' or 'fuse3' depending on the version, 'fuse' is often a meta-package.
 echo "Installing Zsh, fzf, git, curl, wget, fuse..."
-sudo zypper --non-interactive install zsh fzf git curl wget fuse
+sudo zypper --non-interactive install zsh fzf git curl wget fuse tmux
 
 # --- Set Zsh as Default Shell ---
 # IMPORTANT: Run this command as the user who wants Zsh, *without* sudo.
