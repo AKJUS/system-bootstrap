@@ -137,31 +137,10 @@ sudo zypper install hyperfine
 echo "-----------------------------------------------------"
 echo "Script finished."
 echo "-----------------------------------------------------"
-
-sudo zypper in mpv
-sudo zypper in wf-recorder
-sudo zypper in wireplumber
-sudo zypper in wireplumber-devel
+sudo zypper addrepo https://downloads.1password.com/linux/rpm/stable/x86_64 1password
 sudo zypper install 1password
-sudo zypper install git
-sudo zypper install libsecret
-sudo zypper install git-credential-libsecret
-sudo zypper install curl wget
-sudo zypper install v4l2loopback
-sudo zypper install v4l2loopback-kmp-default
-sudo zypper in xdg-desktop-portal
-sudo zypper in xdg-desktop-portal xdg-desktop-portal-gtk
-sudo zypper in xdg-desktop-portal-wlr
 
-sudo zypper install fastfetch
-sudo zypper in thunar
-sudo zypper in fontawesome-fonts
-sudo zypper in papirus-icon-theme
+sudo zypper in mpv wf-recorder wireplumber wireplumber-devel 1password git libsecret git-credential-libsecret curl wget v4l2loopback-kmp-default xdg-desktop-portal xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr fastfetch thunar fontawesome-fonts papirus-icon-theme kitty yazi 7zip zoxide mupdf zathura asciinema sway xdg-desktop-portal-wlr libvulkan1 qt6-wayland sddm-config-wayland sddm-qt6 sddm-greeter-qt6 sddm-conf qt6-quick-devel qt6-declarative-devel flatpak v4l2loopback-utils v4l2loopback-kmp-default zsh git tmux wl-clipboard sddm-qt6 libQt6Svg6 qt6-virtualkeyboard qt6-virtualkeyboard-imports qt6-multimedia qt6-multimedia-imports 
 
-sudo zypper in kitty # Kitty is a GPU-based terminal emulator
-sudo zypper in yazi # Yazi is a terminal-based file manager 
+sudo zypper in firefox pipewire pipewire-pulseaudio pipewire-alsa pipewire-jack wireplumber alsa-utils alsa-firmware sof-firmware bluez bluez-tools blueman waybar NetworkManager-applet power-profiles-daemon thermald pipewire-tools gcr-ssh-askpass libinput libinput-tools libinput-devel libinput10 thunar thunar-font-manager thunar-media-tags-plugin thunar-vcs-plugin file-roller p7zip unzip unrar
 
-sudo zypper in 7zip zoxide
-
-sudo zypper in mupdf zathura
-sudo zypper install asciinema

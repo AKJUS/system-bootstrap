@@ -45,12 +45,43 @@ output * bg ~/.local/walls/background.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
+input "type:touchpad" {
+    # Basic
+    dwt enabled                    # disable while typing
+    tap enabled                    # tap to click
+    tap_button_map lrm             # left, right, middle click via tap
+    natural_scroll enabled         # reverse scroll like GNOME
+    middle_emulation enabled
+
+    # Pointer speed (-1 to 1)
+    pointer_accel 0.3
+
+    # Acceleration profile
+    accel_profile adaptive         # or flat
+
+    # Gestures
+    scroll_method two_finger       # two finger scroll
+    scroll_factor 0.8
+
+    # Click method
+    click_method clickfinger       # or button_areas
+}
 
 input * {
 	xkb_layout us,ua
 	xkb_options grp:win_space_toggle
     natural_scroll enabled
 }
+
+### Touchpad configuration
+# 3 finger swipe to switch workspaces
+bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:left workspace next
+
+# 4 finger swipe (optional)
+bindgesture swipe:4:right workspace prev
+bindgesture swipe:4:left workspace next
+
 
 ### Key bindings
 #

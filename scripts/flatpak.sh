@@ -11,6 +11,7 @@ flatpak install flathub dev.zed.Zed -y
 flatpak install flathub org.telegram.desktop -y
 flatpak install flathub com.discordapp.Discord -y
 flatpak install flathub org.zulip.Zulip -y
+flatpak install flathub dev.vencord.Vesktop -y
 
 # ===================== Media & Audio =====================
 flatpak install flathub com.spotify.Client -y

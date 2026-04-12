@@ -17,7 +17,7 @@ config.integrated_title_button_style = "Gnome"
 config.integrated_title_buttons = { "Hide", "Maximize", "Close" }
 -- This is where you actually apply your config choices
 
-config.color_scheme = "Dark Ocean (terminal.sexy)"
+config.color_scheme = "Catppuccin Mocha"
 
 config.window_frame = {
   inactive_titlebar_bg = "#353535",
