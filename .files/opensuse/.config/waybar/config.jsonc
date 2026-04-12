@@ -18,7 +18,6 @@
     "clock",
   ],
   "modules-right": [
-    "custom/privacycheck",
     "idle_inhibitor",
     "privacy",
     "sway/language",
@@ -35,7 +34,7 @@
     "wireplumber",
     "wireplumber#source",
     //"pulseaudio",
-    "custom/notifications",
+    "custom/notifications"
   ],
   "wireplumber#source": {
     "node-type": "Audio/Source",

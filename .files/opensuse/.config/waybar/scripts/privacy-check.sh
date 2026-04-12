@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# NOT USED --- IGNORE ---
+
 # Waybar custom widget script for microphone and camera usage indicators
 # This script monitors microphone recording and camera usage
 

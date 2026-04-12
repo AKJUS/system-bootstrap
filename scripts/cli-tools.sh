@@ -24,3 +24,5 @@ rm Miniforge3-$(uname)-$(uname -m).sh
 
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+

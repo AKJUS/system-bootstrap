@@ -101,11 +101,9 @@ rm -rf $APPS_DIR/kustomize/install_kustomize.sh
 echo "Installing neovide"
 rm -rf $APPS_DIR/neovide/
 mkdir -p $APPS_DIR/neovide/bin
-curl -L -o ${APPS_DIR}/neovide/neovide.tar.gz https://github.com/neovide/neovide/releases/download/${NEOVIDE_VERSION}/neovide-linux-x86_64.tar.gz
+curl -L -o ${APPS_DIR}/neovide/bin/neovide https://github.com/neovide/neovide/releases/latest/download/neovide.AppImage
 
-tar -zvxf ${APPS_DIR}/neovide/neovide.tar.gz -C ${APPS_DIR}/neovide/bin/ 1>/dev/null
 chmod +x ${APPS_DIR}/neovide/bin/neovide
-rm -rf ${APPS_DIR}/neovide/neovide.tar.gz
 
 
 # --- 

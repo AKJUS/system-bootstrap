@@ -303,21 +303,17 @@ box#workspaces {
 }
 
 #wireplumber {
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
   color: @flamingo;
   font-family: "Symbols Nerd Font";
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 
 #language {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-right: 5px;
-  margin-left: 5px;
+  padding: 5px;
+  margin: 5px;
   border-radius: 15px;
 }
 
