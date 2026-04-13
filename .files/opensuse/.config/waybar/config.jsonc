@@ -18,9 +18,9 @@
     "clock",
   ],
   "modules-right": [
+    "sway/language",
     "idle_inhibitor",
     "privacy",
-    "sway/language",
     "tray",
     "custom/zypper",
     "network",
@@ -33,8 +33,8 @@
     //"group/hardware",
     "wireplumber",
     "wireplumber#source",
-    //"pulseaudio",
-    "custom/notifications"
+    "custom/notifications",
+    "custom/power"
   ],
   "wireplumber#source": {
     "node-type": "Audio/Source",
@@ -62,31 +62,10 @@
     "tooltip-format": "{node_name} {volume}%",
     "reverse-scrolling": true,
   },
-  "custom/privacycheck": {
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/privacy-check.sh",
-    "format": "{}",
-    "signal": 8,
-    "interval": 10,
-  },
-  "custom/spotify": {
-    "return-type": "json",
-    "exec": "~/.config/waybar/scripts/spotify/spotify.sh artist",
-    "format": "󰓇 <span>{}</span>",
-    "interval": 10,
-    "on-click": "playerctl -p spotify play-pause",
-    "exec-if": "playerctl --list-all | grep -iq spotify",
-    "on-scroll-up": "playerctl -p spotify next",
-    "on-scroll-down": "playerctl -p spotify next",
-  },
   "custom/icon": {
     "tooltip": true,
     "tooltip-format": "<span color='#c4bd99'><tt><small>OpenSUSE Tumbleweed</small></tt></span>",
     "format": " ",
-  },
-  "custom/separator-icon": {
-    "format": " ",
-    "tooltip": false,
   },
   "sway/mode": {
     "format": " {}",
@@ -163,17 +142,17 @@
       {
         "type": "screenshare",
         "tooltip": true,
-        "tooltip-icon-size": 24,
+        "tooltip-icon-size": 16,
       },
       {
         "type": "audio-out",
         "tooltip": true,
-        "tooltip-icon-size": 24,
+        "tooltip-icon-size": 16,
       },
       {
         "type": "audio-in",
         "tooltip": true,
-        "tooltip-icon-size": 24,
+        "tooltip-icon-size": 16,
       },
     ],
     "ignore-monitor": true,
@@ -299,30 +278,6 @@
     "on-click": "bluetooth toggle; pkill -SIGRTMIN+8 waybar",
     "on-click-right": "exec alacritty -e sh -c 'bluetoothctl'",
   },
-  // Not used now because of the new wireplumber module
-  "pulseaudio": {
-    "format": "<span size='13000' foreground='#EBDDAA'>{icon}</span> {volume}%",
-    "format-muted": "<span size='14000' foreground='#EBDDAA'></span> Muted",
-    "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ],
-    },
-    "format-alt": "{volume} {icon}",
-    "format-alt-click": "click-middle",
-    "scroll-step": 10,
-    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-right": "pavucontrol",
-    "tooltip": true,
-  },
   "custom/scratchpad": {
     "format-text": "{}",
     "return-type": "json",
@@ -347,5 +302,17 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true,
+  },
+  "custom/power": {
+    "format": "⏻ ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate",
+    },
   },
 }
