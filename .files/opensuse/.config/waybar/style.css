@@ -13,6 +13,7 @@
 @define-color blue #8aadf4;
 @define-color lavender #b7bdf8;
 @define-color text #cad3f5;
+@define-color subtext3 #4c4f69;
 @define-color subtext1 #b8c0e0;
 @define-color subtext0 #a5adcb;
 @define-color overlay2 #939ab7;
@@ -187,7 +188,7 @@ box#workspaces {
 }
 
 #clock {
-  color: @sky;
+  color: @subtext3;
   background: transparent;
 }
 
