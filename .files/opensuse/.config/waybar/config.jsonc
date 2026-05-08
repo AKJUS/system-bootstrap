@@ -105,6 +105,12 @@
   "tray": {
     "icon-size": 16,
     "spacing": 8,
+    "icons": {
+      "nm-applet": "/home/worxbend/.system-bootstrap/assets/icons/nm.png",
+      "nm": "/home/worxbend/.system-bootstrap/assets/icons/nm.png",
+      "network-manager": "/home/worxbend/.system-bootstrap/assets/icons/nm.png",
+      "blueman": "/home/worxbend/.system-bootstrap/assets/icons/bluetooth-active.png",
+    },
   },
   "clock": {
     // "timezone": "America/New_York",
