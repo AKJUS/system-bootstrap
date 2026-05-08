@@ -34,7 +34,7 @@
     "wireplumber",
     "wireplumber#source",
     "custom/notifications",
-    "custom/power"
+    "custom/power",
   ],
   "wireplumber#source": {
     "node-type": "Audio/Source",
@@ -52,11 +52,7 @@
     "format-muted": "<span>󰖁 </span>",
     "on-click-right": "pavucontrol",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", ""],
     "scroll-step": 5,
     "tooltip": true,
     "tooltip-format": "{node_name} {volume}%",
@@ -198,11 +194,7 @@
   "temperature": {
     "critical-threshold": 80,
     "format": "{icon} {temperatureC}°C",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", ""],
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -220,38 +212,14 @@
     "interval": 60,
     "states": {
       "warning": 30,
-      "critical": 15
+      "critical": 15,
     },
     "format": "{icon} {capacity}%",
     "format-icons": {
-      "default": [
-        "󰂎",
-        "󰁺",
-        "󰁻",
-        "󰁼",
-        "󰁽",
-        "󰁾",
-        "󰁿",
-        "󰂀",
-        "󰂁",
-        "󰂂",
-        "󰁹"
-      ],
-      "charging": [
-        "󰢟",
-        "󰢜",
-        "󰂆",
-        "󰂇",
-        "󰂈",
-        "󰢝",
-        "󰂉",
-        "󰢞",
-        "󰂊",
-        "󰂋",
-        "󰂅"
-      ]
+      "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
     },
-    "max-length": 25
+    "max-length": 25,
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -261,8 +229,8 @@
       "default": "",
       "performance": "",
       "balanced": "",
-      "power-saver": ""
-    }
+      "power-saver": "",
+    },
   },
   "bluetooth": {
     "format": "",
@@ -309,8 +277,8 @@
     "menu": "on-click",
     "menu-file": "~/.config/waybar/power_menu.xml",
     "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
+      "shutdown": "systemctl poweroff",
+      "reboot": "systemctl reboot",
       "suspend": "systemctl suspend",
       "hibernate": "systemctl hibernate",
     },
