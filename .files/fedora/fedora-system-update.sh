@@ -17,6 +17,8 @@ echo "Upgrading system via 'dnf'..."
 sudo dnf upgrade -y 
 sudo dnf distro-sync -y
 
+echo ""
+echo "Flatpak update..."
 flatpak update -y
 
 echo ""
@@ -33,12 +35,15 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk update
 sdk upgrade
 
+echo ""
 echo "Updating NVM..."
 nvm install node --reinstall-packages-from=current --latest-npm
 
+echo ""
 echo "Updating Miniforge3"
 mamba update --all
 
+echo ""
 echo "Updating astral.uv"
 uv self update
 
