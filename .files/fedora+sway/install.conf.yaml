@@ -1,0 +1,25 @@
+- defaults:
+      link:
+          relink: true
+          create: true
+- clean: ["~"]
+
+- clean:
+      ~/.config:
+          recursive: true
+- link:
+      ~/.local/backgrounds: ../../assets/fedora+sway+backgrounds
+      ~/.config/waybar: .config/waybar
+      ~/.config/rofi: .config/rofi
+      ~/.config/vicinae: .config/vicinae
+      ~/.config/dunst: .config/dunst
+      ~/.config/swayosd: .config/swayosd
+      ~/.config/kanshi: .config/kanshi
+      ~/.config/fuzzel: .config/fuzzel
+      ~/.config/sway: .config/sway
+      ~/.config/swaylock: .config/swaylock
+      ~/.config/swaync: .config/swaync
+- shell: 
+    - systemctl --user daemon-reload
+    - systemctl --user enable waybar.service
+    - systemctl --user start waybar.service
