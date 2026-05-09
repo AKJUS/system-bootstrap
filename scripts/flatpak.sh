@@ -60,7 +60,8 @@ flatpak install flathub org.gnome.dspy -y
 flatpak install flathub io.github.swordpuffin.rewaita -y
 flatpak install flathub org.gnome.design.Emblem -y
 flatpak install flathub org.mozilla.vpn -y
-flatpak install flathub io.github.zingytomato.netpeek -y 
+flatpak install flathub io.github.zingytomato.netpeek -y
+flatpak install flathub com.oguzhaninan.Stacer -y
 
 # ===================== Productivity Tools =================
 flatpak install flathub com.pojtinger.felicitas.Sessions -y

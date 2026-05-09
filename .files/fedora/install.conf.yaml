@@ -11,8 +11,6 @@
       - rm -rf ~/Pictures/Backgrounds
       - rm -rf ~/system-update.sh
 - link:
-      ~/.local/share/gnome-background-properties/adwaita.xml.in: ./gnome-background-properties.xml
-      ~/Pictures/Backgrounds: ../../assets/Backgrounds
       ~/system-update.sh: ./fedora-system-update.sh
 
 - shell:

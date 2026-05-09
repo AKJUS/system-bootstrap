@@ -1,20 +1,34 @@
-#!/usr/bin/env bash
+# ── System update ─────────────────────────────────────────────────────────────────
+# check-update exits 100 when updates are available; || true prevents set -e abort
+sudo dnf check-update || true
+sudo dnf upgrade -y
 
-sudo dnf check-update && sudo dnf upgrade
+# ── Base deps ─────────────────────────────────────────────────────────────────────
+sudo dnf install -y \
+    ca-certificates curl wget gnupg2 \
+    util-linux-user \
+    fuse3 \
+    fedora-workstation-repositories
 
-sudo dnf install ca-certificates curl gnupg
+# fuse3: FUSE 2 is deprecated in Fedora 44; fuse3 is the current package
+# util-linux-user: provides chsh — installed before it's called below
 
-sudo dnf groupupdate core
+# ── PipeWire audio stack ──────────────────────────────────────────────────────────
+sudo dnf install -y \
+    pipewire pipewire-alsa pipewire-pulseaudio pipewire-jack-audio-connection-kit \
+    wireplumber
 
-sudo dnf install fedora-workstation-repositories
+# pipewire-alsa alone is insufficient; pulseaudio compat + wireplumber session
+# manager are required for a working audio stack
 
-sudo dnf install pipewire-alsa
+# ── RPM Fusion ───────────────────────────────────────────────────────────────────
+FEDORA_VER=$(rpm -E %fedora)
+sudo dnf install -y \
+    "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-${FEDORA_VER}.noarch.rpm" \
+    "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-${FEDORA_VER}.noarch.rpm"
 
-sudo dnf install util-linux-user
+# ── Shell ─────────────────────────────────────────────────────────────────────────
+sudo dnf install -y zsh fzf git
 
-sudo dnf install "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
-sudo dnf install "https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
-
-sudo dnf install zsh fzf git curl wget fuse
 chsh -s "$(which zsh)"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
