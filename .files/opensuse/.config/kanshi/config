@@ -6,7 +6,6 @@ output HDMI-A-1 {
 output HDMI-A-2 {
     mode 2560x1440@119.998
     position 3840,0
-    transform 90  
     adaptive_sync on
     alias $DELL
 }
