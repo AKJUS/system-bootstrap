@@ -11,11 +11,11 @@ WITH_TMUX = 'true'
 size = 14
 
 [font.bold]
-family = "FiraCode Nerd Font"
-style = "Bold"
+family = "Victor Mono Nerd Font"
+style = "Regular"
 
 [font.bold_italic]
-family = "FiraCode Nerd Font"
+family = "Victor Mono Nerd Font"
 style = "Bold Italic"
 
 [font.glyph_offset]
@@ -23,11 +23,11 @@ x = 0
 y = 0
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "Victor Mono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "Victor Mono Nerd Font"
 style = "Regular"
 
 [font.offset]
