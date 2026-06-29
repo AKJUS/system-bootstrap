@@ -6,6 +6,17 @@ default:
 
 # --- Common Setup ---
 
+# Format supported repository files
+format:
+    ./scripts/format.sh
+
+# Lint and syntax-check supported repository files
+lint:
+    ./scripts/lint.sh
+
+# Run all repository quality checks
+check: lint
+
 # Run basic system configurations (git, docker, time)
 configure-system:
     ./scripts/configurations.sh

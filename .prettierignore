@@ -1,0 +1,7 @@
+.git/
+.agents/
+.codex/
+assets/
+*.png
+*.jpg
+*.jpeg

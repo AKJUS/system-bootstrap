@@ -1,63 +1,69 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
+set -euo pipefail
 
-# TODO: Tue 12 Apr - Please update me in case of changes in upstream repo.
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+CONFIG_PATH="${NERDFONT_CONFIG:-${REPO_ROOT}/.files/.config/nerd-config-installer/config.yaml}"
+INSTALL_DIR="${NERDFONT_INSTALLER_BIN_DIR:-${HOME}/.local/bin}"
+INSTALLER="${INSTALL_DIR}/nerdfont-install"
+INSTALLER_REPO="${NERDFONT_INSTALLER_REPO:-worxbend/nerd-font-installer}"
 
-FONT_DIR=${HOME}/.fonts
-mkdir -p $FONT_DIR
+detect_os() {
+    case "$(uname -s)" in
+        Linux) echo "linux" ;;
+        Darwin) echo "darwin" ;;
+        *) echo "Unsupported OS: $(uname -s)" >&2; return 1 ;;
+    esac
+}
 
-echo $FONT_DIR
+detect_arch() {
+    case "$(uname -m)" in
+        x86_64 | amd64) echo "amd64" ;;
+        arm64 | aarch64) echo "arm64" ;;
+        *) echo "Unsupported architecture: $(uname -m)" >&2; return 1 ;;
+    esac
+}
 
-git clone --depth 1 --filter=blob:none https://github.com/ryanoasis/nerd-fonts
+install_nerdfont_installer() {
+    local os arch archive workdir base_url
 
-cd nerd-fonts
+    os="$(detect_os)"
+    arch="$(detect_arch)"
+    archive="nerdfont-install_latest_${os}_${arch}.tar.gz"
+    base_url="https://github.com/${INSTALLER_REPO}/releases/download/latest"
+    workdir="$(mktemp -d)"
 
-./install.sh -U JetBrainsMono
-./install.sh -U MPlus
-./install.sh -U Terminus
-./install.sh -U FantasqueSansMono
-./install.sh -U Noto
-./install.sh -U Hack
-./install.sh -U HeavyData
-./install.sh -U 3270
-./install.sh -U FiraCode
-./install.sh -U LiberationMono
-./install.sh -U RobotoMono
-./install.sh -U Mononoki
-./install.sh -U Ubuntu
-./install.sh -U DroidSansMono
-./install.sh -U Monoid
-./install.sh -U SpaceMono
-./install.sh -U SourceCodePro
-./install.sh -U ComicShannsMono
-./install.sh -U NerdFontsSymbolsOnly
-./install.sh -U DaddyTimeMono
-./install.sh -U UbuntuMono
-./install.sh -U Meslo
-./install.sh -U FiraMono
-./install.sh -U CodeNewRoman
-./install.sh -U CascadiaCode
-./install.sh -U Hasklig
-./install.sh -U DejaVuSansMono
-./install.sh -U ZedMono
-./install.sh -U Inconsolata
-./install.sh -U Hermit
-./install.sh -U CommitMono
-./install.sh -U Terminus
-./install.sh -U Agave
-./install.sh -U GeistMono 
-./install.sh -U Monaspace
-./install.sh -U ShareTechMono
-./install.sh -U Recursive
-./install.sh -U D2Coding
-./install.sh -U EnvyCodeR
-./install.sh -U IosevkaTerm
-./install.sh -U Lekton
-./install.sh -U Lilex
-./install.sh -U VictorMono
+    trap 'rm -rf "${workdir}"' RETURN
 
+    mkdir -p "${INSTALL_DIR}"
+    curl -fsSLo "${workdir}/${archive}" "${base_url}/${archive}"
+    curl -fsSLo "${workdir}/checksums.txt" "${base_url}/checksums.txt"
 
-sudo fc-cache -vf
+    (
+        cd "${workdir}"
+        if command -v sha256sum >/dev/null 2>&1; then
+            sha256sum --check --ignore-missing checksums.txt
+        fi
+        tar -xzf "${archive}"
+        find . -type f -name nerdfont-install -exec chmod +x {} \; -exec mv {} "${INSTALLER}" \;
+    )
 
-cd ..
+    if [ ! -x "${INSTALLER}" ]; then
+        echo "Downloaded archive did not contain nerdfont-install" >&2
+        exit 1
+    fi
+}
 
-rm -rf nerd-fonts
+if [ ! -f "${CONFIG_PATH}" ]; then
+    echo "Nerd Font installer config not found: ${CONFIG_PATH}" >&2
+    exit 1
+fi
+
+if ! command -v nerdfont-install >/dev/null 2>&1 && [ ! -x "${INSTALLER}" ]; then
+    install_nerdfont_installer
+fi
+
+if command -v nerdfont-install >/dev/null 2>&1; then
+    exec nerdfont-install --config "${CONFIG_PATH}"
+fi
+
+exec "${INSTALLER}" --config "${CONFIG_PATH}"

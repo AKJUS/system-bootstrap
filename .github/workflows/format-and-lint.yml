@@ -1,0 +1,82 @@
+name: Format and lint
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: format-and-lint-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  format-and-lint:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: stable
+
+      - name: Install system tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            jq \
+            libxml2-utils \
+            lua5.4 \
+            python3-pip \
+            ruby \
+            shellcheck \
+            zsh
+
+          sudo update-alternatives --install /usr/bin/lua lua /usr/bin/lua5.4 100
+          sudo update-alternatives --install /usr/bin/luac luac /usr/bin/luac5.4 100
+
+      - name: Install formatter and linter tools
+        run: |
+          echo "${HOME}/.cargo/bin" >> "${GITHUB_PATH}"
+          echo "${HOME}/go/bin" >> "${GITHUB_PATH}"
+          echo "${HOME}/.local/bin" >> "${GITHUB_PATH}"
+
+          npm install --global prettier markdownlint-cli2
+          python3 -m pip install --user yamllint
+          go install mvdan.cc/sh/v3/cmd/shfmt@latest
+
+          rustup toolchain install stable --profile minimal
+          for crate in just taplo-cli stylua selene; do
+            cargo install --locked "${crate}"
+          done
+
+      - name: Format repository
+        run: just format
+
+      - name: Commit formatting changes
+        run: |
+          if git diff --quiet; then
+            echo "No formatting changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "style: autoformat"
+          git push
+
+      - name: Lint repository
+        run: just lint

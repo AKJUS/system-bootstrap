@@ -364,3 +364,10 @@ unset __mamba_setup
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
 [ -f ~/.cache/mill/download/mill-completion.sh ] && source ~/.cache/mill/download/mill-completion.sh # MILL_SOURCE_COMPLETION_LINE
+
+# Android SDK
+export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
+export ANDROID_USER_HOME="$HOME/.config/.android"
+export ANDROID_AVD_HOME="$ANDROID_USER_HOME/avd"
+export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"

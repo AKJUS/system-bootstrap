@@ -2,6 +2,7 @@
       link:
           relink: true
           create: true
+          force: true
 
 - clean: ["~"]
 
@@ -13,18 +14,8 @@
       - ~/Downloads
       - ~/.vim/undo-history
       - ~/.local/share/gnome-background-properties/
-# only remove and recreate all links
 - shell:
-      - conda config --set changeps1 False
-      - rm -rf ~/.config/zathura/
-      - rm -rf ~/.config/zellij
-      - rm -rf ~/.config/kitty
-      - rm -rf ~/.config/nvim
-      - rm -rf ~/.config/alacritty
-      - rm -rf ~/.config/lazygit
-      - rm -rf ~/.config/lsd/
-      - rm -rf ~/config/yazi
-      - rm -rf ~/.config/btop
+      - command -v conda >/dev/null 2>&1 && conda config --set changeps1 False || true
 
 - link:
       ~/.tmux.conf: .tmux.conf
@@ -50,4 +41,4 @@
       ~/.config/yazi/yazi.toml: .config/yazi/yazi.toml
       ~/.config/yazi/theme.toml: .config/yazi/theme.toml
       ~/.config/yazi/keymap.toml: .config/yazi/keymap.toml
-      ~/.config/ghostty: .config/ghostty
+      ~/.config/nerd-config-installer/config.yaml: .config/nerd-config-installer/config.yaml
