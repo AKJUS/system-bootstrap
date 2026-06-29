@@ -67,32 +67,11 @@ tar -zvxf $APPS_DIR/zellij/zellij.tar.gz -C ${APPS_DIR}/zellij/bin/ 1>/dev/null
 chmod +x $APPS_DIR/zellij/bin/zellij
 
 # ---
-echo "Installing helm"
-rm -rf $APPS_DIR/helm/
-mkdir -p $APPS_DIR/helm/bin
-curl -fsSL -o ${APPS_DIR}/helm/get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-chmod 700 ${APPS_DIR}/helm/get_helm.sh
-chmod +x ${APPS_DIR}/helm/get_helm.sh
-export USE_SUDO=false
-export HELM_INSTALL_DIR=${APPS_DIR}/helm/bin
-${APPS_DIR}/helm/./get_helm.sh
-rm ${APPS_DIR}/helm/get_helm.sh
-
-# ---
 echo "Installing kubectl"
 rm -rf $APPS_DIR/kubectl/
 mkdir -p $APPS_DIR/kubectl/bin
 curl -L -o ${APPS_DIR}/kubectl/bin/kubectl "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x ${APPS_DIR}/kubectl/bin/kubectl
-
-# ---
-echo "Installing kustomize"
-rm -rf $APPS_DIR/kustomize/
-mkdir -p $APPS_DIR/kustomize/bin
-curl -L -o $APPS_DIR/kustomize/install_kustomize.sh "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"
-chmod +x $APPS_DIR/kustomize/install_kustomize.sh
-$APPS_DIR/kustomize/./install_kustomize.sh $APPS_DIR/kustomize/bin
-rm -rf $APPS_DIR/kustomize/install_kustomize.sh
 
 # ---
 echo "Installing neovide"
