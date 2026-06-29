@@ -12,6 +12,7 @@ dedicated script with `sudo`.
 greeter compositor. It runs under the **`sddm` system user**, whose home is `/var/lib/sddm/`.
 
 The SDDM Sway session is completely isolated from the regular user session:
+
 - it never reads `~/.config/sway/config`
 - it never runs kanshi or any user services
 - output configuration (rotation, resolution) must be declared in the `sddm` user's own Sway config
@@ -21,6 +22,7 @@ The SDDM Sway session is completely isolated from the regular user session:
 ## Active config on this machine
 
 ### `/etc/sddm.conf`
+
 ```ini
 [Theme]
 Current=silent
@@ -36,6 +38,7 @@ CompositorCommand=sway
 ```
 
 ### `/etc/sddm.conf.d/10-wayland.conf`
+
 ```ini
 [General]
 DisplayServer=wayland
@@ -114,12 +117,12 @@ The script is idempotent — safe to re-run.
 
 ## Troubleshooting
 
-| Symptom | Cause | Fix |
-|---------|-------|-----|
-| Login screen shows on wrong/rotated display | No sddm sway config | Run `03-sddm.sh` |
-| SDDM fails to start Wayland session | `CompositorCommand` missing `sway` in PATH | Check `/etc/sddm.conf.d/` ordering |
-| Theme not loading | `/usr/share/sddm/themes/silent` missing | `sudo zypper in sddm-theme-silent` (or equivalent) |
-| Changes not applied after edit | SDDM already running | `sudo systemctl restart sddm` |
+| Symptom                                     | Cause                                      | Fix                                                |
+| ------------------------------------------- | ------------------------------------------ | -------------------------------------------------- |
+| Login screen shows on wrong/rotated display | No sddm sway config                        | Run `03-sddm.sh`                                   |
+| SDDM fails to start Wayland session         | `CompositorCommand` missing `sway` in PATH | Check `/etc/sddm.conf.d/` ordering                 |
+| Theme not loading                           | `/usr/share/sddm/themes/silent` missing    | `sudo zypper in sddm-theme-silent` (or equivalent) |
+| Changes not applied after edit              | SDDM already running                       | `sudo systemctl restart sddm`                      |
 
 ---
 

@@ -27,16 +27,16 @@ inactive = { fg = "#cdd6f4", bg = "#45475a" }
 
 [mode]
 normal_main = { fg = "#1e1e2e", bg = "#fab387", bold = true }
-normal_alt  = { fg = "#fab387", bg = "#313244"}
+normal_alt  = { fg = "#fab387", bg = "#313244" }
 
 select_main = { fg = "#1e1e2e", bg = "#a6e3a1", bold = true }
-select_alt  = { fg = "#a6e3a1", bg = "#313244"}
+select_alt  = { fg = "#a6e3a1", bg = "#313244" }
 
-unset_main  = { fg = "#1e1e2e", bg = "#f2cdcd", bold = true }
-unset_alt   = { fg = "#f2cdcd", bg = "#313244"}
+unset_main = { fg = "#1e1e2e", bg = "#f2cdcd", bold = true }
+unset_alt  = { fg = "#f2cdcd", bg = "#313244" }
 
 [indicator]
-parent = { fg = "#1e1e2e", bg = "#cdd6f4" }
+parent  = { fg = "#1e1e2e", bg = "#cdd6f4" }
 current = { fg = "#1e1e2e", bg = "#fab387" }
 preview = { fg = "#1e1e2e", bg = "#cdd6f4" }
 
@@ -66,12 +66,12 @@ active   = { fg = "#f5c2e7" }
 inactive = {}
 
 [confirm]
-border     = { fg = "#fab387" }
-title      = { fg = "#fab387" }
-body       = {}
-list       = {}
-btn_yes    = { reversed = true }
-btn_no     = {}
+border  = { fg = "#fab387" }
+title   = { fg = "#fab387" }
+body    = {}
+list    = {}
+btn_yes = { reversed = true }
+btn_no  = {}
 
 [cmp]
 border = { fg = "#fab387" }
@@ -103,37 +103,37 @@ title_error = { fg = "#f38ba8" }
 
 [filetype]
 rules = [
-	# Media
-	{ mime = "image/*", fg = "#94e2d5" },
-	{ mime = "{audio,video}/*", fg = "#f9e2af" },
+  # Media
+  { mime = "image/*", fg = "#94e2d5" },
+  { mime = "{audio,video}/*", fg = "#f9e2af" },
 
-	# Archives
-	{ mime = "application/*zip", fg = "#f5c2e7" },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#f5c2e7" },
+  # Archives
+  { mime = "application/*zip", fg = "#f5c2e7" },
+  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#f5c2e7" },
 
-	# Documents
-	{ mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
+  # Documents
+  { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
 
-	# Virtual file system
-	{ mime = "vfs/{absent,stale}", fg = "#45475a" },
+  # Virtual file system
+  { mime = "vfs/{absent,stale}", fg = "#45475a" },
 
-	# Special file
-	{ url = "*", is = "orphan", bg = "#f38ba8" },
-	{ url = "*", is = "exec"  , fg = "#a6e3a1" },
+  # Special file
+  { url = "*", is = "orphan", bg = "#f38ba8" },
+  { url = "*", is = "exec", fg = "#a6e3a1" },
 
-	# Dummy file
-	{ url = "*", is = "dummy", bg = "#f38ba8" },
-	{ url = "*/", is = "dummy", bg = "#f38ba8" },
+  # Dummy file
+  { url = "*", is = "dummy", bg = "#f38ba8" },
+  { url = "*/", is = "dummy", bg = "#f38ba8" },
 
-	# Fallback
-	{ url = "*/", fg = "#fab387" },
+  # Fallback
+  { url = "*/", fg = "#fab387" },
 ]
 
 [spot]
-border = { fg = "#fab387" }
-title  = { fg = "#fab387" }
+border   = { fg = "#fab387" }
+title    = { fg = "#fab387" }
 tbl_cell = { fg = "#fab387", reversed = true }
-tbl_col = { bold = true }
+tbl_col  = { bold = true }
 
 [icon]
 files = [

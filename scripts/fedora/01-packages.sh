@@ -44,12 +44,12 @@ sudo dnf install -y \
     libva libva-utils \
     mesa-va-drivers
 
-if lspci | grep -i amd | grep -i vga > /dev/null; then
+if lspci | grep -i amd | grep -i vga >/dev/null; then
     echo "AMD GPU found."
     sudo dnf install -y radeontop
 fi
 
-if lspci | grep -i intel | grep -i vga > /dev/null; then
+if lspci | grep -i intel | grep -i vga >/dev/null; then
     echo "Intel GPU found."
     sudo dnf install -y intel-media-driver
 fi

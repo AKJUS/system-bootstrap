@@ -5,17 +5,10 @@
   // "width": 1280, // Waybar width
   // "gtk-layer-shell": "false",
   // Choose the order of the modules
-  "modules-left": [
-    "custom/icon",
-    "sway/workspaces",
-    "custom/scratchpad",
-    "sway/mode",
-    "sway/window",
-    "mpris",
-  ],
+  "modules-left": ["custom/icon", "sway/workspaces", "custom/scratchpad", "sway/mode", "sway/window", "mpris"],
   "modules-center": [
     // "custom/spotify",
-    "clock",
+    "clock"
   ],
   "modules-right": [
     "sway/language",
@@ -34,7 +27,7 @@
     "wireplumber",
     "wireplumber#source",
     "custom/notifications",
-    "custom/power",
+    "custom/power"
   ],
   "wireplumber#source": {
     "node-type": "Audio/Source",
@@ -45,7 +38,7 @@
     "scroll-step": 5,
     "tooltip": true,
     "tooltip-format": "{source_desc} {volume}%",
-    "reverse-scrolling": true,
+    "reverse-scrolling": true
   },
   "wireplumber": {
     "format": "<span>{icon}</span> {volume}%",
@@ -56,26 +49,26 @@
     "scroll-step": 5,
     "tooltip": true,
     "tooltip-format": "{node_name} {volume}%",
-    "reverse-scrolling": true,
+    "reverse-scrolling": true
   },
   "custom/icon": {
     "tooltip": true,
     "tooltip-format": "<span color='#c4bd99'><tt><small>OpenSUSE Tumbleweed</small></tt></span>",
-    "format": " ",
+    "format": " "
   },
   "sway/mode": {
-    "format": " {}",
+    "format": " {}"
   },
   "sway/window": {
     "format": "{title}",
     "expand": true,
     "max-length": 55,
     "tooltip": true,
-    "icon": true,
+    "icon": true
   },
   "sway/language": {
     "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
-    "format": " 󰌓 {short} {variant}",
+    "format": " 󰌓 {short} {variant}"
   },
   //  Modules configuration
   "sway/workspaces": {
@@ -92,15 +85,15 @@
       "6": " ",
       "7": " ",
       "8": "",
-      "9": "",
-    },
+      "9": ""
+    }
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
       "activated": " ",
-      "deactivated": " ",
-    },
+      "deactivated": " "
+    }
   },
   "tray": {
     "icon-size": 16,
@@ -109,8 +102,8 @@
       "nm-applet": "/home/worxbend/.system-bootstrap/assets/icons/nm.png",
       "nm": "/home/worxbend/.system-bootstrap/assets/icons/nm.png",
       "network-manager": "/home/worxbend/.system-bootstrap/assets/icons/nm.png",
-      "blueman": "/home/worxbend/.system-bootstrap/assets/icons/bluetooth-active.png",
-    },
+      "blueman": "/home/worxbend/.system-bootstrap/assets/icons/bluetooth-active.png"
+    }
   },
   "clock": {
     // "timezone": "America/New_York",
@@ -126,15 +119,15 @@
         "months": "<span color='#c4bd99'><b>{}</b></span>",
         "weeks": "<span color='#935e7d'><b>{}</b></span>",
         "weekdays": "<span color='#e5ed78'><b>{}</b></span>",
-        "today": "<span color='#e5ed78'><b><u>{}</u></b></span>",
-      },
+        "today": "<span color='#e5ed78'><b><u>{}</u></b></span>"
+      }
     },
     "actions": {
       "on-click-right": "mode",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down",
+      "on-scroll-down": "shift_down"
     },
-    "interval": 10,
+    "interval": 10
   },
   "privacy": {
     "icon-spacing": 4,
@@ -144,30 +137,30 @@
       {
         "type": "screenshare",
         "tooltip": true,
-        "tooltip-icon-size": 16,
+        "tooltip-icon-size": 16
       },
       {
         "type": "audio-out",
         "tooltip": true,
-        "tooltip-icon-size": 16,
+        "tooltip-icon-size": 16
       },
       {
         "type": "audio-in",
         "tooltip": true,
-        "tooltip-icon-size": 16,
-      },
+        "tooltip-icon-size": 16
+      }
     ],
     "ignore-monitor": true,
     "ignore": [
       {
         "type": "audio-in",
-        "name": "cava",
+        "name": "cava"
       },
       {
         "type": "screenshare",
-        "name": "obs",
-      },
-    ],
+        "name": "obs"
+      }
+    ]
   },
   "mpris": {
     "format": "<span>{player_icon}</span> {title}",
@@ -182,25 +175,25 @@
       "brave": "",
       "opera": "",
       "vivaldi": "",
-      "slack": "",
+      "slack": ""
     },
     "status-icons": {
-      "paused": "⏸",
+      "paused": "⏸"
     },
-    "max-length": 25,
+    "max-length": 25
   },
   "cpu": {
     "format": "󰻠 {usage}% ",
     "tooltip": false,
-    "on-click-right": "exec alacritty -e sh -c 'btm'",
+    "on-click-right": "exec alacritty -e sh -c 'btm'"
   },
   "memory": {
-    "format": " {}%",
+    "format": " {}%"
   },
   "temperature": {
     "critical-threshold": 80,
     "format": "{icon} {temperatureC}°C",
-    "format-icons": ["", "", ""],
+    "format-icons": ["", "", ""]
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -212,20 +205,20 @@
     "tooltip-format": "{ifname} via {ipaddr} ",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
-    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-disconnected": "Disconnected"
   },
   "battery": {
     "interval": 60,
     "states": {
       "warning": 30,
-      "critical": 15,
+      "critical": 15
     },
     "format": "{icon} {capacity}%",
     "format-icons": {
       "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+      "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
     },
-    "max-length": 25,
+    "max-length": 25
   },
   "power-profiles-daemon": {
     "format": "{icon}",
@@ -235,8 +228,8 @@
       "default": "",
       "performance": "",
       "balanced": "",
-      "power-saver": "",
-    },
+      "power-saver": ""
+    }
   },
   "bluetooth": {
     "format": "",
@@ -250,7 +243,7 @@
     "format-connected-battery": " {device_battery_percentage}%",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "bluetooth toggle; pkill -SIGRTMIN+8 waybar",
-    "on-click-right": "exec alacritty -e sh -c 'bluetoothctl'",
+    "on-click-right": "exec alacritty -e sh -c 'bluetoothctl'"
   },
   "custom/scratchpad": {
     "format-text": "{}",
@@ -259,7 +252,7 @@
     "exec": "/usr/share/openSUSEway/helpers/scratchpad-indicator.sh 2> /dev/null",
     "exec-if": "exit 0",
     "on-click": "swaymsg 'scratchpad show'",
-    "on-click-right": "swaymsg 'move scratchpad'",
+    "on-click-right": "swaymsg 'move scratchpad'"
   },
   "custom/notifications": {
     "tooltip": true,
@@ -268,14 +261,14 @@
       "notification": "<span foreground='#eba0ac' weight='bold'></span><span foreground='red'><small><sup>⬤</sup></small></span>",
       "none": "<span foreground='#eba0ac' weight='bold'> </span>",
       "dnd-notification": "<span foreground='#7f849c' weight='bold'></span><span foreground='red'><small><sup>⬤</sup></small></span>",
-      "dnd-none": "<span foreground='#7f849c' weight='bold'> </span>",
+      "dnd-none": "<span foreground='#7f849c' weight='bold'> </span>"
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true,
+    "escape": true
   },
   "custom/power": {
     "format": "⏻ ",
@@ -286,7 +279,7 @@
       "shutdown": "systemctl poweroff",
       "reboot": "systemctl reboot",
       "suspend": "systemctl suspend",
-      "hibernate": "systemctl hibernate",
-    },
-  },
+      "hibernate": "systemctl hibernate"
+    }
+  }
 }

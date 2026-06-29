@@ -11,7 +11,10 @@ detect_os() {
     case "$(uname -s)" in
         Linux) echo "linux" ;;
         Darwin) echo "darwin" ;;
-        *) echo "Unsupported OS: $(uname -s)" >&2; return 1 ;;
+        *)
+            echo "Unsupported OS: $(uname -s)" >&2
+            return 1
+            ;;
     esac
 }
 
@@ -19,7 +22,10 @@ detect_arch() {
     case "$(uname -m)" in
         x86_64 | amd64) echo "amd64" ;;
         arm64 | aarch64) echo "arm64" ;;
-        *) echo "Unsupported architecture: $(uname -m)" >&2; return 1 ;;
+        *)
+            echo "Unsupported architecture: $(uname -m)" >&2
+            return 1
+            ;;
     esac
 }
 

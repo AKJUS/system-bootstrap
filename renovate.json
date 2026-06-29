@@ -1,17 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    ":semanticCommits",
-    ":prHourlyLimitNone",
-    ":prConcurrentLimit10"
-  ],
-  "schedule": [
-    "before 6am on monday"
-  ],
-  "labels": [
-    "renovate"
-  ],
+  "extends": ["config:recommended", ":semanticCommits", ":prHourlyLimitNone", ":prConcurrentLimit10"],
+  "schedule": ["before 6am on monday"],
+  "labels": ["renovate"],
   "customManagers": [
     {
       "customType": "regex",

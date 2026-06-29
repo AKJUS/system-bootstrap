@@ -1,8 +1,8 @@
 [formatting]
-align_comments = true
-align_entries = true
-array_auto_expand = true
+align_comments      = true
+align_entries       = true
+array_auto_expand   = true
 array_auto_collapse = false
-column_width = 120
-indent_string = "  "
-reorder_keys = false
+column_width        = 120
+indent_string       = "  "
+reorder_keys        = false

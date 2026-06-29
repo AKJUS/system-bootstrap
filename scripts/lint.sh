@@ -44,14 +44,14 @@ is_shell_file() {
         *.sh) return 0 ;;
     esac
 
-    IFS= read -r first_line < "$file" || first_line=""
+    IFS= read -r first_line <"$file" || first_line=""
     [[ "$first_line" == "#!"*"sh"* ]]
 }
 
 shell_dialect() {
     local file="$1" first_line
 
-    IFS= read -r first_line < "$file" || first_line=""
+    IFS= read -r first_line <"$file" || first_line=""
     case "$first_line" in
         *zsh*) echo "zsh" ;;
         *bash*) echo "bash" ;;

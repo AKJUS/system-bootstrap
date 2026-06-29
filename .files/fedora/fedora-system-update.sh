@@ -12,9 +12,9 @@ echo "\n"
 echo "Updating system via 'dnf'..."
 sudo dnf check-update -y
 sudo dnf update -y
-sudo dnf check-update -y 
+sudo dnf check-update -y
 echo "Upgrading system via 'dnf'..."
-sudo dnf upgrade -y 
+sudo dnf upgrade -y
 sudo dnf distro-sync -y
 
 echo ""
@@ -46,4 +46,3 @@ mamba update --all
 echo ""
 echo "Updating astral.uv"
 uv self update
-

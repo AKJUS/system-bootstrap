@@ -1,4 +1,3 @@
-
 #!/usr/bin/env zsh
 
 # openSUSE Script Section: VS Code, Podman, Time Config

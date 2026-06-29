@@ -40,6 +40,3 @@ mamba update --all
 
 echo "Updating astral.uv"
 uv self update
-
-
-

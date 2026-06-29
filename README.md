@@ -36,15 +36,15 @@ configuration, desktop environments, wallpapers, and maintenance workflows.
 
 ## 🚀 Highlights
 
-| Area | What You Get |
-| --- | --- |
-| 🐧 Distros | Fedora, Arch Linux, and openSUSE bootstrap scripts |
-| 🧰 Dev tools | Zsh, tmux, Neovim, Go, Rust, Java, Node, Python, Kubernetes tools |
-| 🖥 Desktop | GNOME, Hyprland, Sway, Waybar, Rofi/Fuzzel, SDDM tweaks |
-| 🎨 Terminal | Alacritty, Kitty, WezTerm, Ghostty, Starship, Zellij |
-| 🔤 Fonts | Nerd Font installer config stored in the repo and linked via Dotbot |
-| 🧹 Quality | `just format`, `just lint`, and GitHub Actions auto-format + lint |
-| 🧲 Dotfiles | Force-linked repo dotfiles through Dotbot |
+| Area         | What You Get                                                        |
+| ------------ | ------------------------------------------------------------------- |
+| 🐧 Distros   | Fedora, Arch Linux, and openSUSE bootstrap scripts                  |
+| 🧰 Dev tools | Zsh, tmux, Neovim, Go, Rust, Java, Node, Python, Kubernetes tools   |
+| 🖥 Desktop    | GNOME, Hyprland, Sway, Waybar, Rofi/Fuzzel, SDDM tweaks             |
+| 🎨 Terminal  | Alacritty, Kitty, WezTerm, Ghostty, Starship, Zellij                |
+| 🔤 Fonts     | Nerd Font installer config stored in the repo and linked via Dotbot |
+| 🧹 Quality   | `just format`, `just lint`, and GitHub Actions auto-format + lint   |
+| 🧲 Dotfiles  | Force-linked repo dotfiles through Dotbot                           |
 
 ## 📦 Quick Start
 
@@ -85,17 +85,17 @@ just apply-dotfiles
 
 ## 🕹 Commands
 
-| Command | Purpose |
-| --- | --- |
-| `just` | Show all available recipes |
-| `just configure-system` | Configure Git, tmux plugin manager, and time settings |
-| `just install-cli-tools` | Install language/toolchain managers and CLI installers |
-| `just install-binaries` | Install portable binary tools into `~/.apps` |
-| `just install-fonts` | Install configured Nerd Fonts with `worxbend/nerd-font-installer` |
-| `just apply-dotfiles` | Force-link dotfiles from `.files` |
-| `just format` | Format supported repo files |
-| `just lint` | Syntax-check and lint supported repo files |
-| `just check` | Run the repo quality gate |
+| Command                  | Purpose                                                           |
+| ------------------------ | ----------------------------------------------------------------- |
+| `just`                   | Show all available recipes                                        |
+| `just configure-system`  | Configure Git, tmux plugin manager, and time settings             |
+| `just install-cli-tools` | Install language/toolchain managers and CLI installers            |
+| `just install-binaries`  | Install portable binary tools into `~/.apps`                      |
+| `just install-fonts`     | Install configured Nerd Fonts with `worxbend/nerd-font-installer` |
+| `just apply-dotfiles`    | Force-link dotfiles from `.files`                                 |
+| `just format`            | Format supported repo files                                       |
+| `just lint`              | Syntax-check and lint supported repo files                        |
+| `just check`             | Run the repo quality gate                                         |
 
 ## 🗂 Layout
 
@@ -178,11 +178,11 @@ GitHub Actions runs the same flow:
 
 ## 🧭 Distro Notes
 
-| Distro | Profile | Desktop Focus |
-| --- | --- | --- |
-| Fedora | `scripts/fedora/*`, `.files/fedora/*` | GNOME-oriented workstation |
-| Arch Linux | `scripts/arch/*`, `.files/arch+hypr/*` | Hyprland rice |
-| openSUSE | `scripts/opensuse/*`, `.files/opensuse/*` | Sway + SDDM Wayland |
+| Distro     | Profile                                   | Desktop Focus              |
+| ---------- | ----------------------------------------- | -------------------------- |
+| Fedora     | `scripts/fedora/*`, `.files/fedora/*`     | GNOME-oriented workstation |
+| Arch Linux | `scripts/arch/*`, `.files/arch+hypr/*`    | Hyprland rice              |
+| openSUSE   | `scripts/opensuse/*`, `.files/opensuse/*` | Sway + SDDM Wayland        |
 
 Some scripts install system packages, enable services, write system config, or require `sudo`.
 Read a script before running it on a machine you care about.

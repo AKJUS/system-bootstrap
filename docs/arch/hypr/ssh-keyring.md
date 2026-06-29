@@ -6,9 +6,9 @@ Arch Linux follows a "Do It Yourself" philosophy. Consequently, no secret manage
 
 ## 2. Architecture Specification
 
-*   **Secret Store**: `gnome-keyring-daemon` (handling the DBus Secret Service standard).
-*   **SSH Integration**: `gcr-ssh-agent` (Modern GCR 4 implementation).
-*   **Authentication**: PAM (Pluggable Authentication Modules) hooks to auto-unlock the keyring upon user login.
+- **Secret Store**: `gnome-keyring-daemon` (handling the DBus Secret Service standard).
+- **SSH Integration**: `gcr-ssh-agent` (Modern GCR 4 implementation).
+- **Authentication**: PAM (Pluggable Authentication Modules) hooks to auto-unlock the keyring upon user login.
 
 ## 3. Configuration Procedure
 
@@ -26,6 +26,7 @@ We must explicitly define which agent owns the SSH environment.
 
 1.  **Deactivate Legacy Service**:
     Arch's `gnome-keyring` package ships with unit files that may default to "on". Mask them to prevent conflicts.
+
     ```bash
     systemctl --user mask gnome-keyring-ssh.service gnome-keyring-ssh.socket
     ```
@@ -68,6 +69,7 @@ This is the most error-prone step in Arch. We must manually edit the PAM configu
 
 1.  **Authentication Stack (`auth`)**:
     Add this line at the end of the `auth` section (usually after `system-local-login`).
+
     ```
     auth       optional     pam_gnome_keyring.so
     ```
@@ -78,7 +80,7 @@ This is the most error-prone step in Arch. We must manually edit the PAM configu
     session    optional     pam_gnome_keyring.so auto_start
     ```
 
-*Note: Ensure `auto_start` is present. It triggers the daemon if it's not already running.*
+_Note: Ensure `auto_start` is present. It triggers the daemon if it's not already running._
 
 ## 4. Keyring Initialization
 

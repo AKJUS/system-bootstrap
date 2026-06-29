@@ -311,7 +311,8 @@ box#workspaces {
   border: 1px solid @rosewater;
 }
 
-#wireplumber, #battery {
+#wireplumber,
+#battery {
   padding-left: 4px;
   padding-right: 2px;
   font-family: "Symbols Nerd Font";
@@ -321,7 +322,6 @@ box#workspaces {
 
 #language {
   border-radius: 15px;
-
 }
 
 #language.ua {
@@ -401,11 +401,11 @@ box#workspaces {
   color: @maroon;
 }
 menu {
-    border: none;
-    border-radius: 5px;
-    background: @crust;
-    color: @maroon;
+  border: none;
+  border-radius: 5px;
+  background: @crust;
+  color: @maroon;
 }
 menuitem {
-    border-radius: 5px;
+  border-radius: 5px;
 }

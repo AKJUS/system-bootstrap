@@ -1,20 +1,20 @@
 - defaults:
-      link:
-          relink: true
-          create: true
-          force: true
+    link:
+      relink: true
+      create: true
+      force: true
 - clean: ["~"]
 
 - clean:
-      ~/.config:
-          recursive: true
+    ~/.config:
+      recursive: true
 - link:
-      ~/system-update.sh: ./fedora-system-update.sh
+    ~/system-update.sh: ./fedora-system-update.sh
 
 - shell:
-      - for i in {1..9}; do; gsettings set org.gnome.shell.keybindings switch-to-application-$i "[]"; done
-      - for i in {1..9}; do; gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-$i "['<Super>$i']"; done
-      - for i in {1..9}; do; gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-$i "['<Super><Shift>$i']"; done
-      - gsettings set org.gnome.mutter dynamic-workspaces false
-      - gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
-      - gsettings set org.gnome.shell.keybindings show-screenshot-ui "['<Super>Print', 'Print']" 
+    - for i in {1..9}; do; gsettings set org.gnome.shell.keybindings switch-to-application-$i "[]"; done
+    - for i in {1..9}; do; gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-$i "['<Super>$i']"; done
+    - for i in {1..9}; do; gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-$i "['<Super><Shift>$i']"; done
+    - gsettings set org.gnome.mutter dynamic-workspaces false
+    - gsettings set org.gnome.desktop.wm.preferences num-workspaces 9
+    - gsettings set org.gnome.shell.keybindings show-screenshot-ui "['<Super>Print', 'Print']"

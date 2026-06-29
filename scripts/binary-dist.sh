@@ -11,7 +11,6 @@ YAZI_VERSION=v26.5.6
 
 APPS_DIR=${HOME}/.apps
 
-
 mkdir -p $APPS_DIR
 
 # ---
@@ -43,7 +42,7 @@ mkdir -p $APPS_DIR/minikube/bin
 curl -L -o $APPS_DIR/minikube/bin/minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 chmod +x $APPS_DIR/minikube/bin/minikube
 
-# --- 
+# ---
 echo "Installing xplr"
 rm -rf $APPS_DIR/xplr/
 mkdir -p $APPS_DIR/xplr/bin
@@ -52,14 +51,14 @@ tar -zvxf ${APPS_DIR}/xplr/xplr-linux.tar.gz -C ${APPS_DIR}/xplr/bin/ 1>/dev/nul
 chmod +x ${APPS_DIR}/xplr/bin/xplr
 rm -rf ${APPS_DIR}/xplr/xplr-linux.tar.gz
 
-# --- 
+# ---
 echo "Installing kind"
 rm -rf $APPS_DIR/kind/
 mkdir -p $APPS_DIR/kind/bin
 curl -Lo $APPS_DIR/kind/bin/kind https://kind.sigs.k8s.io/dl/v${KIND_VERSION}/kind-linux-amd64
 chmod +x $APPS_DIR/kind/bin/kind
 
-# --- 
+# ---
 echo "Installing zellij"
 rm -rf $APPS_DIR/zellij/
 mkdir -p $APPS_DIR/zellij/bin
@@ -79,7 +78,6 @@ export HELM_INSTALL_DIR=${APPS_DIR}/helm/bin
 ${APPS_DIR}/helm/./get_helm.sh
 rm ${APPS_DIR}/helm/get_helm.sh
 
- 
 # ---
 echo "Installing kubectl"
 rm -rf $APPS_DIR/kubectl/
@@ -96,8 +94,7 @@ chmod +x $APPS_DIR/kustomize/install_kustomize.sh
 $APPS_DIR/kustomize/./install_kustomize.sh $APPS_DIR/kustomize/bin
 rm -rf $APPS_DIR/kustomize/install_kustomize.sh
 
-
-# --- 
+# ---
 echo "Installing neovide"
 rm -rf $APPS_DIR/neovide/
 mkdir -p $APPS_DIR/neovide/bin
@@ -105,24 +102,22 @@ curl -L -o ${APPS_DIR}/neovide/bin/neovide https://github.com/neovide/neovide/re
 
 chmod +x ${APPS_DIR}/neovide/bin/neovide
 
-
-# --- 
+# ---
 echo "Installing neovim"
 rm -rf $APPS_DIR/neovim/
 mkdir -p $APPS_DIR/neovim/bin
 curl -L -o ${APPS_DIR}/neovim/neovim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 tar -zvxf ${APPS_DIR}/neovim/neovim.tar.gz -C ${APPS_DIR}/neovim/ 1>/dev/null
-mv --force ${APPS_DIR}/neovim/nvim-linux-x86_64/* ${APPS_DIR}/neovim 
+mv --force ${APPS_DIR}/neovim/nvim-linux-x86_64/* ${APPS_DIR}/neovim
 chmod +x ${APPS_DIR}/neovim/bin/nvim
-ln -sf ${APPS_DIR}/neovim/bin/nvim ${APPS_DIR}/neovim/bin/neovim 
-ln -sf ${APPS_DIR}/neovim/bin/nvim ${APPS_DIR}/neovim/bin/vim 
+ln -sf ${APPS_DIR}/neovim/bin/nvim ${APPS_DIR}/neovim/bin/neovim
+ln -sf ${APPS_DIR}/neovim/bin/nvim ${APPS_DIR}/neovim/bin/vim
 
-sudo ln -sf ${APPS_DIR}/neovim/bin/nvim /usr/local/bin/neovim 
-sudo ln -sf ${APPS_DIR}/neovim/bin/nvim /usr/local/bin/vim 
-sudo ln -sf ${APPS_DIR}/neovim/bin/nvim /usr/local/bin/nvim 
-sudo ln -sf ${APPS_DIR}/neovim/bin/nvim /usr/bin/nvim 
+sudo ln -sf ${APPS_DIR}/neovim/bin/nvim /usr/local/bin/neovim
+sudo ln -sf ${APPS_DIR}/neovim/bin/nvim /usr/local/bin/vim
+sudo ln -sf ${APPS_DIR}/neovim/bin/nvim /usr/local/bin/nvim
+sudo ln -sf ${APPS_DIR}/neovim/bin/nvim /usr/bin/nvim
 sudo ln -sf ${APPS_DIR}/neovim/bin/nvim /usr/bin/neovim
-
 
 rm -rf ${APPS_DIR}/neovim/neovim.tar.gz
 rm -rf ${APPS_DIR}/neovim/nvim-linux-x86_64/
@@ -134,7 +129,7 @@ curl -L -o ${APPS_DIR}/lazygit/lazygit.tar.gz https://github.com/jesseduffield/l
 
 tar -zvxf ${APPS_DIR}/lazygit/lazygit.tar.gz -C ${APPS_DIR}/lazygit/bin/ 1>/dev/null
 chmod +x ${APPS_DIR}/lazygit/bin/lazygit
-ln -sf ${APPS_DIR}/lazygit/bin/lazygit ${APPS_DIR}/lazygit/bin/lzg 
+ln -sf ${APPS_DIR}/lazygit/bin/lazygit ${APPS_DIR}/lazygit/bin/lzg
 
 rm -rf ${APPS_DIR}/lazygit/lazygit.tar.gz
 
@@ -159,4 +154,3 @@ tar -zvxf ${APPS_DIR}/dotbot/dotbot.tar.gz -C ${APPS_DIR}/dotbot/bin/ 1>/dev/nul
 chmod +x ${APPS_DIR}/dotbot/bin/dotbot
 
 rm -rf ${APPS_DIR}/dotbot/dotbot.tar.gz
-

@@ -2,7 +2,7 @@
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-curl -s "https://get.sdkman.io" | bash 
+curl -s "https://get.sdkman.io" | bash
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
@@ -25,4 +25,3 @@ rm Miniforge3-$(uname)-$(uname -m).sh
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
-

@@ -23,7 +23,7 @@ sudo mkdir -p "$SDDM_SWAY_DIR"
 # --- 2. Write minimal greeter Sway config ---
 # Adjust output names / transforms to match your hardware.
 # Output names can be found with: swaymsg -t get_outputs | grep name
-sudo tee "$SDDM_SWAY_DIR/config" > /dev/null <<'EOF'
+sudo tee "$SDDM_SWAY_DIR/config" >/dev/null <<'EOF'
 # SDDM greeter sway config
 # Managed by: scripts/opensuse/03-sddm.sh
 # Do NOT edit manually — re-run the script instead.

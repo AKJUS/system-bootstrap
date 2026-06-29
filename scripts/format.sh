@@ -32,7 +32,7 @@ mapfile -t prettier_files < <(
     collect_files \( \
         -name "*.yaml" -o -name "*.yml" -o \
         -name "*.md" -o -name "*.css" \
-    \)
+        \)
 )
 mapfile -t json_files < <(collect_files \( -name "*.json" \))
 mapfile -t jsonc_files < <(collect_files \( -name "*.jsonc" \))
@@ -100,7 +100,7 @@ if have xmllint; then
     info "Formatting XML and SVG with xmllint"
     for file in "${xml_files[@]}"; do
         tmp="$(mktemp)"
-        if xmllint --format "$file" > "$tmp"; then
+        if xmllint --format "$file" >"$tmp"; then
             mv "$tmp" "$file"
         else
             rm -f "$tmp"

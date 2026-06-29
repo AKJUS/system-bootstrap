@@ -11,9 +11,9 @@ This document describes the setup of a modern SSH and secret management stack fo
 We implement a split-responsibility model:
 
 1.  **SSH Agent**: `gcr-ssh-agent` (part of GCR 4).
-    *   *Reasoning*: More secure implementation, provides a better passphrase inquiry UI, and represents the modern standard for GTK-based environments.
+    - _Reasoning_: More secure implementation, provides a better passphrase inquiry UI, and represents the modern standard for GTK-based environments.
 2.  **Secret Store**: `gnome-keyring-daemon`.
-    *   *Reasoning*: Currently the most reliable implementation of the DBus Secret Service API, necessary for storing encrypted credentials.
+    - _Reasoning_: Currently the most reliable implementation of the DBus Secret Service API, necessary for storing encrypted credentials.
 
 ## 3. Implementation Guide
 

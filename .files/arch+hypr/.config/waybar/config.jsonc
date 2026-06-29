@@ -11,11 +11,11 @@
     "hyprland/windowcount",
     "hyprland/window",
     "hyprland/submap",
-    "mpris",
+    "mpris"
   ],
   "modules-center": [
     // "custom/spotify",
-    "clock",
+    "clock"
   ],
   "modules-right": [
     "custom/privacycheck",
@@ -35,20 +35,16 @@
     //"pulseaudio",
     "battery",
     "power-profiles-daemon",
-    "custom/power",
+    "custom/power"
   ],
   "group/hardware": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 500,
       "children-class": "not-power",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
-    "modules": [
-      "cpu",
-      "memory",
-      "temperature"
-    ],
+    "modules": ["cpu", "memory", "temperature"]
   },
   "wireplumber#source": {
     "node-type": "Audio/Source",
@@ -59,29 +55,25 @@
     "scroll-step": 5,
     "tooltip": true,
     "tooltip-format": "{source_desc} {volume}%",
-    "reverse-scrolling": true,
+    "reverse-scrolling": true
   },
   "wireplumber": {
     "format": "<span>{icon}</span> {volume}%",
     "format-muted": "<span>󰖁 </span>",
     "on-click-right": "pavucontrol",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", ""],
     "scroll-step": 5,
     "tooltip": true,
     "tooltip-format": "{node_name} {volume}%",
-    "reverse-scrolling": true,
+    "reverse-scrolling": true
   },
   "custom/privacycheck": {
     "return-type": "json",
     "exec": "~/.config/waybar/scripts/privacy-check.sh",
     "format": "{}",
     "signal": 8,
-    "interval": 10,
+    "interval": 10
   },
   "custom/spotify": {
     "return-type": "json",
@@ -91,7 +83,7 @@
     "on-click": "playerctl -p spotify play-pause",
     "exec-if": "playerctl --list-all | grep -iq spotify",
     "on-scroll-up": "playerctl -p spotify next",
-    "on-scroll-down": "playerctl -p spotify next",
+    "on-scroll-down": "playerctl -p spotify next"
   },
   "custom/icon": {
     "tooltip": true,
@@ -101,7 +93,7 @@
   },
   "custom/separator-icon": {
     "format": " ",
-    "tooltip": false,
+    "tooltip": false
   },
   "hyprland/submap": {
     "format": " {}",
@@ -117,18 +109,18 @@
   "hyprland/window": {
     "format": "{title}",
     "rewrite": {
-      "(.*) — Mozilla Firefox": "$1",
+      "(.*) — Mozilla Firefox": "$1"
     },
     "separate-outputs": true,
     "expand": true,
     "max-length": 25,
     "tooltip": true,
-    "icon": true,
+    "icon": true
   },
   "hyprland/language": {
     "format": " 󰌓 {}",
     "format-en": "US  ",
-    "format-uk": "UA  ",
+    "format-uk": "UA  "
   },
   //  Modules configuration
   "hyprland/workspaces": {
@@ -148,31 +140,13 @@
       "default": "",
       "urgent": "",
       "occupied": "",
-      "empty": " ",
+      "empty": " "
     },
     "persistent-workspaces": {
       "*": 5, // This ensures 5 workspaces always show on WHATEVER the main monitor is
-      "eDP-1": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ],
-      "HDMI-A-1": [
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
-      "HDMI-A-2": [
-        6,
-        7,
-        8,
-        9,
-        10
-      ],
+      "eDP-1": [1, 2, 3, 4, 5],
+      "HDMI-A-1": [6, 7, 8, 9, 10],
+      "HDMI-A-2": [6, 7, 8, 9, 10]
     },
     "window-rewrite-default": "",
     "window-rewrite": {
@@ -180,19 +154,19 @@
       "class<firefox>": "", // Windows whose classes are "firefox"
       "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
       "foot": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
-      "code": "󰨞",
-    },
+      "code": "󰨞"
+    }
   },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
       "activated": " ",
-      "deactivated": " ",
-    },
+      "deactivated": " "
+    }
   },
   "tray": {
     "icon-size": 16,
-    "spacing": 8,
+    "spacing": 8
   },
   "clock": {
     // "timezone": "America/New_York",
@@ -208,15 +182,15 @@
         "months": "<span color='#c4bd99'><b>{}</b></span>",
         "weeks": "<span color='#935e7d'><b>{}</b></span>",
         "weekdays": "<span color='#e5ed78'><b>{}</b></span>",
-        "today": "<span color='#e5ed78'><b><u>{}</u></b></span>",
-      },
+        "today": "<span color='#e5ed78'><b><u>{}</u></b></span>"
+      }
     },
     "actions": {
       "on-click-right": "mode",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down",
+      "on-scroll-down": "shift_down"
     },
-    "interval": 10,
+    "interval": 10
   },
   "privacy": {
     "icon-spacing": 4,
@@ -226,30 +200,30 @@
       {
         "type": "screenshare",
         "tooltip": true,
-        "tooltip-icon-size": 24,
+        "tooltip-icon-size": 24
       },
       {
         "type": "audio-out",
         "tooltip": true,
-        "tooltip-icon-size": 24,
+        "tooltip-icon-size": 24
       },
       {
         "type": "audio-in",
         "tooltip": true,
-        "tooltip-icon-size": 24,
-      },
+        "tooltip-icon-size": 24
+      }
     ],
     "ignore-monitor": true,
     "ignore": [
       {
         "type": "audio-in",
-        "name": "cava",
+        "name": "cava"
       },
       {
         "type": "screenshare",
-        "name": "obs",
-      },
-    ],
+        "name": "obs"
+      }
+    ]
   },
   "mpris": {
     "format": "<span>{player_icon}</span> {title}",
@@ -264,29 +238,25 @@
       "brave": "",
       "opera": "",
       "vivaldi": "",
-      "slack": "",
+      "slack": ""
     },
     "status-icons": {
-      "paused": "",
+      "paused": ""
     },
-    "max-length": 25,
+    "max-length": 25
   },
   "cpu": {
     "format": "󰻠 {usage}% ",
     "tooltip": false,
-    "on-click-right": "exec alacritty -e sh -c 'btm'",
+    "on-click-right": "exec alacritty -e sh -c 'btm'"
   },
   "memory": {
-    "format": " {}%",
+    "format": " {}%"
   },
   "temperature": {
     "critical-threshold": 80,
     "format": "{icon} {temperatureC}°C",
-    "format-icons": [
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", ""]
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -298,7 +268,7 @@
     "tooltip-format": "{ifname} via {ipaddr} ",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)  {ipaddr}",
     "tooltip-format-ethernet": "{ifname}   {ipaddr}",
-    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-disconnected": "Disconnected"
   },
   "bluetooth": {
     "format": "",
@@ -312,7 +282,7 @@
     "format-connected-battery": " {device_alias} {device_battery_percentage}%",
     "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
     "on-click": "bluetooth toggle; pkill -SIGRTMIN+8 waybar",
-    "on-click-right": "exec alacritty -e sh -c 'bluetoothctl'",
+    "on-click-right": "exec alacritty -e sh -c 'bluetoothctl'"
   },
   // Not used now because of the new wireplumber module
   "pulseaudio": {
@@ -325,22 +295,18 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ],
+      "default": ["", "", ""]
     },
     "format-alt": "{volume} {icon}",
     "format-alt-click": "click-middle",
     "scroll-step": 10,
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "on-click-right": "pavucontrol",
-    "tooltip": true,
+    "tooltip": true
   },
   "custom/notifications": {
     "tooltip": true,
-    "format": "{icon}",
+    "format": "{icon}"
   },
   "battery": {
     "interval": 60,
@@ -349,13 +315,7 @@
       "critical": 15
     },
     "format": "{capacity}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", "", "", ""],
     "max-length": 25
   },
   "power-profiles-daemon": {

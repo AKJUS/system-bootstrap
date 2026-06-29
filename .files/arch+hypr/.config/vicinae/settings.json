@@ -9,88 +9,82 @@
 // Learn more about configuration at https://docs.vicinae.com/config
 
 {
-   "$schema": "https://vicinae.com/schemas/config.json",
-   "imports": [],
-   "close_on_focus_loss": true,
-   "consider_preedit": false,
-   "pop_to_root_on_close": false,
-   "escape_key_behavior": "navigate_back",
-   "favicon_service": "twenty",
-   "keybinding": "default",
-   "search_files_in_root": false,
-   "font": {
-      "normal": {
-         "family": "JetBrainsMono NF",
-         "size": 12
+  "$schema": "https://vicinae.com/schemas/config.json",
+  "imports": [],
+  "close_on_focus_loss": true,
+  "consider_preedit": false,
+  "pop_to_root_on_close": false,
+  "escape_key_behavior": "navigate_back",
+  "favicon_service": "twenty",
+  "keybinding": "default",
+  "search_files_in_root": false,
+  "font": {
+    "normal": {
+      "family": "JetBrainsMono NF",
+      "size": 12
+    }
+  },
+  "theme": {
+    "light": {
+      "name": "vicinae-light",
+      "icon_theme": "auto"
+    },
+    "dark": {
+      "name": "catppuccin-mocha",
+      "icon_theme": "auto"
+    }
+  },
+  "launcher_window": {
+    "opacity": 0.75,
+    "client_side_decorations": {
+      "enabled": true,
+      "rounding": 10,
+      "border_width": 1
+    },
+    "size": {
+      "width": 770,
+      "height": 480
+    },
+    "dim_around": true,
+    "blur": {
+      "enabled": true
+    },
+    "compact_mode": {
+      "enabled": false
+    },
+    "layer_shell": {
+      "layer": "top",
+      "keyboard_interactivity": "exclusive",
+      "enabled": true
+    }
+  },
+  "keybinds": {
+    "action.copy": "control+shift+C",
+    "action.copy-name": "control+shift+.",
+    "action.copy-path": "control+shift+,",
+    "action.dangerous-remove": "control+shift+X",
+    "action.duplicate": "control+D",
+    "action.edit": "control+E",
+    "action.edit-secondary": "control+shift+E",
+    "action.move-down": "control+shift+ARROWDOWN",
+    "action.move-up": "control+shift+ARROWUP",
+    "action.new": "control+N",
+    "action.open": "control+O",
+    "action.pin": "control+shift+P",
+    "action.refresh": "control+R",
+    "action.remove": "control+X",
+    "action.save": "control+S",
+    "open-search-filter": "control+P",
+    "open-settings": "control+,",
+    "toggle-action-panel": "control+B"
+  },
+  "favorites": ["clipboard:history"],
+  "fallbacks": ["files:search"],
+  "providers": {
+    "applications": {
+      "preferences": {
+        "paths": ["/usr/share/applications"]
       }
-   },
-   "theme": {
-      "light": {
-         "name": "vicinae-light",
-         "icon_theme": "auto"
-      },
-      "dark": {
-         "name": "catppuccin-mocha",
-         "icon_theme": "auto"
-      }
-   },
-   "launcher_window": {
-      "opacity": 0.75,
-      "client_side_decorations": {
-         "enabled": true,
-         "rounding": 10,
-         "border_width": 1
-      },
-      "size": {
-         "width": 770,
-         "height": 480
-      },
-      "dim_around": true,
-      "blur": {
-         "enabled": true
-      },
-      "compact_mode": {
-         "enabled": false
-      },
-      "layer_shell": {
-         "layer": "top",
-         "keyboard_interactivity": "exclusive",
-         "enabled": true
-      }
-   },
-   "keybinds": {
-      "action.copy": "control+shift+C",
-      "action.copy-name": "control+shift+.",
-      "action.copy-path": "control+shift+,",
-      "action.dangerous-remove": "control+shift+X",
-      "action.duplicate": "control+D",
-      "action.edit": "control+E",
-      "action.edit-secondary": "control+shift+E",
-      "action.move-down": "control+shift+ARROWDOWN",
-      "action.move-up": "control+shift+ARROWUP",
-      "action.new": "control+N",
-      "action.open": "control+O",
-      "action.pin": "control+shift+P",
-      "action.refresh": "control+R",
-      "action.remove": "control+X",
-      "action.save": "control+S",
-      "open-search-filter": "control+P",
-      "open-settings": "control+,",
-      "toggle-action-panel": "control+B"
-   },
-   "favorites": [
-      "clipboard:history"
-   ],
-   "fallbacks": [
-      "files:search"
-   ],
-   "providers": {
-      "applications": {
-         "preferences": {
-            "paths": [
-               "/usr/share/applications"
-            ]
-         }
-      }
-   }
+    }
+  }
 }

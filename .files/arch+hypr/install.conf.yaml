@@ -1,24 +1,24 @@
 - defaults:
-      link:
-          relink: true
-          create: true
-          force: true
+    link:
+      relink: true
+      create: true
+      force: true
 - clean: ["~"]
 
 - clean:
-      ~/.config:
-          recursive: true
+    ~/.config:
+      recursive: true
 - link:
-      ~/system-update.sh: ./arch-system-update.sh
-      ~/.local/backgrounds: ../../assets/arch+hypr+backgrounds
-      ~/.config/hypr: .config/hypr
-      ~/.config/waybar: .config/waybar
-      ~/.config/rofi: .config/rofi
-      ~/.config/vicinae: .config/vicinae
-      ~/.config/dunst: .config/dunst
-      ~/.config/swayosd: .config/swayosd
-      ~/.config/fuzzel: .config/fuzzel
-- shell: 
+    ~/system-update.sh: ./arch-system-update.sh
+    ~/.local/backgrounds: ../../assets/arch+hypr+backgrounds
+    ~/.config/hypr: .config/hypr
+    ~/.config/waybar: .config/waybar
+    ~/.config/rofi: .config/rofi
+    ~/.config/vicinae: .config/vicinae
+    ~/.config/dunst: .config/dunst
+    ~/.config/swayosd: .config/swayosd
+    ~/.config/fuzzel: .config/fuzzel
+- shell:
     - systemctl --user daemon-reload
     - systemctl --user enable waybar.service
     - systemctl --user start waybar.service

@@ -1,4 +1,3 @@
-
 #!/usr/bin/env zsh
 
 # openSUSE Setup Script using Zypper
@@ -31,19 +30,19 @@ echo "Installing VAAPI/VDPAU libraries and tools..."
 # Core VAAPI/VDPAU libs
 sudo zypper --non-interactive install libva1 libva-utils libvdpau1 mpv
 # Mesa drivers provide acceleration for AMD/Intel open-source drivers
-sudo zypper --non-interactive install Mesa-dri Mesa-gallium Mesa-libva  GStreamer integration
+sudo zypper --non-interactive install Mesa-dri Mesa-gallium Mesa-libva GStreamer integration
 sudo zypper --non-interactive install gstreamer-plugins-vaapi
 # VDPAU<->VAAPI bridge
 sudo zypper --non-interactive install libvdpau_va_gl1
 
 # --- GPU Specific Tools ---
 echo "Checking for AMD/Intel GPUs and installing specific tools..."
-if lspci | grep -i amd | grep -i vga > /dev/null; then
+if lspci | grep -i amd | grep -i vga >/dev/null; then
     echo "AMD GPU found. Installing radeontop..."
     sudo zypper --non-interactive install radeontop
 fi
 
-if lspci | grep -i intel | grep -i vga > /dev/null; then
+if lspci | grep -i intel | grep -i vga >/dev/null; then
     echo "Intel GPU found. Installing intel-media-driver and intel-gpu-tools..."
     # intel-media-driver is often preferred for newer Intel GPUs (Gen 8+)
     sudo zypper --non-interactive install libva-intel-driver intel-gpu-tools
@@ -68,9 +67,9 @@ echo "Installing system utilities (stacer, xsensors, net-tools, jq)..."
 # echo "Attempting to install stacer (may require external repo)..."
 # sudo zypper --non-interactive install stacer # Commented out - check repo first
 echo "Installing lm_sensors (provides sensors command, xsensors might not be packaged)..."
-sudo zypper --non-interactive install lm_sensors # Use 'sensors' command
+sudo zypper --non-interactive install lm_sensors           # Use 'sensors' command
 sudo zypper --non-interactive install net-tools-deprecated # For ifconfig, netstat etc.
-sudo zypper --non-interactive install jq # Already installed via devel_basis pattern, but ensures it's there
+sudo zypper --non-interactive install jq                   # Already installed via devel_basis pattern, but ensures it's there
 
 # --- Virtualization ---
 echo "Installing QEMU/KVM and Libvirt..."
@@ -92,7 +91,7 @@ sudo zypper --non-interactive install stress
 echo "Installing v4l2loopback and OBS Studio..."
 # v4l2loopback might require kernel headers/devel if not pre-built
 sudo zypper --non-interactive install kernel-devel # Ensure kernel headers are present for module builds
-sudo zypper --non-interactive install v4l2loopback-utils v4l2loopback-kmp-default 
+sudo zypper --non-interactive install v4l2loopback-utils v4l2loopback-kmp-default
 
 # --- Multimedia Group/Pattern Update ---
 # This approximates the 'dnf groupupdate multimedia'
@@ -131,7 +130,7 @@ sudo zypper --non-interactive install texlive-scheme-basic texlive-xetex
 # --- Other Utilities ---
 echo "Installing wl-clipboard and yq..."
 sudo zypper --non-interactive install wl-clipboard # Wayland clipboard utility
-sudo zypper --non-interactive install yq # YAML processor
+sudo zypper --non-interactive install yq           # YAML processor
 
 sudo zypper install hyperfine
 echo "-----------------------------------------------------"
@@ -140,7 +139,6 @@ echo "-----------------------------------------------------"
 sudo zypper addrepo https://downloads.1password.com/linux/rpm/stable/x86_64 1password
 sudo zypper install 1password
 
-sudo zypper in mpv wf-recorder wireplumber wireplumber-devel 1password git libsecret git-credential-libsecret curl wget v4l2loopback-kmp-default xdg-desktop-portal xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr fastfetch thunar fontawesome-fonts papirus-icon-theme kitty yazi 7zip zoxide mupdf zathura asciinema sway xdg-desktop-portal-wlr libvulkan1 qt6-wayland sddm-config-wayland sddm-qt6 sddm-greeter-qt6 sddm-conf qt6-quick-devel qt6-declarative-devel flatpak v4l2loopback-utils v4l2loopback-kmp-default zsh git tmux wl-clipboard sddm-qt6 libQt6Svg6 qt6-virtualkeyboard qt6-virtualkeyboard-imports qt6-multimedia qt6-multimedia-imports 
+sudo zypper in mpv wf-recorder wireplumber wireplumber-devel 1password git libsecret git-credential-libsecret curl wget v4l2loopback-kmp-default xdg-desktop-portal xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr fastfetch thunar fontawesome-fonts papirus-icon-theme kitty yazi 7zip zoxide mupdf zathura asciinema sway xdg-desktop-portal-wlr libvulkan1 qt6-wayland sddm-config-wayland sddm-qt6 sddm-greeter-qt6 sddm-conf qt6-quick-devel qt6-declarative-devel flatpak v4l2loopback-utils v4l2loopback-kmp-default zsh git tmux wl-clipboard sddm-qt6 libQt6Svg6 qt6-virtualkeyboard qt6-virtualkeyboard-imports qt6-multimedia qt6-multimedia-imports
 
 sudo zypper in firefox pipewire pipewire-pulseaudio pipewire-alsa pipewire-jack wireplumber alsa-utils alsa-firmware sof-firmware bluez bluez-tools blueman waybar NetworkManager-applet power-profiles-daemon thermald pipewire-tools gcr-ssh-askpass libinput libinput-tools libinput-devel libinput10 thunar thunar-font-manager thunar-media-tags-plugin thunar-vcs-plugin file-roller p7zip unzip unrar
-
