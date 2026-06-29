@@ -1,134 +1,208 @@
-# System Bootstrap
-
-A comprehensive, multi-distro dotfiles and system bootstrap configuration. Designed to set up a premium development environment on **Fedora**, **Arch Linux**, and **OpenSUSE**.
-
 <p align="center">
-  <img src="assets/fedora-black-4k.png" width="48%" alt="Fedora Wallpaper">
-  <img src="assets/opensuse-black-4k.png" width="48%" alt="OpenSUSE Wallpaper">
+  <img src="assets/main.png" width="128" alt="System Bootstrap logo">
 </p>
 
-## 📋 Table of Contents
+<h1 align="center">System Bootstrap</h1>
 
-- [Features](#-features)
-- [Structure](#-structure)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-  - [Using Just (Recommended)](#using-just-recommended)
-  - [Manual Execution](#manual-execution)
-- [Configuration Details](#-configuration-details)
-- [Notes](#-notes)
-- [License](#-license)
+<p align="center">
+  <strong>Multi-distro dotfiles, workstation bootstrap scripts, and desktop rice for a sharp Linux dev setup.</strong>
+</p>
 
-## 🚀 Features
+<p align="center">
+  <a href="https://github.com/limpid-kzonix/system-bootstrap/actions/workflows/format-and-lint.yml">
+    <img
+      alt="Format and lint"
+      src="https://github.com/limpid-kzonix/system-bootstrap/actions/workflows/format-and-lint.yml/badge.svg"
+    >
+  </a>
+  <img alt="Fedora" src="https://img.shields.io/badge/Fedora-ready-51A2DA?logo=fedora&logoColor=white">
+  <img alt="Arch Linux" src="https://img.shields.io/badge/Arch-ready-1793D1?logo=archlinux&logoColor=white">
+  <img alt="openSUSE" src="https://img.shields.io/badge/openSUSE-ready-73BA25?logo=opensuse&logoColor=white">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
+</p>
 
-*   **Multi-Distro Support**: Tailored scripts for Fedora, Arch, and OpenSUSE.
-*   **Dotfiles Management**: Powered by [Dotbot](https://github.com/anishathalye/dotbot) (installed via `binary-dist.sh`).
-*   **Dev Environment**: Deploys a full stack: Zsh (Oh-My-Zsh), Neovim, Tmux (TPM), Go, Rust, Java (SDKMan).
-*   **Desktop Rice**: Configuration for Hyprland, Gnome extensions, stunning wallpapers, and Alacritty/Kitty/WezTerm theming.
+<p align="center">
+  <img src="assets/fedora-black-4k.png" width="49%" alt="Fedora desktop wallpaper">
+  <img src="assets/opensuse-black-4k.png" width="49%" alt="openSUSE desktop wallpaper">
+</p>
 
-## 📂 Structure
+## ✨ What This Is
 
-```
-.system-bootstrap/
-├── .files/               # Dotfiles configuration (Zsh, Neovim, Tmux, etc.)
-│   ├── arch+hypr/        # Arch-specific configs
-│   ├── fedora/           # Fedora-specific configs
-│   ├── opensuse/         # OpenSUSE-specific configs
-│   └── install.conf.yaml # Main Dotbot configuration
-├── scripts/              # Installation & setup scripts
-│   ├── arch/             # Arch installation steps (00-03)
-│   ├── fedora/           # Fedora installation steps (00-02)
-│   ├── opensuse/         # OpenSUSE installation steps (00-02)
-│   ├── binary-dist.sh    # Installs binaries (Dotbot, Yazi, Neovim, etc.)
-│   ├── cli-tools.sh      # Installs CLI tools (Rust, Python, Node, etc.)
-│   └── ...               # Common setup scripts
-├── assets/               # Wallpapers and resources
-├── Justfile              # Command runner for orchestration
-└── README.md             # This file
-```
+`system-bootstrap` is a personal workstation automation repo for setting up a polished development environment across
+Fedora, Arch Linux, and openSUSE.
 
-## 🛠 Prerequisites
+It brings together package installation, binary tool installs, Dotbot-managed dotfiles, Nerd Fonts, terminal/editor
+configuration, desktop environments, wallpapers, and maintenance workflows.
 
-*   **Git**: To clone the repo.
-*   **Just**: Recommended runner (optional, can run scripts manually).
-    *   *Fedora*: `sudo dnf install just`
-    *   *Arch*: `sudo pacman -S just`
-    *   *Suse*: `sudo zypper install just`
+## 🚀 Highlights
 
-## 📦 Installation
+| Area | What You Get |
+| --- | --- |
+| 🐧 Distros | Fedora, Arch Linux, and openSUSE bootstrap scripts |
+| 🧰 Dev tools | Zsh, tmux, Neovim, Go, Rust, Java, Node, Python, Kubernetes tools |
+| 🖥 Desktop | GNOME, Hyprland, Sway, Waybar, Rofi/Fuzzel, SDDM tweaks |
+| 🎨 Terminal | Alacritty, Kitty, WezTerm, Ghostty, Starship, Zellij |
+| 🔤 Fonts | Nerd Font installer config stored in the repo and linked via Dotbot |
+| 🧹 Quality | `just format`, `just lint`, and GitHub Actions auto-format + lint |
+| 🧲 Dotfiles | Force-linked repo dotfiles through Dotbot |
 
-Clone the repository:
+## 📦 Quick Start
+
 ```bash
 git clone --recursive https://github.com/limpid-kzonix/system-bootstrap.git ~/.system-bootstrap
 cd ~/.system-bootstrap
-```
-
-### Using Just (Recommended)
-
-View all available commands:
-```bash
 just
 ```
 
-**Typical Workflow:**
+Then run the path for your machine:
 
-1.  **System Setup**:
-    ```bash
-    just configure-system   # Setup git, docker, time
-    ```
-
-2.  **Distro Packages** (Choose your fighter):
-    ```bash
-    just fedora-step-0      # Update & install core repo
-    just fedora-step-1      # Install core packages
-    # ...
-    ```
-    *Or for Arch:*
-    ```bash
-    just arch-install
-    ```
-
-3.  **Cross-Platform Tools**:
-    ```bash
-    just install-cli-tools        # Zsh, fzf, etc.
-    just install-binaries         # Dotbot, Yazi, Neovim, LazyGit, Zellij, etc.
-    just install-zsh-plugins      # Syntax highlighting, autosuggestions
-    just install-gnome-extensions # If using Gnome
-    just install-fonts            # Nerd Fonts
-    just install-flatpaks         # Desktop apps
-    just install-dev-tools        # Go, Rust, Java (SDKMan)
-    ```
-
-4.  **Link Dotfiles**:
-    ```bash
-    just apply-dotfiles
-    ```
-
-### Manual Execution
-
-If you prefer to run scripts one-by-one (e.g., to handle reboots), navigate to `scripts/` and execute them.
-
-**Fedora Example:**
 ```bash
-./scripts/fedora/00-system-update.sh
-# Reboot if kernel updated
-./scripts/fedora/01-packages.sh
-./scripts/configurations.sh
-./scripts/cli-tools.sh
-./scripts/binary-dist.sh
+# Fedora
+just fedora-step-0
+just fedora-step-1
+just fedora-step-2
+
+# Arch + Hyprland
+just arch-install
+
+# openSUSE + Sway
+just opensuse-install
+just opensuse-sddm
 ```
 
-## 🔧 Configuration Details
+Finish with the shared setup:
 
-*   **Zsh**: Custom detailed configuration with Oh-My-Zsh and plugins.
-*   **Neovim**: Lua-based configuration in `.files/nvim`.
-*   **Terminal**: Unified themes for Alacritty, Kitty, and WezTerm.
-*   **Hyprland**: (Arch only) Tiling window manager setup in `.files/arch+hypr`.
+```bash
+just configure-system
+just install-cli-tools
+just install-binaries
+just install-zsh-plugins
+just install-fonts
+just install-flatpaks
+just install-dev-tools
+just apply-dotfiles
+```
 
-## ⚠️ Notes
+## 🕹 Commands
 
-*   **Docker**: The `configure-system` script adds your user to the `docker` group. **You must log out and log back in** for this to take effect.
-*   **Reboots**: Some package installation scripts (kernel updates, drivers) may require a reboot.
+| Command | Purpose |
+| --- | --- |
+| `just` | Show all available recipes |
+| `just configure-system` | Configure Git, tmux plugin manager, and time settings |
+| `just install-cli-tools` | Install language/toolchain managers and CLI installers |
+| `just install-binaries` | Install portable binary tools into `~/.apps` |
+| `just install-fonts` | Install configured Nerd Fonts with `worxbend/nerd-font-installer` |
+| `just apply-dotfiles` | Force-link dotfiles from `.files` |
+| `just format` | Format supported repo files |
+| `just lint` | Syntax-check and lint supported repo files |
+| `just check` | Run the repo quality gate |
+
+## 🗂 Layout
+
+```text
+.system-bootstrap/
+├── .files/                    # Dotfiles managed by Dotbot
+│   ├── .config/               # Shared XDG configs
+│   ├── arch+hypr/             # Arch + Hyprland profile
+│   ├── fedora/                # Fedora profile
+│   ├── nvim/                  # Neovim Lua config
+│   ├── opensuse/              # openSUSE + Sway profile
+│   └── install.conf.yaml      # Shared Dotbot manifest
+├── .github/workflows/         # Auto-format and lint workflow
+├── assets/                    # Wallpapers, icons, and visual resources
+├── docs/                      # Notes for fonts, keyrings, SDDM, and desktop quirks
+├── scripts/                   # Bootstrap, package, formatter, and lint scripts
+├── Justfile                   # Command runner
+└── README.md
+```
+
+## 🧬 Dotfiles
+
+Dotfiles live under `.files` and are linked with Dotbot.
+
+The repo is intentionally opinionated: link defaults use `force: true`, so repo-managed files replace local targets.
+Run this only when you want this repository to own those config paths.
+
+```bash
+just apply-dotfiles
+```
+
+Managed highlights:
+
+- 🐚 Zsh + Oh My Zsh plugins
+- 🧠 Neovim Lua setup
+- 🧱 tmux, Zellij, Starship
+- 🖥 Alacritty, Kitty, WezTerm, Ghostty
+- 📁 Yazi, Lazygit, LSD, Btop
+- 🪟 Hyprland, Sway, Waybar, Rofi, Fuzzel
+
+## 🔤 Nerd Fonts
+
+Nerd Fonts are installed through
+[worxbend/nerd-font-installer](https://github.com/worxbend/nerd-font-installer).
+
+The config is stored in the repo at:
+
+```text
+.files/.config/nerd-config-installer/config.yaml
+```
+
+Dotbot links it to:
+
+```text
+~/.config/nerd-config-installer/config.yaml
+```
+
+Install the configured font set:
+
+```bash
+just install-fonts
+```
+
+## 🧪 Formatting And Linting
+
+This repo has a quality workflow for shell, YAML, JSON/JSONC, TOML, Lua, Markdown, CSS, XML, SVG, and Justfile syntax.
+
+```bash
+just format
+just lint
+just check
+```
+
+GitHub Actions runs the same flow:
+
+1. Install formatter and linter binaries/packages.
+2. Run `just format`.
+3. Commit formatting changes with `style: autoformat`.
+4. Run `just lint`.
+
+## 🧭 Distro Notes
+
+| Distro | Profile | Desktop Focus |
+| --- | --- | --- |
+| Fedora | `scripts/fedora/*`, `.files/fedora/*` | GNOME-oriented workstation |
+| Arch Linux | `scripts/arch/*`, `.files/arch+hypr/*` | Hyprland rice |
+| openSUSE | `scripts/opensuse/*`, `.files/opensuse/*` | Sway + SDDM Wayland |
+
+Some scripts install system packages, enable services, write system config, or require `sudo`.
+Read a script before running it on a machine you care about.
+
+## ⚠️ Operational Notes
+
+- Docker or virtualization group changes require logout/login.
+- Kernel, driver, and desktop stack changes may require a reboot.
+- Dotbot force-linking replaces matching local config paths.
+- Some install scripts are intentionally personal and may include preferred apps or services.
+
+## 📚 Docs
+
+- [Font fallback and emoji rendering](docs/fonts.md)
+- [Arch Hyprland keyring notes](docs/arch/hypr/ssh-keyring.md)
+- [Fedora GNOME keyring notes](docs/fedora/gnome/ssh-keyring.md)
+- [Fedora Sway keyring notes](docs/fedora/sway/ssh-keyring.md)
+- [openSUSE Sway keyring notes](docs/suse/sway/ssh-keyring.md)
+- [openSUSE SDDM Wayland notes](docs/suse/sway/sddm-wayland.md)
 
 ## 📄 License
-MIT
+
+MIT. See [LICENSE](LICENSE).
