@@ -51,12 +51,14 @@ is_shell_file() {
 shell_dialect() {
     local file="$1" first_line
 
-
     case "$(basename "$file")" in
-        .zshrc | *.zsh) echo "zsh"; return ;;
+        .zshrc | *.zsh)
+            echo "zsh"
+            return
+            ;;
     esac
 
-    IFS= read -r first_line < "$file" || first_line=""
+    IFS= read -r first_line <"$file" || first_line=""
     case "$first_line" in
         *bash*) echo "bash" ;;
         *zsh*) echo "zsh" ;;
