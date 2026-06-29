@@ -59,9 +59,9 @@ shell_dialect() {
     IFS= read -r first_line < "$file" || first_line=""
     case "$first_line" in
         *bash*) echo "bash" ;;
+        *zsh*) echo "zsh" ;;
         *) echo "bash" ;;
     esac
-        *zsh*) echo "zsh" ;;
 }
 
 mapfile -t all_files < <(collect_files)
