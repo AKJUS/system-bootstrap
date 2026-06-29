@@ -102,7 +102,7 @@ jobs:
 
           install_release_binary \
             "Kampfkarren/selene" \
-            'linux.*x86_64.*\.(zip|tar\.gz|tgz)$|x86_64.*linux.*\.(zip|tar\.gz|tgz)$' \
+            '^selene-[0-9].*-linux\.zip$' \
             "selene"
 
           stylua --version
