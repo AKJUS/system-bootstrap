@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # ── System update ─────────────────────────────────────────────────────────────────
 # check-update exits 100 when updates are available; || true prevents set -e abort
 sudo dnf check-update || true

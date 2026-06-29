@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 flatpak install flathub com.obsproject.Studio -y
 
 # OBS Studio Plugins

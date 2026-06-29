@@ -36,7 +36,7 @@ mapfile -t prettier_files < <(
 )
 mapfile -t json_files < <(collect_files \( -name "*.json" \))
 mapfile -t jsonc_files < <(collect_files \( -name "*.jsonc" \))
-mapfile -t xml_files < <(collect_files \( -name "*.xml" -o -name "*.svg" \))
+mapfile -t xml_files < <(collect_files \( -name "*.xml" \))
 
 json_files_with_comments=()
 strict_json_files=()
@@ -97,7 +97,7 @@ else
 fi
 
 if have xmllint; then
-    info "Formatting XML and SVG with xmllint"
+    info "Formatting XML with xmllint"
     for file in "${xml_files[@]}"; do
         tmp="$(mktemp)"
         if xmllint --format "$file" >"$tmp"; then
@@ -108,7 +108,8 @@ if have xmllint; then
         fi
     done
 else
-    skip "xmllint not found; XML/SVG formatting skipped"
+    skip "xmllint not found; XML formatting skipped"
 fi
 
+skip "SVG files are intentionally ignored"
 skip "No standard formatter configured for INI, KDL, Rasi, or app-specific .conf files"

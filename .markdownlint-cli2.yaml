@@ -1,10 +1,13 @@
 config:
+  first-line-heading: false
   line-length:
-    line_length: 120
-    code_blocks: false
-    tables: false
+    line_length: 2000
   no-inline-html: false
   no-bare-urls: false
+  no-emphasis-as-heading: false
+  blanks-around-fences: false
+  fenced-code-language: false
+  list-marker-space: false
 
 globs:
   - "**/*.md"

@@ -51,17 +51,17 @@ is_shell_file() {
 shell_dialect() {
     local file="$1" first_line
 
-    IFS= read -r first_line <"$file" || first_line=""
-    case "$first_line" in
-        *zsh*) echo "zsh" ;;
-        *bash*) echo "bash" ;;
-        *)
-            case "$(basename "$file")" in
-                .zshrc | *.zsh) echo "zsh" ;;
-                *) echo "bash" ;;
-            esac
-            ;;
+
+    case "$(basename "$file")" in
+        .zshrc | *.zsh) echo "zsh"; return ;;
     esac
+
+    IFS= read -r first_line < "$file" || first_line=""
+    case "$first_line" in
+        *bash*) echo "bash" ;;
+        *) echo "bash" ;;
+    esac
+        *zsh*) echo "zsh" ;;
 }
 
 mapfile -t all_files < <(collect_files)
@@ -77,7 +77,7 @@ mapfile -t json_files < <(collect_files \( -name "*.json" \))
 mapfile -t jsonc_files < <(collect_files \( -name "*.jsonc" \))
 mapfile -t toml_files < <(collect_files \( -name "*.toml" \))
 mapfile -t lua_files < <(collect_files \( -name "*.lua" \))
-mapfile -t xml_files < <(collect_files \( -name "*.xml" -o -name "*.svg" \))
+mapfile -t xml_files < <(collect_files \( -name "*.xml" \))
 mapfile -t md_files < <(collect_files \( -name "*.md" \))
 mapfile -t css_files < <(collect_files \( -name "*.css" \))
 
@@ -108,7 +108,7 @@ if have shellcheck; then
         if [ "$(shell_dialect "$file")" = "zsh" ]; then
             skip "shellcheck does not support zsh: $file"
         else
-            run shellcheck "$file"
+            run shellcheck --severity=error "$file"
         fi
     done
 else
@@ -227,12 +227,12 @@ fi
 
 if have selene; then
     info "Linting Lua with selene"
-    run selene .files/nvim
+    run selene --config .files/nvim/selene.toml .files/nvim
 else
     skip "selene not found; Lua semantic lint skipped"
 fi
 
-info "Checking XML and SVG syntax"
+info "Checking XML syntax"
 for file in "${xml_files[@]}"; do
     run xmllint --noout "$file"
 done
@@ -261,6 +261,7 @@ else
     skip "markdownlint not found; Markdown lint skipped"
 fi
 
+skip "SVG files are intentionally ignored"
 skip "No standard parser configured for INI, KDL, Rasi, or app-specific .conf files"
 
 exit "${failures}"

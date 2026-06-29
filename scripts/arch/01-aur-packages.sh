@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 paru -S --noconfirm google-chrome ttf-nerd-fonts-symbols nerd-fonts
 paru -S --noconfirm sddm qt6-virtualkeyboard qt6-multimedia-ffmpeg
 # Probably not needed, as it's not that stable compared to GNOME
