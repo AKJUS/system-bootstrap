@@ -26,6 +26,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 
-curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
+curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh" | bash
 
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-4 | bash
