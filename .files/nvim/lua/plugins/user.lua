@@ -110,13 +110,18 @@ return {
 			)
 		end,
 	},
+	{ "folke/tokyonight.nvim", name = "tokyonight", priority = 1000 },
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
+		"olimorris/onedarkpro.nvim",
+		priority = 1000, -- Ensure it loads first
 		config = function()
-			vim.cmd.colorscheme("catppuccin-macchiato")
+			require("onedarkpro").setup({
+				options = {
+					cursorline = true, -- Use cursorline highlighting?
+					transparency = true, -- Use a transparent background?
+					terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
+				},
+			})
 		end,
 	},
-	{ "folke/tokyonight.nvim", name = "tokyonight", priority = 1000 },
 }
