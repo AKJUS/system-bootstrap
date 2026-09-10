@@ -4,9 +4,15 @@
 // ! PLACE YOUR CUSTOM CONFIGURATION ELSEWHERE !
 
 layout {
-    gaps 15
-    border { width 4 }
-    focus-ring { width 4 }
+    gaps 8
+
+    border {
+        width 4
+    }
+
+    focus-ring {
+        width 4
+    }
 }
 
 window-rule {
@@ -14,4 +20,11 @@ window-rule {
     clip-to-geometry true
     tiled-state true
     draw-border-with-background false
+}
+
+layer-rule {
+    exclude namespace="^dms:bar$"
+    background-effect {
+        xray false
+    }
 }

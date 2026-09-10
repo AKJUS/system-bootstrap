@@ -4,5 +4,7 @@
 // ! PLACE YOUR CUSTOM CONFIGURATION ELSEWHERE !
 
 recent-windows {
-    highlight { corner-radius 20 }
+    highlight {
+        corner-radius 20
+    }
 }
