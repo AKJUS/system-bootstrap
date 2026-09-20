@@ -88,7 +88,7 @@
         {
           "id": "spacer",
           "enabled": true,
-          "size": 30
+          "size": 10
         },
         {
           "id": "runningApps",
@@ -97,6 +97,13 @@
           "runningAppsGroupByApp": false,
           "runningAppsCurrentWorkspace": true,
           "runningAppsCurrentMonitor": false
+        },
+        {
+          "id": "focusedWindow",
+          "enabled": true,
+          "focusedWindowSize": 1,
+          "focusedWindowCompactMode": true,
+          "focusedWindowShowIcon": true
         }
       ],
       "centerWidgets": [
@@ -107,14 +114,7 @@
         {
           "id": "spacer",
           "enabled": true,
-          "size": 20
-        },
-        {
-          "id": "focusedWindow",
-          "enabled": true,
-          "focusedWindowSize": 1,
-          "focusedWindowCompactMode": true,
-          "focusedWindowShowIcon": true
+          "size": 5
         },
         {
           "id": "clock",
