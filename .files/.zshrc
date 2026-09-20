@@ -376,7 +376,7 @@ export ANDROID_AVD_HOME="$ANDROID_USER_HOME/avd"
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
 
 # opencode
-export PATH=/home/worxbend/.opencode/bin:$PATH
+[[ -d /home/worxbend/.opencode/bin ]] && export PATH="/home/worxbend/.opencode/bin:$PATH"
 
 # kimi-code
-export PATH="/home/worxbend/.kimi-code/bin:$PATH"
+[[ -d /home/worxbend/.kimi-code/bin ]] && export PATH="/home/worxbend/.kimi-code/bin:$PATH"
