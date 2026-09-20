@@ -170,6 +170,11 @@
           "showInGb": true
         },
         {
+          "id": "spacer",
+          "enabled": true,
+          "size": 20
+        },
+        {
           "id": "powerMenuButton",
           "enabled": true
         },
@@ -180,11 +185,6 @@
           "showMicIcon": true,
           "showIdleInhibitorIcon": true,
           "showDoNotDisturbIcon": true
-        },
-        {
-          "id": "spacer",
-          "enabled": true,
-          "size": 20
         }
       ],
       "spacing": 4,
