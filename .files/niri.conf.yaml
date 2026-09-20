@@ -8,12 +8,19 @@
 #   ~/.config/DankMaterialShell/{firefox,zen}.css
 #   ~/.local/share/color-schemes/DankMatugen*.colors
 #
-# Per-machine runtime state is out of scope too: ~/.local/state/DankMaterialShell/
-# holds the wallpaper path, weather location, and launcher history.
+# Per-machine runtime state is out of scope: ~/.local/state/DankMaterialShell/
+# holds session, wallpaper, weather, and output state; ~/.cache/DankMaterialShell/
+# holds generated colors and usage history.
 #
-# DMS saves settings.json with an atomic write (temp file + rename). Qt's QSaveFile
-# resolves the symlink and writes through to the target, so the link survives and
-# every change made in the DMS UI lands straight in this repo — verified on 2026-09-06.
+# DMS saves settings.json and plugin_settings.json with Qt's symlink-safe atomic
+# writer. Clipboard settings use a direct write, which also follows the symlink.
+# Consequently, UI changes to these three files land directly in this repo.
+#
+# plugins.lock.json is deliberately a snapshot rather than a link: DMS replaces
+# that file during updates, which would destroy a file-level symlink. Refresh it:
+#   dms plugins lock --output ~/.system-bootstrap/.files/.config/DankMaterialShell/plugins.lock.json
+# Restore it on another machine:
+#   dms plugins restore ~/.system-bootstrap/.files/.config/DankMaterialShell/plugins.lock.json
 - defaults:
     link:
       relink: true
@@ -29,7 +36,11 @@
     ~/.config/niri/dms/outputs.kdl: .config/niri/dms/outputs.kdl
     ~/.config/niri/dms/cursor.kdl: .config/niri/dms/cursor.kdl
     ~/.config/niri/dms/input.kdl: .config/niri/dms/input.kdl
+    ~/.config/niri/dms/windowrules.kdl: .config/niri/dms/windowrules.kdl
+    ~/.config/niri/dms/wpblur.kdl: .config/niri/dms/wpblur.kdl
     ~/.config/DankMaterialShell/settings.json: .config/DankMaterialShell/settings.json
+    ~/.config/DankMaterialShell/plugin_settings.json: .config/DankMaterialShell/plugin_settings.json
+    ~/.config/DankMaterialShell/clsettings.json: .config/DankMaterialShell/clsettings.json
     ~/.config/danksearch/config.toml: .config/danksearch/config.toml
     ~/.config/environment.d/90-dms.conf: .config/environment.d/90-dms.conf
     ~/.config/mimeapps.list: .config/mimeapps.list

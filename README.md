@@ -118,8 +118,9 @@ Dotfiles live under `.files` and are linked with Dotbot.
 
 Dotbot is not vendored in this repo. `scripts/apply-dotfiles.sh` downloads the
 [dotbot-go](https://github.com/worxbend/dotbot-go) release binary into a temporary directory on demand, verifies its
-published SHA-256, applies the configs, and discards it. It runs two passes: the shared `.files/install.conf.yaml`,
-then the distro overlay (`.files/arch/`, `.files/fedora/`) matching `ID`/`ID_LIKE` in `/etc/os-release`.
+published SHA-256, applies the configs, and discards it. It runs two passes: the shared `.files/install.conf.yaml` and
+`.files/niri.conf.yaml`, then the distro overlay (`.files/arch/`, `.files/fedora/`) matching `ID`/`ID_LIKE` in
+`/etc/os-release`.
 
 The repo is intentionally opinionated: link defaults use `force: true`, so repo-managed files replace local targets.
 Run this only when you want this repository to own those config paths.
@@ -142,7 +143,22 @@ Managed highlights:
 - 🧱 tmux, Zellij, Starship
 - 🖥 Alacritty, Kitty, WezTerm, Ghostty
 - 📁 Yazi, Lazygit, LSD, Btop
-- 🪟 GNOME, COSMIC, Sway, Waybar, Fuzzel
+- 🪟 GNOME, COSMIC, Niri + DankMaterialShell, Sway, Waybar, Fuzzel
+
+### DankMaterialShell
+
+Portable DMS settings and DMS-generated Niri snippets live under `.files/.config/` and are linked by
+`.files/niri.conf.yaml`. Runtime state, caches, generated themes, and plugin checkout directories stay local.
+
+The plugin lock is tracked as a snapshot because DMS replaces its live lockfile instead of writing through symlinks:
+
+```bash
+# Refresh the snapshot after installing or updating DMS plugins
+dms plugins lock --output ~/.system-bootstrap/.files/.config/DankMaterialShell/plugins.lock.json
+
+# Reproduce the saved plugin revisions on another machine
+dms plugins restore ~/.system-bootstrap/.files/.config/DankMaterialShell/plugins.lock.json
+```
 
 ## 🔤 Nerd Fonts
 

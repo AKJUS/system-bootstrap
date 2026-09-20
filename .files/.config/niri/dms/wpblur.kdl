@@ -3,8 +3,7 @@
 // ! CHANGES WILL BE OVERWRITTEN !
 // ! PLACE YOUR CUSTOM CONFIGURATION ELSEWHERE !
 
-recent-windows {
-    highlight {
-        corner-radius 15
-    }
+layer-rule {
+    match namespace="dms:blurwallpaper"
+    place-within-backdrop true
 }
