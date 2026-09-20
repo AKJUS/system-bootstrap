@@ -518,14 +518,7 @@
   "osdAudioOutputEnabled": true,
   "powerActionConfirm": true,
   "powerActionHoldDuration": 0.5,
-  "powerMenuActions": [
-    "reboot",
-    "logout",
-    "poweroff",
-    "lock",
-    "suspend",
-    "restart"
-  ],
+  "powerMenuActions": ["reboot", "logout", "poweroff", "lock", "suspend", "restart"],
   "powerMenuDefaultAction": "logout",
   "powerMenuGridLayout": false,
   "customPowerActionLock": "",
@@ -560,9 +553,7 @@
       "name": "Main Bar",
       "enabled": true,
       "position": 0,
-      "screenPreferences": [
-        "all"
-      ],
+      "screenPreferences": ["all"],
       "showOnLastDisplay": true,
       "leftWidgets": [
         "launcherButton",
@@ -695,9 +686,7 @@
   "desktopClockY": -1,
   "desktopClockWidth": 280,
   "desktopClockHeight": 180,
-  "desktopClockDisplayPreferences": [
-    "all"
-  ],
+  "desktopClockDisplayPreferences": ["all"],
   "systemMonitorEnabled": false,
   "systemMonitorShowHeader": true,
   "systemMonitorTransparency": 0.8,
@@ -734,9 +723,7 @@
   "systemMonitorY": -1,
   "systemMonitorWidth": 320,
   "systemMonitorHeight": 480,
-  "systemMonitorDisplayPreferences": [
-    "all"
-  ],
+  "systemMonitorDisplayPreferences": ["all"],
   "systemMonitorVariants": [],
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
@@ -754,25 +741,15 @@
   "clipboardEnterToPaste": false,
   "clipboardRememberTypeFilter": false,
   "clipboardTypeFilter": "all",
-  "clipboardVisibleEntryActions": [
-    "pin",
-    "edit",
-    "delete"
-  ],
+  "clipboardVisibleEntryActions": ["pin", "edit", "delete"],
   "launcherPluginVisibility": {},
-  "launcherPluginOrder": [
-    "dms_settings_search",
-    "emojiLauncher",
-    "dms_clipboard_search"
-  ],
+  "launcherPluginOrder": ["dms_settings_search", "emojiLauncher", "dms_clipboard_search"],
   "frameEnabled": false,
   "frameThickness": 16,
   "frameRounding": 23,
   "frameColor": "",
   "frameOpacity": 1,
-  "frameScreenPreferences": [
-    "all"
-  ],
+  "frameScreenPreferences": ["all"],
   "frameBarSize": 40,
   "frameShowOnOverview": false,
   "frameBlurEnabled": true,
