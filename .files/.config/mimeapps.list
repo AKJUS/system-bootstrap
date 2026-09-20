@@ -20,7 +20,7 @@ image/png=org.gnome.Loupe.desktop
 image/svg+xml=org.gnome.Loupe.desktop
 image/webp=org.gnome.Loupe.desktop
 inode/directory=org.gnome.Nautilus.desktop
-text/html=firefox.desktop
+text/html=brave-browser.desktop
 video/avi=mpv.desktop
 video/mp4=mpv.desktop
 video/mpeg=mpv.desktop
@@ -31,10 +31,12 @@ video/x-msvideo=mpv.desktop
 x-scheme-handler/calendar=dms-open.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/file=org.gnome.Nautilus.desktop
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
 x-scheme-handler/mailto=firefox.desktop
 x-scheme-handler/jetbrains=jetbrainsd.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
 
 [Added Associations]
 application/vnd.comicbook+zip=org.pwmt.zathura-pdf-mupdf.desktop;
