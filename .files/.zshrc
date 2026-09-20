@@ -374,3 +374,9 @@ export ANDROID_SDK_ROOT="$ANDROID_HOME"
 export ANDROID_USER_HOME="$HOME/.config/.android"
 export ANDROID_AVD_HOME="$ANDROID_USER_HOME/avd"
 export PATH="$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$PATH"
+
+# opencode
+export PATH=/home/worxbend/.opencode/bin:$PATH
+
+# kimi-code
+export PATH="/home/worxbend/.kimi-code/bin:$PATH"
