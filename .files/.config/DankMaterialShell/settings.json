@@ -137,7 +137,8 @@
         {
           "id": "keyboard_layout_name",
           "enabled": true,
-          "keyboardLayoutNameShowIcon": true
+          "keyboardLayoutNameShowIcon": true,
+          "keyboardLayoutNameCompactMode": true
         },
         {
           "id": "spacer",
