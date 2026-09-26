@@ -12,7 +12,9 @@ input {
         tap
         accel-speed 0.0
         natural-scroll
+        disabled-on-external-mouse
         dwt
+        middle-emulation
     }
     keyboard {
         xkb {
